@@ -76,6 +76,11 @@ public class Register_a_sensor extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(0, 119, 182));
         jButton1.setText("Save & Configure");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(192, 57, 43));
         jButton2.setText("Cancel");
@@ -110,6 +115,11 @@ public class Register_a_sensor extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(0, 119, 182));
         jButton3.setText("Save");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -188,8 +198,24 @@ public class Register_a_sensor extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-       
+       MainScreen M1 = new MainScreen();
+       M1.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        Configure_a_sensor C1 = new Configure_a_sensor();
+       C1.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        MainScreen M2 = new MainScreen();
+       M2.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
