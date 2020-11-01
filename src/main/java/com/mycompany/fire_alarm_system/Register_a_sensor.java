@@ -205,6 +205,15 @@ public class Register_a_sensor extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
+            Sensor s1 = new Sensor();
+            FileIO f = new FileIO();
+            
+            s1.SensorID = jTextField1.getText();
+            s1.floorno = Integer.parseInt(jTextField2.getText());
+            s1.location = jTextField3.toString();
+            s1.SensorType =  jComboBox1.getSelectedItem().toString();
+            f.WriteObjectToFile(s1);
+            f.ReadObjectFromFile(s1);
         Configure_a_sensor C1 = new Configure_a_sensor();
        C1.setVisible(true);
         this.dispose();
