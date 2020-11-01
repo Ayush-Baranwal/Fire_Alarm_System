@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+package com.mycompany.fire_alarm_system;
 /**
  *
  * @author HP
@@ -79,12 +79,17 @@ public class Register_a_sensor extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(192, 57, 43));
         jButton2.setText("Cancel");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(248, 148, 6));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Registor a Sensor");
+        jLabel6.setText("Register a Sensor");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -180,6 +185,11 @@ public class Register_a_sensor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments

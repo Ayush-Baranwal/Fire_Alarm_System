@@ -8,6 +8,8 @@
  *
  * @author HP
  */
+package com.mycompany.fire_alarm_system;
+
 public class Start_Monitoring extends javax.swing.JFrame {
 
     /**
