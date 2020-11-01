@@ -149,12 +149,14 @@ public class MainScreen extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         Register_a_sensor R=new Register_a_sensor();
         R.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
         Configure_a_sensor C=new Configure_a_sensor();
         C.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
@@ -165,6 +167,7 @@ public class MainScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         Start_Monitoring S=new Start_Monitoring();
         S.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**
