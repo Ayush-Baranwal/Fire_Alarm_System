@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates  
  * and open the template in the editor.
  */
-package com.mycompany.fire_alarm_system;
+
 /**
  *
  * @author AADHARSH
  */
-
+package com.mycompany.fire_alarm_system;
 import java.io.*;
 
 public class FileIO {
@@ -17,7 +17,7 @@ public class FileIO {
     
     public void WriteObjectToFile(Object serObj) {
  
-        filepath = "C:\\Users\\HP\\Documents\\Code-Base";
+        filepath = "Exercise17_03.dat";
         
         try {
             File file = new File(filepath);
