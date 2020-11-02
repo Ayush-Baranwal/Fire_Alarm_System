@@ -231,7 +231,6 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
-
     /**
      * @param args the command line arguments
      */
