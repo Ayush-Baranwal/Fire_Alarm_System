@@ -214,7 +214,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        // TODO add your handling code here :
+        // TODO add your handling code here:
         MainScreen M3 = new MainScreen();
         M3.setVisible(true);
         this.dispose();
