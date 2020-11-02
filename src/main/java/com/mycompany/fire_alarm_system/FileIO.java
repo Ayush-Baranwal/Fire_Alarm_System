@@ -1,14 +1,15 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+
+ * To change this template file, choose Tools | Templates  
  * and open the template in the editor.
  */
-
+package com.mycompany.fire_alarm_system;
 /**
  *
  * @author AADHARSH
  */
-package com.mycompany.fire_alarm_system;
+
 import java.io.*;
 
 public class FileIO {
@@ -17,7 +18,8 @@ public class FileIO {
     
     public void WriteObjectToFile(Object serObj) {
  
-        filepath = "D:\\Fire-Alarm-System\\src\\Data\\Exercise17_03.dat";
+
+        filepath = "";
         
         try {
             File file = new File(filepath);
