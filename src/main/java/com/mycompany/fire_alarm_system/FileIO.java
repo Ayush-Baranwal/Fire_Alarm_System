@@ -8,7 +8,7 @@
  *
  * @author AADHARSH
  */
-
+package com.mycompany.fire_alarm_system;
 import java.io.*;
 
 public class FileIO {
@@ -17,7 +17,7 @@ public class FileIO {
     
     public void WriteObjectToFile(Object serObj) {
  
-        filepath = "D:\\FireAlarm\\src\\Projfolder\\Exercise17_03.dat";
+        filepath = "D:\\Fire-Alarm-System\\src\\Data\\Exercise17_03.dat";
         
         try {
             File file = new File(filepath);
