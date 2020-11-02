@@ -22,7 +22,7 @@ public class Main {
                     }
         });
 //       Register_a_sensor R=new Register_a_sensor();
-//       Configure_a_sensor C=new Configure_a_sensor();
+//       Configure_a_sensor C=new Configure_a_sensor() ;
 //       Start_Monitoring S=new Start_Monitoring();
     }
     
