@@ -223,6 +223,17 @@ public class Register_a_sensor extends javax.swing.JFrame {
         // TODO add your handling code here:
         MainScreen M2 = new MainScreen();
        M2.setVisible(true);
+        Sensor s1 = new Sensor();
+            FileIO f = new FileIO();
+            
+            s1.SensorID = jTextField1.getText();
+            s1.floorno = Integer.parseInt(jTextField2.getText());
+            s1.location = jTextField3.toString();
+            s1.SensorType =  jComboBox1.getSelectedItem().toString();
+            f.WriteObjectToFile(s1);
+            f.ReadObjectFromFile(s1);
+        Configure_a_sensor C1 = new Configure_a_sensor();
+       C1.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3MouseClicked
 
