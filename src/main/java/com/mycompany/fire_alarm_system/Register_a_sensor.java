@@ -186,14 +186,14 @@ public class Register_a_sensor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //ActionListener for canceling the registration and directing to MainScreen window.
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
        MainScreen M1 = new MainScreen();
        M1.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
-
+    //ActionListener for saving data of registered sensor and directing to MainScreen window.
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
         MainScreen M2 = new MainScreen();
