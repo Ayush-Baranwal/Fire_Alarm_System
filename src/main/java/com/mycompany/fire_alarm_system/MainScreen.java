@@ -145,24 +145,24 @@ public class MainScreen extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    //ActionListener for directing to Register window.
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         Register_a_sensor R=new Register_a_sensor();
         R.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1MouseClicked
-
+    //ActionListener for directing to Configure window.
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
         Configure_a_sensor C=new Configure_a_sensor();
         C.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
-
+    //ActionListener for Quiting window.
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         this.dispose();
     }//GEN-LAST:event_jButton4MouseClicked
-
+    //ActionListener for directing to StartMonituring window.
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
         Start_Monitoring S=new Start_Monitoring();
