@@ -241,10 +241,6 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         MainScreen M4 = new MainScreen();
         M4.setVisible(true);
         this.dispose();
-        if (evt.isPopupTrigger()) {
-                    jPopupMenu1.show(evt.getComponent(),
-                            evt.getX(), evt.getY());
-                }
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
