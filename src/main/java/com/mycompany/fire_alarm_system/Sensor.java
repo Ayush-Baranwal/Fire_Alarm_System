@@ -13,6 +13,12 @@ import java.io.Serializable;
 public class Sensor implements Serializable {
     public String SensorID, location, SensorType;
     public int floorno;
+    public static int thresholdCO;
+    public static int thresholdSmoke;
+    public static int thresholdHeat;
+    public static int duration;
+    public static int volume;
+    public static int logint;
     
     @Override
     public String toString() {

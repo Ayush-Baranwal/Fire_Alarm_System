@@ -212,6 +212,9 @@ public class Register_a_sensor extends javax.swing.JFrame {
             s1.SensorType =  jComboBox1.getSelectedItem().toString();
             f.WriteObjectToFile(s1);
             f.ReadObjectFromFile(s1);
+            System.out.println(Sensor.thresholdHeat);
+             System.out.println(Sensor.volume);
+              System.out.println(Sensor.duration);
         Configure_a_sensor C1 = new Configure_a_sensor();
        C1.setVisible(true);
         this.dispose();
