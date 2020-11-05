@@ -92,7 +92,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
 
         jComboBox1.setBackground(new java.awt.Color(108, 120, 137));
         jComboBox1.setForeground(new java.awt.Color(228, 241, 254));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Time(in min)", "1 min", "2 min", "4 min", "8 min", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Time(in min)", "1", "2", "4", "8", "" }));
 
         jSlider1.setBackground(new java.awt.Color(108, 120, 137));
         jSlider1.setMajorTickSpacing(5);
@@ -100,7 +100,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
 
         jComboBox2.setBackground(new java.awt.Color(108, 120, 137));
         jComboBox2.setForeground(new java.awt.Color(228, 241, 254));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Time(in sec)", "5 sec", "10 sec", "20 sec", "40 sec" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Time(in sec)", "5", "10", "20", "40" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -112,6 +112,11 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -129,7 +134,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
 
         jComboBox3.setBackground(new java.awt.Color(108, 120, 137));
         jComboBox3.setForeground(new java.awt.Color(108, 120, 137));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sensor", "CO Sensor", "Heat Sensor", "Smoke Sensor", " " }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sensor", "CO Sensor", "Heat Sensor", "Smoke Sensor", "" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -242,6 +247,22 @@ public class Configure_a_sensor extends javax.swing.JFrame {
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+                switch(jComboBox1.getSelectedIndex())
+                {
+                    case 1:
+                        Sensor.thresholdCO = Integer.parseInt(jTextField1.getText());
+                    case 2:
+                        Sensor.thresholdHeat = Integer.parseInt(jTextField1.getText());
+                    case 3:
+                        Sensor.thresholdSmoke = Integer.parseInt(jTextField1.getText());
+                }
+                Sensor.duration = Integer.parseInt(jComboBox2.getSelectedItem().toString());
+                Sensor.volume = jSlider1.getValue();
+                Sensor.logint = Integer.parseInt(jComboBox2.getSelectedItem().toString());
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
