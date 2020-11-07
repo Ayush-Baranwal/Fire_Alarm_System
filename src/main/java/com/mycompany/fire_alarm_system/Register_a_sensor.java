@@ -211,7 +211,7 @@ public class Register_a_sensor extends javax.swing.JFrame {
         // TODO add your handling code here:
         int index=0;
         int flag=1;
-        
+        int flag2=1;
         for(int j=0;j<11;j++){
             if(Floor.f0.get(j).Cid.equals(jTextField1.getText())||Floor.f0.get(j).Hid.equals(jTextField1.getText())||Floor.f0.get(j).Sid.equals(jTextField1.getText()))
                 flag=0;
@@ -237,13 +237,28 @@ public class Register_a_sensor extends javax.swing.JFrame {
                 flag=0;
         }
         
-        if(flag==0) JOptionPane.showMessageDialog(this,"Entered Sensor ID already used!");
-        else{
-        if(Integer.parseInt(jTextField2.getText())>5||Integer.parseInt(jTextField2.getText())<0||"".equals(jTextField1.getText())){    
-             JOptionPane.showMessageDialog(this,"Enter correct data!");
-             
+        if(flag==0){
+            JOptionPane.showMessageDialog(this,"Entered Sensor ID already used!");
+            flag2=0;
+            Register_a_sensor R2 = new Register_a_sensor();
+            R2.setVisible(true);
+            this.dispose();
         }
-        else{
+        if(Integer.parseInt(jTextField2.getText())>5||Integer.parseInt(jTextField2.getText())<0){    
+             JOptionPane.showMessageDialog(this,"Entered floor doesn't exist in CC3!");
+             flag2=0;
+             Register_a_sensor R3 = new Register_a_sensor();
+            R3.setVisible(true);
+            this.dispose();
+        }
+        if("".equals(jTextField1.getText())){
+            JOptionPane.showMessageDialog(this,"Sensor ID can't be left blank");
+            flag2=0;
+             Register_a_sensor R4 = new Register_a_sensor();
+            R4.setVisible(true);
+            this.dispose();
+        }
+        if(flag2==1){
         Sensor s1 = new Sensor();
         FileIO f = new FileIO();
 
@@ -332,7 +347,6 @@ public class Register_a_sensor extends javax.swing.JFrame {
             jTextField1.setText("");
             jTextField2.setText("");
             JOptionPane.showMessageDialog(this,"Sensor Registered");
-        }
         }
     }//GEN-LAST:event_jButton3MouseClicked
 
