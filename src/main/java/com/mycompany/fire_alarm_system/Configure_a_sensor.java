@@ -4,6 +4,7 @@
  * and open the template in the editor  .
  */
 package com.mycompany.fire_alarm_system;
+import javax.swing.JOptionPane;
 /**
  *
  * @author HP
@@ -134,8 +135,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
 
         jComboBox3.setBackground(new java.awt.Color(108, 120, 137));
         jComboBox3.setForeground(new java.awt.Color(108, 120, 137));
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sensor", "CO Sensor", "Heat Sensor", "Smoke Sensor", " " }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sensor", "CO Sensor", "Heat Sensor", "Smoke Sensor", "" }));
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox3ActionPerformed(evt);
@@ -148,7 +148,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(42, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -239,6 +239,34 @@ public class Configure_a_sensor extends javax.swing.JFrame {
     //ActionListener for Configuring a particular type of sensor and directing to MainScreen window.
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
+        switch(jComboBox1.getSelectedIndex())
+            {
+                case 1:
+                    Sensor.thresholdCO = Float.parseFloat(jTextField1.getText());
+                    break;
+                case 2:
+                    Sensor.thresholdHeat = Float.parseFloat(jTextField1.getText());
+                    break;
+                case 3:
+                    Sensor.thresholdSmoke = Float.parseFloat(jTextField1.getText());
+                    break;
+            }
+            Sensor.duration = Integer.parseInt(jComboBox2.getSelectedItem().toString());
+            Sensor.volume = jSlider1.getValue();
+            Sensor.logint = Integer.parseInt(jComboBox2.getSelectedItem().toString());
+            switch(jComboBox1.getSelectedIndex())
+            {
+                case 1:
+                    Location.conCsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdCO);
+                    break;
+                case 2:
+                    Location.conHsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdHeat);
+                    break;
+                case 3:
+                    Location.conSsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdSmoke);
+                    break;
+            }
+            JOptionPane.showMessageDialog(this,"Configuration Successful");
         MainScreen M4 = new MainScreen();
         M4.setVisible(true);
         this.dispose();
@@ -250,18 +278,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
 
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-                switch(jComboBox1.getSelectedIndex())
-                {
-                    case 1:
-                        Sensor.thresholdCO = Integer.parseInt(jTextField1.getText());
-                    case 2:
-                        Sensor.thresholdHeat = Integer.parseInt(jTextField1.getText());
-                    case 3:
-                        Sensor.thresholdSmoke = Integer.parseInt(jTextField1.getText());
-                }
-                Sensor.duration = Integer.parseInt(jComboBox2.getSelectedItem().toString());
-                Sensor.volume = jSlider1.getValue();
-                Sensor.logint = Integer.parseInt(jComboBox2.getSelectedItem().toString());
+
 // TODO add your handling code here:
    }//GEN-LAST:event_jButton1ActionPerformed
 

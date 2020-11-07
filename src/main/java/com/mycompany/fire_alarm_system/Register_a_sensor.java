@@ -1,13 +1,14 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
- * and open the template in the editor .
+ * and open the template in the editor.
  */
 package com.mycompany.fire_alarm_system;
 /**
  *
  * @author HP
  */
+import javax.swing.*; 
 public class Register_a_sensor extends javax.swing.JFrame {
 
     /**
@@ -65,7 +66,9 @@ public class Register_a_sensor extends javax.swing.JFrame {
 
         jComboBox1.setBackground(new java.awt.Color(108, 120, 137));
         jComboBox1.setForeground(new java.awt.Color(108, 120, 137));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sensor", "CO Sensor", "Heat Sensor", "Smoke Sensor", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CO Sensor", "Heat Sensor", "Smoke Sensor", " " }));
+        jComboBox1.setToolTipText("");
+        jComboBox1.setName(""); // NOI18N
 
         jTextField2.setBackground(new java.awt.Color(108, 120, 137));
         jTextField2.setForeground(new java.awt.Color(228, 241, 254));
@@ -116,7 +119,7 @@ public class Register_a_sensor extends javax.swing.JFrame {
 
         jComboBox2.setBackground(new java.awt.Color(108, 120, 137));
         jComboBox2.setForeground(new java.awt.Color(108, 120, 137));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Room 1", "Room 2", "Room 3", "Room 4", "Room 5", "Room 6", "Lab 1", "Lab 2", "Stairs 1", "Stairs 2", "Hall" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Room 1", "Room 2", "Room 3", "Room 4", "Room 5", "Room 6", "Lab 1", "Lab 2", "Stairs 1", "Stairs 2", "Hall", " " }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -173,6 +176,8 @@ public class Register_a_sensor extends javax.swing.JFrame {
                 .addContainerGap(57, Short.MAX_VALUE))
         );
 
+        jComboBox1.getAccessibleContext().setAccessibleName("");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -196,23 +201,108 @@ public class Register_a_sensor extends javax.swing.JFrame {
     //ActionListener for saving data of registered sensor and directing to MainScreen window.
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
-        MainScreen M2 = new MainScreen();
-       M2.setVisible(true);
+        int index=0;
+        int flag=1;
+//        for(int i=0;i<6;i++){
+//            for(int j=0;j<11;j++){
+//                
+//            }
+//        }
+        if(flag==0) JOptionPane.showMessageDialog(this,"Entered Sensor ID already used!");
+        else{
+        if(Integer.parseInt(jTextField2.getText())>5||Integer.parseInt(jTextField2.getText())<0||"".equals(jTextField1.getText())){    
+             JOptionPane.showMessageDialog(this,"Enter correct data!");
+             
+        }
+        else{
         Sensor s1 = new Sensor();
-            FileIO f = new FileIO();
-            
-            s1.SensorID = jTextField1.getText();
-            s1.floorno = Integer.parseInt(jTextField2.getText());
-            s1.location = jComboBox2.getSelectedItem().toString();
-            s1.SensorType =  jComboBox1.getSelectedItem().toString();
+        FileIO f = new FileIO();
+
+        s1.SensorID = jTextField1.getText();
+        s1.floorno = Integer.parseInt(jTextField2.getText());
+        s1.location = jComboBox2.getSelectedItem().toString();
+        s1.SensorType =  jComboBox1.getSelectedItem().toString();    
             f.WriteObjectToFile(s1);
             f.ReadObjectFromFile(s1);
             System.out.println(Sensor.thresholdHeat);
-             System.out.println(Sensor.volume);
-              System.out.println(Sensor.duration);
-        Configure_a_sensor C1 = new Configure_a_sensor();
-       C1.setVisible(true);
-        this.dispose();
+            System.out.println(Sensor.volume);
+            System.out.println(Sensor.duration);
+            
+            switch(s1.location)
+            {
+                case "Room 1":
+                    index=0;
+                    break;
+                case "Room 2":
+                    index=1;
+                    break;
+                case "Room 3":
+                    index=2;
+                    break;
+                case "Room 4":
+                    index=3;
+                    break;
+                case "Room 5":
+                    index=4;
+                    break;
+                case "Room 6":
+                    index=5;
+                    break;
+                case "Lab 1":
+                    index=6;
+                    break;
+                case "Lab 2":
+                    index=7;
+                    break;
+                case "Stairs 1":
+                    index=8;
+                    break;
+                case "Stairs 2":
+                    index=9;
+                    break;
+                case "Hall":
+                    index=10;
+                    break;
+            }
+            
+            Location L=new Location();
+            Location.setLoc(s1);
+            switch(s1.SensorType)
+            {
+                case "Smoke Sensor":
+                    L.regSsensor(s1);
+                    break;
+                case "Heat Sensor":
+                    L.regHsensor(s1);
+                    break;
+                case "CO Sensor":
+                    L.regCsensor(s1);
+                    break;
+            }
+            
+            switch(s1.floorno){
+                case 0:
+                       Floor.f0.add(L);
+                        break;
+                case 1:
+                       Floor.f1.add(L);
+                        break;
+                case 2:
+                       Floor.f2.add(L);
+                        break;
+                case 3:
+                       Floor.f3.add(L);
+                        break;
+                case 4:
+                       Floor.f4.add(L);
+                        break;
+                case 5:
+                       Floor.f5.add(L);
+                        break;
+            }
+            JOptionPane.showMessageDialog(this,"Sensor Registered");
+        }
+        }
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
