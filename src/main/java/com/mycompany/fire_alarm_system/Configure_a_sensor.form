@@ -45,7 +45,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                  <EmptySpace pref="42" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel4" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
