@@ -1,9 +1,10 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
- * and open the template in the editor .
+ * and open the template in the editor  .
  */
 package com.mycompany.fire_alarm_system;
+import javax.swing.JOptionPane;
 /**
  *
  * @author HP
@@ -76,14 +77,17 @@ public class Configure_a_sensor extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Sound of Alarm:");
+        jLabel3.setText("Volume of Alarm:");
+        jLabel3.setToolTipText("");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Log Interval");
 
         jTextField1.setBackground(new java.awt.Color(108, 120, 137));
-        jTextField1.setForeground(new java.awt.Color(228, 241, 254));
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField1.setOpaque(false);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -91,16 +95,18 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         });
 
         jComboBox1.setBackground(new java.awt.Color(108, 120, 137));
-        jComboBox1.setForeground(new java.awt.Color(228, 241, 254));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Time(in min)", "1", "2", "4", "8", "" }));
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "4", "8", " " }));
+        jComboBox1.setToolTipText("Time(in minutes)");
 
         jSlider1.setBackground(new java.awt.Color(108, 120, 137));
         jSlider1.setMajorTickSpacing(5);
         jSlider1.setMinorTickSpacing(10);
 
         jComboBox2.setBackground(new java.awt.Color(108, 120, 137));
-        jComboBox2.setForeground(new java.awt.Color(228, 241, 254));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Time(in sec)", "5", "10", "20", "40" }));
+        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "5", "10", "20", "40" }));
+        jComboBox2.setToolTipText("Time(in second)");
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -108,6 +114,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         });
 
         jButton1.setBackground(new java.awt.Color(0, 119, 182));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setText("Configure");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -121,6 +128,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(192, 57, 43));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("Cancel");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -133,9 +141,9 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         jLabel5.setText("Sensor Type:");
 
         jComboBox3.setBackground(new java.awt.Color(108, 120, 137));
-        jComboBox3.setForeground(new java.awt.Color(108, 120, 137));
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sensor", "CO Sensor", "Heat Sensor", "Smoke Sensor", " " }));
+        jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CO Sensor", "Heat Sensor", "Smoke Sensor", " " }));
+        jComboBox3.setToolTipText("Select sensor type.");
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox3ActionPerformed(evt);
@@ -148,44 +156,47 @@ public class Configure_a_sensor extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(40, 40, 40)
-                        .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(64, 64, 64))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jButton1)
-                                        .addComponent(jLabel2))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(64, 64, 64))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jButton1)
+                                                .addComponent(jLabel2))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addGap(17, 17, 17)
+                                            .addComponent(jButton2))))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(17, 17, 17)
-                                    .addComponent(jButton2))))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(24, 24, 24))))
-                .addContainerGap(14, Short.MAX_VALUE))
+                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(24, 24, 24))))
+                        .addContainerGap(76, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jComboBox3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -239,6 +250,34 @@ public class Configure_a_sensor extends javax.swing.JFrame {
     //ActionListener for Configuring a particular type of sensor and directing to MainScreen window.
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
+        switch(jComboBox1.getSelectedIndex())
+            {
+                case 1:
+                    Sensor.thresholdCO = Float.parseFloat(jTextField1.getText());
+                    break;
+                case 2:
+                    Sensor.thresholdHeat = Float.parseFloat(jTextField1.getText());
+                    break;
+                case 3:
+                    Sensor.thresholdSmoke = Float.parseFloat(jTextField1.getText());
+                    break;
+            }
+            Sensor.duration = Integer.parseInt(jComboBox2.getSelectedItem().toString());
+            Sensor.volume = jSlider1.getValue();
+            Sensor.logint = Integer.parseInt(jComboBox2.getSelectedItem().toString());
+            switch(jComboBox1.getSelectedIndex())
+            {
+                case 1:
+                    Location.conCsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdCO);
+                    break;
+                case 2:
+                    Location.conHsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdHeat);
+                    break;
+                case 3:
+                    Location.conSsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdSmoke);
+                    break;
+            }
+            JOptionPane.showMessageDialog(this,"Configuration Successful");
         MainScreen M4 = new MainScreen();
         M4.setVisible(true);
         this.dispose();
@@ -250,18 +289,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
 
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-                switch(jComboBox1.getSelectedIndex())
-                {
-                    case 1:
-                        Sensor.thresholdCO = Integer.parseInt(jTextField1.getText());
-                    case 2:
-                        Sensor.thresholdHeat = Integer.parseInt(jTextField1.getText());
-                    case 3:
-                        Sensor.thresholdSmoke = Integer.parseInt(jTextField1.getText());
-                }
-                Sensor.duration = Integer.parseInt(jComboBox2.getSelectedItem().toString());
-                Sensor.volume = jSlider1.getValue();
-                Sensor.logint = Integer.parseInt(jComboBox2.getSelectedItem().toString());
+
 // TODO add your handling code here:
    }//GEN-LAST:event_jButton1ActionPerformed
 

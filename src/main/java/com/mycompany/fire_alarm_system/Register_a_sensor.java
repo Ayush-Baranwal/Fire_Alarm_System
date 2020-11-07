@@ -1,13 +1,14 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
- * and open the template in the editor  .
+ * and open the template in the editor.
  */
 package com.mycompany.fire_alarm_system;
 /**
  *
  * @author HP
  */
+import javax.swing.*; 
 public class Register_a_sensor extends javax.swing.JFrame {
 
     /**
@@ -61,16 +62,24 @@ public class Register_a_sensor extends javax.swing.JFrame {
         jLabel4.setText("Install Location:");
 
         jTextField1.setBackground(new java.awt.Color(108, 120, 137));
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(228, 241, 254));
+        jTextField1.setOpaque(false);
 
         jComboBox1.setBackground(new java.awt.Color(108, 120, 137));
-        jComboBox1.setForeground(new java.awt.Color(108, 120, 137));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sensor", "CO Sensor", "Heat Sensor", "Smoke Sensor", " " }));
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CO Sensor", "Heat Sensor", "Smoke Sensor", " " }));
+        jComboBox1.setToolTipText("Choose sensor type");
+        jComboBox1.setName(""); // NOI18N
+        jComboBox1.setOpaque(false);
 
         jTextField2.setBackground(new java.awt.Color(108, 120, 137));
+        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(228, 241, 254));
+        jTextField2.setOpaque(false);
 
         jButton2.setBackground(new java.awt.Color(192, 57, 43));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("Cancel");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -107,6 +116,7 @@ public class Register_a_sensor extends javax.swing.JFrame {
         );
 
         jButton3.setBackground(new java.awt.Color(0, 119, 182));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setText("Save");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -115,26 +125,23 @@ public class Register_a_sensor extends javax.swing.JFrame {
         });
 
         jComboBox2.setBackground(new java.awt.Color(108, 120, 137));
-        jComboBox2.setForeground(new java.awt.Color(108, 120, 137));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Room 1", "Room 2", "Room 3", "Room 4", "Room 5", "Room 6", " " }));
+        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Room 1", "Room 2", "Room 3", "Room 4", "Room 5", "Room 6", "Lab 1", "Lab 2", "Stairs 1", "Stairs 2", "Hall", " " }));
+        jComboBox2.setOpaque(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(104, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3)
-                        .addGap(0, 0, 0)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4))
+                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
@@ -143,12 +150,11 @@ public class Register_a_sensor extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                                .addComponent(jTextField2)))
-                        .addGap(83, 83, 83))
+                                .addComponent(jTextField2))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(48, 48, 48)
-                        .addComponent(jButton2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jButton2)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
@@ -175,8 +181,10 @@ public class Register_a_sensor extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
+
+        jComboBox1.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -201,23 +209,145 @@ public class Register_a_sensor extends javax.swing.JFrame {
     //ActionListener for saving data of registered sensor and directing to MainScreen window.
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
-        MainScreen M2 = new MainScreen();
-       M2.setVisible(true);
+        int index=0;
+        int flag=1;
+        int flag2=1;
+        for(int j=0;j<11;j++){
+            if(Floor.f0.get(j).Cid.equals(jTextField1.getText())||Floor.f0.get(j).Hid.equals(jTextField1.getText())||Floor.f0.get(j).Sid.equals(jTextField1.getText()))
+                flag=0;
+        }
+        for(int j=0;j<11;j++){
+            if(Floor.f1.get(j).Cid.equals(jTextField1.getText())||Floor.f1.get(j).Hid.equals(jTextField1.getText())||Floor.f1.get(j).Sid.equals(jTextField1.getText()))
+                flag=0;
+        }
+        for(int j=0;j<11;j++){
+            if(Floor.f2.get(j).Cid.equals(jTextField1.getText())||Floor.f2.get(j).Hid.equals(jTextField1.getText())||Floor.f2.get(j).Sid.equals(jTextField1.getText()))
+                flag=0;
+        }
+        for(int j=0;j<11;j++){
+            if(Floor.f3.get(j).Cid.equals(jTextField1.getText())||Floor.f3.get(j).Hid.equals(jTextField1.getText())||Floor.f3.get(j).Sid.equals(jTextField1.getText()))
+                flag=0;
+        }
+        for(int j=0;j<11;j++){
+            if(Floor.f4.get(j).Cid.equals(jTextField1.getText())||Floor.f4.get(j).Hid.equals(jTextField1.getText())||Floor.f4.get(j).Sid.equals(jTextField1.getText()))
+                flag=0;
+        }
+        for(int j=0;j<11;j++){
+            if(Floor.f5.get(j).Cid.equals(jTextField1.getText())||Floor.f5.get(j).Hid.equals(jTextField1.getText())||Floor.f5.get(j).Sid.equals(jTextField1.getText()))
+                flag=0;
+        }
+        
+        if(flag==0){
+            JOptionPane.showMessageDialog(this,"Entered Sensor ID already used!");
+            flag2=0;
+            Register_a_sensor R2 = new Register_a_sensor();
+            R2.setVisible(true);
+            this.dispose();
+        }
+        if(Integer.parseInt(jTextField2.getText())>5||Integer.parseInt(jTextField2.getText())<0){    
+             JOptionPane.showMessageDialog(this,"Entered floor doesn't exist in CC3!");
+             flag2=0;
+             Register_a_sensor R3 = new Register_a_sensor();
+            R3.setVisible(true);
+            this.dispose();
+        }
+        if("".equals(jTextField1.getText())){
+            JOptionPane.showMessageDialog(this,"Sensor ID can't be left blank");
+            flag2=0;
+             Register_a_sensor R4 = new Register_a_sensor();
+            R4.setVisible(true);
+            this.dispose();
+        }
+        if(flag2==1){
         Sensor s1 = new Sensor();
-            FileIO f = new FileIO();
-            
-            s1.SensorID = jTextField1.getText();
-            s1.floorno = Integer.parseInt(jTextField2.getText());
-            s1.location = jComboBox2.getSelectedItem().toString();
-            s1.SensorType =  jComboBox1.getSelectedItem().toString();
+        FileIO f = new FileIO();
+
+        s1.SensorID = jTextField1.getText();
+        s1.floorno = Integer.parseInt(jTextField2.getText());
+        s1.location = jComboBox2.getSelectedItem().toString();
+        s1.SensorType =  jComboBox1.getSelectedItem().toString();    
             f.WriteObjectToFile(s1);
             f.ReadObjectFromFile(s1);
             System.out.println(Sensor.thresholdHeat);
-             System.out.println(Sensor.volume);
-              System.out.println(Sensor.duration);
-        Configure_a_sensor C1 = new Configure_a_sensor();
-       C1.setVisible(true);
-        this.dispose();
+            System.out.println(Sensor.volume);
+            System.out.println(Sensor.duration);
+            
+            switch(s1.location)
+            {
+                case "Room 1":
+                    index=0;
+                    break;
+                case "Room 2":
+                    index=1;
+                    break;
+                case "Room 3":
+                    index=2;
+                    break;
+                case "Room 4":
+                    index=3;
+                    break;
+                case "Room 5":
+                    index=4;
+                    break;
+                case "Room 6":
+                    index=5;
+                    break;
+                case "Lab 1":
+                    index=6;
+                    break;
+                case "Lab 2":
+                    index=7;
+                    break;
+                case "Stairs 1":
+                    index=8;
+                    break;
+                case "Stairs 2":
+                    index=9;
+                    break;
+                case "Hall":
+                    index=10;
+                    break;
+            }
+            
+            Location L=new Location();
+            L.setLoc(s1);
+            switch(s1.SensorType)
+            {
+                case "Smoke Sensor":
+                    L.regSsensor(s1);
+                    break;
+                case "Heat Sensor":
+                    L.regHsensor(s1);
+                    break;
+                case "CO Sensor":
+                    L.regCsensor(s1);
+                    break;
+            }
+            
+            switch(s1.floorno){
+                case 0:
+                       Floor.f0.set(index,L);
+                        break;
+                case 1:
+                       Floor.f1.set(index,L);
+                        break;
+                case 2:
+                       Floor.f2.set(index,L);
+                        break;
+                case 3:
+                       Floor.f3.set(index,L);
+                        break;
+                case 4:
+                       Floor.f4.set(index,L);
+                        break;
+                case 5:
+                       Floor.f5.set(index,L);
+                        break;
+            }
+            jTextField1.setText("");
+            jTextField2.setText("");
+            JOptionPane.showMessageDialog(this,"Sensor Registered");
+        }
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
