@@ -69,7 +69,7 @@ public class Register_a_sensor extends javax.swing.JFrame {
         jComboBox1.setBackground(new java.awt.Color(108, 120, 137));
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CO Sensor", "Heat Sensor", "Smoke Sensor", " " }));
-        jComboBox1.setToolTipText("");
+        jComboBox1.setToolTipText("Choose sensor type");
         jComboBox1.setName(""); // NOI18N
         jComboBox1.setOpaque(false);
 
