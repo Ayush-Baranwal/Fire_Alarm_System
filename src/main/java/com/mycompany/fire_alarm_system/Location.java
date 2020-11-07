@@ -16,7 +16,7 @@ public class Location {
     static float Stvalue, Htvalue, Ctvalue;
     static int Sdur, Hdur, Cdur, Slog, Clog, Hlog, vol;
     float Scvalue, Hcvalue, Ccvalue;
-    static String loc;
+    String loc;
     String Sid, Hid, Cid;
     Location(){
         Stvalue=0;
@@ -37,7 +37,7 @@ public class Location {
         Cid=s.SensorID;
     }
     
-    public static void setLoc(Sensor s){
+    public void setLoc(Sensor s){
         loc=s.location;
     }
     public static void conSsensor(int d, int v, int l, float t){

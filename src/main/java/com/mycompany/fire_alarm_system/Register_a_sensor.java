@@ -62,18 +62,24 @@ public class Register_a_sensor extends javax.swing.JFrame {
         jLabel4.setText("Install Location:");
 
         jTextField1.setBackground(new java.awt.Color(108, 120, 137));
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(228, 241, 254));
+        jTextField1.setOpaque(false);
 
         jComboBox1.setBackground(new java.awt.Color(108, 120, 137));
-        jComboBox1.setForeground(new java.awt.Color(108, 120, 137));
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CO Sensor", "Heat Sensor", "Smoke Sensor", " " }));
         jComboBox1.setToolTipText("");
         jComboBox1.setName(""); // NOI18N
+        jComboBox1.setOpaque(false);
 
         jTextField2.setBackground(new java.awt.Color(108, 120, 137));
+        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(228, 241, 254));
+        jTextField2.setOpaque(false);
 
         jButton2.setBackground(new java.awt.Color(192, 57, 43));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("Cancel");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -110,6 +116,7 @@ public class Register_a_sensor extends javax.swing.JFrame {
         );
 
         jButton3.setBackground(new java.awt.Color(0, 119, 182));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setText("Save");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -118,8 +125,9 @@ public class Register_a_sensor extends javax.swing.JFrame {
         });
 
         jComboBox2.setBackground(new java.awt.Color(108, 120, 137));
-        jComboBox2.setForeground(new java.awt.Color(108, 120, 137));
+        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Room 1", "Room 2", "Room 3", "Room 4", "Room 5", "Room 6", "Lab 1", "Lab 2", "Stairs 1", "Stairs 2", "Hall", " " }));
+        jComboBox2.setOpaque(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -173,7 +181,7 @@ public class Register_a_sensor extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jComboBox1.getAccessibleContext().setAccessibleName("");
@@ -266,7 +274,7 @@ public class Register_a_sensor extends javax.swing.JFrame {
             }
             
             Location L=new Location();
-            Location.setLoc(s1);
+            L.setLoc(s1);
             switch(s1.SensorType)
             {
                 case "Smoke Sensor":
@@ -282,24 +290,26 @@ public class Register_a_sensor extends javax.swing.JFrame {
             
             switch(s1.floorno){
                 case 0:
-                       Floor.f0.add(L);
+                       Floor.f0.set(index,L);
                         break;
                 case 1:
-                       Floor.f1.add(L);
+                       Floor.f1.set(index,L);
                         break;
                 case 2:
-                       Floor.f2.add(L);
+                       Floor.f2.set(index,L);
                         break;
                 case 3:
-                       Floor.f3.add(L);
+                       Floor.f3.set(index,L);
                         break;
                 case 4:
-                       Floor.f4.add(L);
+                       Floor.f4.set(index,L);
                         break;
                 case 5:
-                       Floor.f5.add(L);
+                       Floor.f5.set(index,L);
                         break;
             }
+            jTextField1.setText("");
+            jTextField2.setText("");
             JOptionPane.showMessageDialog(this,"Sensor Registered");
         }
         }
