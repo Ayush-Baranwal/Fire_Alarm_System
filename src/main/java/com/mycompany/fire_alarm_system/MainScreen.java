@@ -64,6 +64,7 @@ public class MainScreen extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(0, 119, 182));
         jButton1.setText("Register");
+        jButton1.setFocusPainted(false);
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);

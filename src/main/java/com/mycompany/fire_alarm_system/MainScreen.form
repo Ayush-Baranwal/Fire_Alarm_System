@@ -124,6 +124,7 @@
               <Color blue="b6" green="77" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Register"/>
+            <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
