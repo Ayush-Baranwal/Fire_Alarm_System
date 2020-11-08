@@ -210,143 +210,162 @@ public class Register_a_sensor extends javax.swing.JFrame {
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
         int index=0;
-        int flag=1;
-        int flag2=1;
+        int flag=0;
         for(int j=0;j<11;j++){
             if(Floor.f0.get(j).Cid.equals(jTextField1.getText())||Floor.f0.get(j).Hid.equals(jTextField1.getText())||Floor.f0.get(j).Sid.equals(jTextField1.getText()))
-                flag=0;
+                flag++;
         }
         for(int j=0;j<11;j++){
             if(Floor.f1.get(j).Cid.equals(jTextField1.getText())||Floor.f1.get(j).Hid.equals(jTextField1.getText())||Floor.f1.get(j).Sid.equals(jTextField1.getText()))
-                flag=0;
+                flag++;
         }
         for(int j=0;j<11;j++){
             if(Floor.f2.get(j).Cid.equals(jTextField1.getText())||Floor.f2.get(j).Hid.equals(jTextField1.getText())||Floor.f2.get(j).Sid.equals(jTextField1.getText()))
-                flag=0;
+                flag++;
         }
         for(int j=0;j<11;j++){
             if(Floor.f3.get(j).Cid.equals(jTextField1.getText())||Floor.f3.get(j).Hid.equals(jTextField1.getText())||Floor.f3.get(j).Sid.equals(jTextField1.getText()))
-                flag=0;
+                flag++;
         }
         for(int j=0;j<11;j++){
             if(Floor.f4.get(j).Cid.equals(jTextField1.getText())||Floor.f4.get(j).Hid.equals(jTextField1.getText())||Floor.f4.get(j).Sid.equals(jTextField1.getText()))
-                flag=0;
+                flag++;
         }
         for(int j=0;j<11;j++){
             if(Floor.f5.get(j).Cid.equals(jTextField1.getText())||Floor.f5.get(j).Hid.equals(jTextField1.getText())||Floor.f5.get(j).Sid.equals(jTextField1.getText()))
-                flag=0;
+                flag++;
         }
         
-        if(flag==0){
-            JOptionPane.showMessageDialog(this,"Entered Sensor ID already used!");
-            flag2=0;
-            Register_a_sensor R2 = new Register_a_sensor();
-            R2.setVisible(true);
-            this.dispose();
-        }
         if(Integer.parseInt(jTextField2.getText())>5||Integer.parseInt(jTextField2.getText())<0){    
-             JOptionPane.showMessageDialog(this,"Entered floor doesn't exist in CC3!");
-             flag2=0;
-             Register_a_sensor R3 = new Register_a_sensor();
-            R3.setVisible(true);
-            this.dispose();
+             flag=flag+2;
         }
         if("".equals(jTextField1.getText())){
-            JOptionPane.showMessageDialog(this,"Sensor ID can't be left blank");
-            flag2=0;
-             Register_a_sensor R4 = new Register_a_sensor();
-            R4.setVisible(true);
-            this.dispose();
+            flag+=4;
         }
-        if(flag2==1){
-        Sensor s1 = new Sensor();
-        FileIO f = new FileIO();
+        
+        switch(flag){
+            case 1:
+                JOptionPane.showMessageDialog(this,"Entered Sensor ID already used!");
+                Register_a_sensor R2 = new Register_a_sensor();
+                R2.setVisible(true);
+                this.dispose();
+                break;
+            case 2:
+                JOptionPane.showMessageDialog(this,"Entered floor doesn't exist in CC3!");
+                Register_a_sensor R3 = new Register_a_sensor();
+                R3.setVisible(true);
+                this.dispose();
+                break;
+            case 3:
+                JOptionPane.showMessageDialog(this,"Entered Sensor ID already used and entered floor doesn't exist in CC3!");
+                Register_a_sensor R4 = new Register_a_sensor();
+                R4.setVisible(true);
+                this.dispose();
+                break;
+            case 4:
+                JOptionPane.showMessageDialog(this,"Sensor ID can't be left blank!");
+                Register_a_sensor R5 = new Register_a_sensor();
+                R5.setVisible(true);
+                this.dispose();
+                break;
+            case 6:
+                JOptionPane.showMessageDialog(this,"Sensor ID can't be left blank and entered floor doesn't exist in CC3!");
+                Register_a_sensor R6 = new Register_a_sensor();
+                R6.setVisible(true);
+                this.dispose();
+                break;
+            case 0:
+            {
+                Sensor s1 = new Sensor();
+                FileIO f = new FileIO();
 
-        s1.SensorID = jTextField1.getText();
-        s1.floorno = Integer.parseInt(jTextField2.getText());
-        s1.location = jComboBox2.getSelectedItem().toString();
-        s1.SensorType =  jComboBox1.getSelectedItem().toString();    
-            f.WriteObjectToFile(s1);
-            f.ReadObjectFromFile(s1);
-            System.out.println(Sensor.thresholdHeat);
-            System.out.println(Sensor.volume);
-            System.out.println(Sensor.duration);
-            
-            switch(s1.location)
-            {
-                case "Room 1":
-                    index=0;
-                    break;
-                case "Room 2":
-                    index=1;
-                    break;
-                case "Room 3":
-                    index=2;
-                    break;
-                case "Room 4":
-                    index=3;
-                    break;
-                case "Room 5":
-                    index=4;
-                    break;
-                case "Room 6":
-                    index=5;
-                    break;
-                case "Lab 1":
-                    index=6;
-                    break;
-                case "Lab 2":
-                    index=7;
-                    break;
-                case "Stairs 1":
-                    index=8;
-                    break;
-                case "Stairs 2":
-                    index=9;
-                    break;
-                case "Hall":
-                    index=10;
-                    break;
-            }
-            
-            Location L=new Location();
-            L.setLoc(s1);
-            switch(s1.SensorType)
-            {
-                case "Smoke Sensor":
-                    L.regSsensor(s1);
-                    break;
-                case "Heat Sensor":
-                    L.regHsensor(s1);
-                    break;
-                case "CO Sensor":
-                    L.regCsensor(s1);
-                    break;
-            }
-            
-            switch(s1.floorno){
-                case 0:
-                       Floor.f0.set(index,L);
+                s1.SensorID = jTextField1.getText();
+                s1.floorno = Integer.parseInt(jTextField2.getText());
+                s1.location = jComboBox2.getSelectedItem().toString();
+                s1.SensorType =  jComboBox1.getSelectedItem().toString();    
+                f.WriteObjectToFile(s1);
+                f.ReadObjectFromFile(s1);
+                System.out.println(Sensor.thresholdHeat);
+                System.out.println(Sensor.volume);
+                System.out.println(Sensor.duration);
+
+                switch(s1.location)
+                {
+                    case "Room 1":
+                        index=0;
                         break;
-                case 1:
-                       Floor.f1.set(index,L);
+                    case "Room 2":
+                        index=1;
                         break;
-                case 2:
-                       Floor.f2.set(index,L);
+                    case "Room 3":
+                        index=2;
                         break;
-                case 3:
-                       Floor.f3.set(index,L);
+                    case "Room 4":
+                        index=3;
                         break;
-                case 4:
-                       Floor.f4.set(index,L);
+                    case "Room 5":
+                        index=4;
                         break;
-                case 5:
-                       Floor.f5.set(index,L);
+                    case "Room 6":
+                        index=5;
                         break;
-            }
-            jTextField1.setText("");
-            jTextField2.setText("");
-            JOptionPane.showMessageDialog(this,"Sensor Registered");
+                    case "Lab 1":
+                        index=6;
+                        break;
+                    case "Lab 2":
+                        index=7;
+                        break;
+                    case "Stairs 1":
+                        index=8;
+                        break;
+                    case "Stairs 2":
+                        index=9;
+                        break;
+                    case "Hall":
+                        index=10;
+                        break;
+                }
+
+                Location L=new Location();
+                L.setLoc(s1);
+                switch(s1.SensorType)
+                {
+                    case "Smoke Sensor":
+                        L.regSsensor(s1);
+                        break;
+                    case "Heat Sensor":
+                        L.regHsensor(s1);
+                        break;
+                    case "CO Sensor":
+                        L.regCsensor(s1);
+                        break;
+                }
+
+                switch(s1.floorno){
+                    case 0:
+                           Floor.f0.set(index,L);
+                            break;
+                    case 1:
+                           Floor.f1.set(index,L);
+                            break;
+                    case 2:
+                           Floor.f2.set(index,L);
+                            break;
+                    case 3:
+                           Floor.f3.set(index,L);
+                            break;
+                    case 4:
+                           Floor.f4.set(index,L);
+                            break;
+                    case 5:
+                           Floor.f5.set(index,L);
+                            break;
+                }
+                jTextField1.setText("");
+                jTextField2.setText("");
+                JOptionPane.showMessageDialog(this,"Sensor Registered.");
+                break;
+        }
         }
     }//GEN-LAST:event_jButton3MouseClicked
 
