@@ -276,7 +276,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
     //ActionListener for Configuring a particular type of sensor and directing to MainScreen window.
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        int stype=jComboBox1.getSelectedIndex();
+        int stype=jComboBox3.getSelectedIndex();
         //float fvalue=Float.parseFloat(jTextField1.getText());
         int flag=0;
         if(!jTextField1.getText().matches("[+-]?([0-9]*[.])?[0-9]+")){
@@ -285,18 +285,18 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         if(flag==0){
         switch(stype)
             {
-                case 1 -> Sensor.thresholdCO = Float.parseFloat(jTextField1.getText());
-                case 2 -> Sensor.thresholdHeat = Float.parseFloat(jTextField1.getText());
-                case 3 -> Sensor.thresholdSmoke = Float.parseFloat(jTextField1.getText());
+                case 0 -> Sensor.thresholdCO = Float.parseFloat(jTextField1.getText());
+                case 1 -> Sensor.thresholdHeat = Float.parseFloat(jTextField1.getText());
+                case 2 -> Sensor.thresholdSmoke = Float.parseFloat(jTextField1.getText());
             }
-            Sensor.duration = Integer.parseInt(jComboBox2.getSelectedItem().toString());
+            Sensor.duration = Integer.parseInt(jComboBox1.getSelectedItem().toString());
             Sensor.volume = jSlider1.getValue();
             Sensor.logint = Integer.parseInt(jComboBox2.getSelectedItem().toString());
             switch(stype)
             {
-                case 1 -> Location.conCsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdCO);
-                case 2 -> Location.conHsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdHeat);
-                case 3 -> Location.conSsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdSmoke);
+                case 0 -> Location.conCsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdCO);
+                case 1 -> Location.conHsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdHeat);
+                case 2 -> Location.conSsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdSmoke);
             }
             JOptionPane.showMessageDialog(this,"Configuration Successful");
             MainScreen M4 = new MainScreen();

@@ -326,41 +326,26 @@ public class Register_a_sensor extends javax.swing.JFrame {
                         break;
                 }
 
-                Location L=new Location();
-                L.setLoc(s1);
-                switch(s1.SensorType)
-                {
+//                Location L=new Location();
+//                L.setLoc(s1);
+//                
+                
+                for(int i=0;i<6;i++){
+                    if(i==s1.floorno){
+                        switch(s1.SensorType){
                     case "Smoke Sensor":
-                        L.regSsensor(s1);
+                        Floor.f0.get(index).Sid=s1.SensorID;
                         break;
                     case "Heat Sensor":
-                        L.regHsensor(s1);
+                        Floor.f0.get(index).Hid=s1.SensorID;
                         break;
                     case "CO Sensor":
-                        L.regCsensor(s1);
+                        Floor.f0.get(index).Cid=s1.SensorID;
                         break;
+                    }
+                    }
                 }
 
-                switch(s1.floorno){
-                    case 0:
-                           Floor.f0.set(index,L);
-                            break;
-                    case 1:
-                           Floor.f1.set(index,L);
-                            break;
-                    case 2:
-                           Floor.f2.set(index,L);
-                            break;
-                    case 3:
-                           Floor.f3.set(index,L);
-                            break;
-                    case 4:
-                           Floor.f4.set(index,L);
-                            break;
-                    case 5:
-                           Floor.f5.set(index,L);
-                            break;
-                }
                 jTextField1.setText("");
                 jTextField2.setText("");
                 JOptionPane.showMessageDialog(this,"Sensor Registered.");

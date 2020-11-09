@@ -24,7 +24,10 @@ public class Location {
         Ctvalue=0;
         Scvalue=0;
         Hcvalue=0;
-        Ccvalue=0; 
+        Ccvalue=0;
+//        Scvalue=RandomGenerator.RandomGenerator(Stvalue/2, Stvalue*2);
+//        Hcvalue=RandomGenerator.RandomGenerator(Htvalue/2, Htvalue*2);
+//        Ccvalue=RandomGenerator.RandomGenerator(Ctvalue/2, Ctvalue*2);
         Sid=Hid=Cid=loc="N/A";   
     }
     public void regSsensor(Sensor s){
@@ -50,13 +53,19 @@ public class Location {
         Cdur=d; vol=v; Clog=l; Ctvalue=t;
     }
     public void setScvalue(){
-        
+        float min=Stvalue/2;
+        float max=Stvalue*2;
+        Scvalue=RandomGenerator.RandomGenerator(min, max);
     }
     public void setHcvalue(){
-        
+        float min=Htvalue/2;
+        float max=Htvalue*2;
+        Hcvalue=RandomGenerator.RandomGenerator(min, max);
     }
     public void setCcvalue(){
-        
+        float min=Ctvalue/2;
+        float max=Ctvalue*2;
+        Ccvalue=RandomGenerator.RandomGenerator(min, max);
     }
     }
 

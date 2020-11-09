@@ -236,6 +236,22 @@ public class Start_Monitoring extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
+        for(int i=0;i<11;i++){
+            if(!Floor.f0.get(i).Sid.equals(""))
+                Floor.f0.get(i).setScvalue();
+            if(!Floor.f0.get(i).Hid.equals(""))
+                Floor.f0.get(i).setHcvalue();
+            if(!Floor.f0.get(i).Cid.equals(""))
+                Floor.f0.get(i).setCcvalue();
+        }
+        
+        
+        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
+        if(tModel1.getRowCount()!=0){
+        for(int i=0;i<11;i++){
+            tModel1.removeRow(tModel1.getRowCount()-1);
+        }}
+       
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(int i=0;i<6;i++){
         String data[]={"Room "+String.valueOf(i+1),String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};

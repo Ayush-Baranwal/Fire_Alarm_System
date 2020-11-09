@@ -15,7 +15,6 @@ public class MainScreen extends javax.swing.JFrame {
      */
     public MainScreen() {
         initComponents();
-        Floor F=new Floor();
     }
 
     /**
