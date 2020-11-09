@@ -13,9 +13,6 @@ import java.util.ArrayList;
 public class Floor {
     static ArrayList<Location> f0,f1,f2,f3,f4,f5 ;
 
-//    static{
-//       floor=new Location[6][11];
-//    }
     Floor(){
        f0=new ArrayList<>(11);
        f1=new ArrayList<>(11);

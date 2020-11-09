@@ -25,19 +25,7 @@ public class Location {
         Scvalue=0;
         Hcvalue=0;
         Ccvalue=0;
-//        Scvalue=RandomGenerator.RandomGenerator(Stvalue/2, Stvalue*2);
-//        Hcvalue=RandomGenerator.RandomGenerator(Htvalue/2, Htvalue*2);
-//        Ccvalue=RandomGenerator.RandomGenerator(Ctvalue/2, Ctvalue*2);
         Sid=Hid=Cid=loc="N/A";   
-    }
-    public void regSsensor(Sensor s){
-        Sid=s.SensorID;
-    }
-    public void regHsensor(Sensor s){
-        Hid=s.SensorID;
-    }
-    public void regCsensor(Sensor s){
-        Cid=s.SensorID;
     }
     
     public void setLoc(Sensor s){
