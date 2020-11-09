@@ -9,13 +9,11 @@
  */
 package com.mycompany.fire_alarm_system;
 import javax.swing.*;
-import java.awt.*;
 
 
 public class Main {
     public static void main(String[] args){
-    Floor F;
-    F=new Floor();
+    
     
         java.awt.EventQueue.invokeLater(new Runnable(){
             public void run(){

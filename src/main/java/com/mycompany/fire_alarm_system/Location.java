@@ -49,5 +49,14 @@ public class Location {
     public static void conCsensor(int d, int v, int l, float t){
         Cdur=d; vol=v; Clog=l; Ctvalue=t;
     }
+    public void setScvalue(){
+        
+    }
+    public void setHcvalue(){
+        
+    }
+    public void setCcvalue(){
+        
+    }
     }
 
