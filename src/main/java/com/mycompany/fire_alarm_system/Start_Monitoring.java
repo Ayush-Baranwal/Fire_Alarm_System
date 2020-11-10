@@ -10,6 +10,8 @@
  */
 package com.mycompany.fire_alarm_system;
 
+import javax.swing.table.DefaultTableModel;
+
 public class Start_Monitoring extends javax.swing.JFrame {
 
     /**
@@ -29,12 +31,13 @@ public class Start_Monitoring extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollBar1 = new javax.swing.JScrollBar();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -45,63 +48,19 @@ public class Start_Monitoring extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Room 1", null, null, null},
-                {"Room 2", null, null, null},
-                {"Room 3", null, null, null},
-                {"Room 4", null, null, null},
-                {"Room 5", null, null, null},
-                {"Room 6", null, null, null},
-                {"Lab 1", null, null, null},
-                {"Lab 2", null, null, null},
-                {"Stairs 1", null, null, null},
-                {"Stairs 2", null, null, null},
-                {"Hall", null, null, null}
-            },
-            new String [] {
-                "", "Smoke Sensor(ppm)", "Heat Sensor(Celsius)", "CO Sensor"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable1.setRowHeight(30);
-        jTable1.setRowSelectionAllowed(false);
-        jTable1.setShowGrid(true);
-        jTable1.setSurrendersFocusOnKeystroke(true);
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-        }
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Ground Floor");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
         );
 
         jPanel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -129,6 +88,42 @@ public class Start_Monitoring extends javax.swing.JFrame {
             }
         });
 
+        jTable1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "", "Smoke Sensor(ppm)", "Heat Sensor(Celsius)", "CO Sensor"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setRowHeight(30);
+        jTable1.setRowSelectionAllowed(false);
+        jTable1.setShowGrid(true);
+        jTable1.setSurrendersFocusOnKeystroke(true);
+        jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -138,39 +133,77 @@ public class Start_Monitoring extends javax.swing.JFrame {
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(105, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(255, 153, 153));
         jMenuBar1.setForeground(new java.awt.Color(255, 153, 153));
 
         jMenu1.setText("Floor 0");
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu1MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Floor 1");
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu2MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Floor 2");
+        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu3MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Floor 3");
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu4MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Floor 4");
+        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu5MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu5);
 
         jMenu6.setText("Floor 5");
+        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu6MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu6);
 
         setJMenuBar(jMenuBar1);
@@ -187,7 +220,8 @@ public class Start_Monitoring extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -202,12 +236,220 @@ public class Start_Monitoring extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
+        for(int i=0;i<11;i++){
+            if(!Floor.f0.get(i).Sid.equals(""))
+                Floor.f0.get(i).setScvalue();
+            if(!Floor.f0.get(i).Hid.equals(""))
+                Floor.f0.get(i).setHcvalue();
+            if(!Floor.f0.get(i).Cid.equals(""))
+                Floor.f0.get(i).setCcvalue();
+        }
         
+        
+        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
+        if(tModel1.getRowCount()!=0){
+        for(int i=0;i<11;i++){
+            tModel1.removeRow(tModel1.getRowCount()-1);
+        }}
+       
+        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
+        for(int i=0;i<6;i++){
+        String data[]={"Room "+String.valueOf(i+1),String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
+        tModel.addRow(data);
+        }
+        for(int i=0;i<2;i++){
+           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+       for(int i=0;i<2;i++){
+           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+       for(int i=0;i<1;i++){
+           String data[]={"Hall",String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+        // TODO add your handling code here:
+        jLabel1.setText("1st Floor");
+        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
+        for(int i=0;i<11;i++){
+            tModel1.removeRow(tModel1.getRowCount()-1);
+        }
+        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
+        for(int i=0;i<6;i++){
+        String data[]={"Room "+String.valueOf(i+1),String.valueOf(Floor.f1.get(i).Scvalue),String.valueOf(Floor.f1.get(i).Hcvalue),String.valueOf(Floor.f1.get(i).Ccvalue)};
+        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+        tModel.addRow(data);
+        }
+        for(int i=0;i<2;i++){
+           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(Floor.f1.get(i).Scvalue),String.valueOf(Floor.f1.get(i).Hcvalue),String.valueOf(Floor.f1.get(i).Ccvalue)};
+        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+       for(int i=0;i<2;i++){
+           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(Floor.f1.get(i).Scvalue),String.valueOf(Floor.f1.get(i).Hcvalue),String.valueOf(Floor.f1.get(i).Ccvalue)};
+        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+       for(int i=0;i<1;i++){
+           String data[]={"Hall",String.valueOf(Floor.f1.get(i).Scvalue),String.valueOf(Floor.f1.get(i).Hcvalue),String.valueOf(Floor.f1.get(i).Ccvalue)};
+        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+    }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
+        // TODO add your handling code here:
+        jLabel1.setText("2nd Floor");
+        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
+        for(int i=0;i<11;i++){
+            tModel1.removeRow(tModel1.getRowCount()-1);
+        }
+        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
+        for(int i=0;i<6;i++){
+        String data[]={"Room "+String.valueOf(i+1),String.valueOf(Floor.f2.get(i).Scvalue),String.valueOf(Floor.f2.get(i).Hcvalue),String.valueOf(Floor.f2.get(i).Ccvalue)};
+        //Float data[]={(Floor.f2.get(i).Scvalue),(Floor.f2.get(i).Hcvalue),(Floor.f2.get(i).Ccvalue)};
+        tModel.addRow(data);
+        }
+        for(int i=0;i<2;i++){
+           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(Floor.f2.get(i).Scvalue),String.valueOf(Floor.f2.get(i).Hcvalue),String.valueOf(Floor.f2.get(i).Ccvalue)};
+        //Float data[]={(Floor.f2.get(i).Scvalue),(Floor.f2.get(i).Hcvalue),(Floor.f2.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+       for(int i=0;i<2;i++){
+           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(Floor.f2.get(i).Scvalue),String.valueOf(Floor.f2.get(i).Hcvalue),String.valueOf(Floor.f2.get(i).Ccvalue)};
+        //Float data[]={(Floor.f2.get(i).Scvalue),(Floor.f2.get(i).Hcvalue),(Floor.f2.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+       for(int i=0;i<1;i++){
+           String data[]={"Hall",String.valueOf(Floor.f2.get(i).Scvalue),String.valueOf(Floor.f2.get(i).Hcvalue),String.valueOf(Floor.f2.get(i).Ccvalue)};
+        //Float data[]={(Floor.f2.get(i).Scvalue),(Floor.f2.get(i).Hcvalue),(Floor.f2.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+    }//GEN-LAST:event_jMenu3MouseClicked
+
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+        // TODO add your handling code here:
+        jLabel1.setText("Ground Floor");
+        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
+        for(int i=0;i<11;i++){
+            tModel1.removeRow(tModel1.getRowCount()-1);
+        }
+        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
+        for(int i=0;i<6;i++){
+        String data[]={"Room "+String.valueOf(i+1),String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
+        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+        tModel.addRow(data);
+        }
+        for(int i=0;i<2;i++){
+           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
+        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+       for(int i=0;i<2;i++){
+           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
+        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+       for(int i=0;i<1;i++){
+           String data[]={"Hall",String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
+        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+    }//GEN-LAST:event_jMenu1MouseClicked
+
+    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+        // TODO add your handling code here:
+        jLabel1.setText("3rd Floor");
+        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
+        for(int i=0;i<11;i++){
+            tModel1.removeRow(tModel1.getRowCount()-1);
+        }
+        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
+        for(int i=0;i<6;i++){
+        String data[]={"Room "+String.valueOf(i+1),String.valueOf(Floor.f3.get(i).Scvalue),String.valueOf(Floor.f3.get(i).Hcvalue),String.valueOf(Floor.f3.get(i).Ccvalue)};
+        //Float data[]={(Floor.f3.get(i).Scvalue),(Floor.f3.get(i).Hcvalue),(Floor.f3.get(i).Ccvalue)};
+        tModel.addRow(data);
+        }
+        for(int i=0;i<2;i++){
+           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(Floor.f3.get(i).Scvalue),String.valueOf(Floor.f3.get(i).Hcvalue),String.valueOf(Floor.f3.get(i).Ccvalue)};
+        //Float data[]={(Floor.f3.get(i).Scvalue),(Floor.f3.get(i).Hcvalue),(Floor.f3.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+       for(int i=0;i<2;i++){
+           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(Floor.f3.get(i).Scvalue),String.valueOf(Floor.f3.get(i).Hcvalue),String.valueOf(Floor.f3.get(i).Ccvalue)};
+        //Float data[]={(Floor.f3.get(i).Scvalue),(Floor.f3.get(i).Hcvalue),(Floor.f3.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+       for(int i=0;i<1;i++){
+           String data[]={"Hall",String.valueOf(Floor.f3.get(i).Scvalue),String.valueOf(Floor.f3.get(i).Hcvalue),String.valueOf(Floor.f3.get(i).Ccvalue)};
+        //Float data[]={(Floor.f3.get(i).Scvalue),(Floor.f3.get(i).Hcvalue),(Floor.f3.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+    }//GEN-LAST:event_jMenu4MouseClicked
+
+    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
+        // TODO add your handling code here:
+        jLabel1.setText("4th Floor");
+        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
+        for(int i=0;i<11;i++){
+            tModel1.removeRow(tModel1.getRowCount()-1);
+        }
+        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
+        for(int i=0;i<6;i++){
+        String data[]={"Room "+String.valueOf(i+1),String.valueOf(Floor.f4.get(i).Scvalue),String.valueOf(Floor.f4.get(i).Hcvalue),String.valueOf(Floor.f4.get(i).Ccvalue)};
+        //Float data[]={(Floor.f4.get(i).Scvalue),(Floor.f4.get(i).Hcvalue),(Floor.f4.get(i).Ccvalue)};
+        tModel.addRow(data);
+        }
+        for(int i=0;i<2;i++){
+           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(Floor.f4.get(i).Scvalue),String.valueOf(Floor.f4.get(i).Hcvalue),String.valueOf(Floor.f4.get(i).Ccvalue)};
+        //Float data[]={(Floor.f4.get(i).Scvalue),(Floor.f4.get(i).Hcvalue),(Floor.f4.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+       for(int i=0;i<2;i++){
+           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(Floor.f4.get(i).Scvalue),String.valueOf(Floor.f4.get(i).Hcvalue),String.valueOf(Floor.f4.get(i).Ccvalue)};
+        //Float data[]={(Floor.f4.get(i).Scvalue),(Floor.f4.get(i).Hcvalue),(Floor.f4.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+       for(int i=0;i<1;i++){
+           String data[]={"Hall",String.valueOf(Floor.f4.get(i).Scvalue),String.valueOf(Floor.f4.get(i).Hcvalue),String.valueOf(Floor.f4.get(i).Ccvalue)};
+        //Float data[]={(Floor.f4.get(i).Scvalue),(Floor.f4.get(i).Hcvalue),(Floor.f4.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+    }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
+        // TODO add your handling code here:
+        jLabel1.setText("5th Floor");
+        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
+        for(int i=0;i<11;i++){
+            tModel1.removeRow(tModel1.getRowCount()-1);
+        }
+        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
+        for(int i=0;i<6;i++){
+        String data[]={"Room "+String.valueOf(i+1),String.valueOf(Floor.f5.get(i).Scvalue),String.valueOf(Floor.f5.get(i).Hcvalue),String.valueOf(Floor.f5.get(i).Ccvalue)};
+        tModel.addRow(data);
+        }
+        for(int i=0;i<2;i++){
+           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(Floor.f5.get(i).Scvalue),String.valueOf(Floor.f5.get(i).Hcvalue),String.valueOf(Floor.f5.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+       for(int i=0;i<2;i++){
+           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(Floor.f5.get(i).Scvalue),String.valueOf(Floor.f5.get(i).Hcvalue),String.valueOf(Floor.f5.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+       for(int i=0;i<1;i++){
+           String data[]={"Hall",String.valueOf(Floor.f5.get(i).Scvalue),String.valueOf(Floor.f5.get(i).Hcvalue),String.valueOf(Floor.f5.get(i).Ccvalue)};
+        tModel.addRow(data);
+       }
+    }//GEN-LAST:event_jMenu6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -247,6 +489,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

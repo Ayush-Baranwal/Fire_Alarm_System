@@ -16,7 +16,7 @@ public class Location {
     static float Stvalue, Htvalue, Ctvalue;
     static int Sdur, Hdur, Cdur, Slog, Clog, Hlog, vol;
     float Scvalue, Hcvalue, Ccvalue;
-    static String loc;
+    String loc;
     String Sid, Hid, Cid;
     Location(){
         Stvalue=0;
@@ -24,20 +24,11 @@ public class Location {
         Ctvalue=0;
         Scvalue=0;
         Hcvalue=0;
-        Ccvalue=0; 
+        Ccvalue=0;
         Sid=Hid=Cid=loc="N/A";   
     }
-    public void regSsensor(Sensor s){
-        Sid=s.SensorID;
-    }
-    public void regHsensor(Sensor s){
-        Hid=s.SensorID;
-    }
-    public void regCsensor(Sensor s){
-        Cid=s.SensorID;
-    }
     
-    public static void setLoc(Sensor s){
+    public void setLoc(Sensor s){
         loc=s.location;
     }
     public static void conSsensor(int d, int v, int l, float t){
@@ -48,6 +39,21 @@ public class Location {
     }
     public static void conCsensor(int d, int v, int l, float t){
         Cdur=d; vol=v; Clog=l; Ctvalue=t;
+    }
+    public void setScvalue(){
+        float min=Stvalue/2;
+        float max=Stvalue*2;
+        Scvalue=RandomGenerator.RandomGenerator(min, max);
+    }
+    public void setHcvalue(){
+        float min=Htvalue/2;
+        float max=Htvalue*2;
+        Hcvalue=RandomGenerator.RandomGenerator(min, max);
+    }
+    public void setCcvalue(){
+        float min=Ctvalue/2;
+        float max=Ctvalue*2;
+        Ccvalue=RandomGenerator.RandomGenerator(min, max);
     }
     }
 

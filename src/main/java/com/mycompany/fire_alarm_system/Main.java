@@ -9,20 +9,19 @@
  */
 package com.mycompany.fire_alarm_system;
 import javax.swing.*;
-import java.awt.*;
 
 
 public class Main {
     public static void main(String[] args){
-    Floor F;
-    F=new Floor();
     
+     
         java.awt.EventQueue.invokeLater(new Runnable(){
             public void run(){
+            Floor F=new Floor();
             MainScreen M=new MainScreen();
             M.setVisible(true);
             M.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    }
+            }
         });
 //       Register_a_sensor R=new Register_a_sensor();
 //       Configure_a_sensor C=new Configure_a_sensor() ;
