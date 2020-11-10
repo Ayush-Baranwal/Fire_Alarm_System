@@ -94,7 +94,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
 
             },
             new String [] {
-                "", "Smoke Sensor(ppm)", "Heat Sensor(Celsius)", "CO Sensor"
+                "", "Smoke Sensor(OD/m)", "Heat Sensor(Celsius)", "CO Sensor(P.P.M.)"
             }
         ) {
             Class[] types = new Class [] {
