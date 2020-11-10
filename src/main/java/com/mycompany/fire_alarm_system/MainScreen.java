@@ -9,7 +9,7 @@ package com.mycompany.fire_alarm_system;
  * @author HP
  */
 public class MainScreen extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form MainScreen
      */
