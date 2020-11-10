@@ -279,7 +279,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         int stype=jComboBox3.getSelectedIndex();
         //float fvalue=Float.parseFloat(jTextField1.getText());
         int flag=0;
-        if(!jTextField1.getText().matches("[+-]?([0-9]*[.])?[0-9]+")){
+        if(!jTextField1.getText().matches("[+]?([0-9]*[.])?[0-9]+")){
                     flag++;
                 }
         if(flag==0){

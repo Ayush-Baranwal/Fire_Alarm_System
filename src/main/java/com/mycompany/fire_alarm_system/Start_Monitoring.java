@@ -65,7 +65,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
 
         jPanel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        jButton2.setBackground(new java.awt.Color(192, 57, 43));
+        jButton2.setBackground(new java.awt.Color(255, 51, 51));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("STOP");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -74,7 +74,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(192, 57, 43));
+        jButton3.setBackground(new java.awt.Color(51, 102, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("START");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
