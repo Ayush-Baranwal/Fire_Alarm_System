@@ -10,6 +10,7 @@
  */
 package com.mycompany.fire_alarm_system;
 
+import static com.mycompany.fire_alarm_system.MainScreen.F;
 import javax.swing.table.DefaultTableModel;
 
 public class Start_Monitoring extends javax.swing.JFrame {
@@ -253,12 +254,12 @@ public class Start_Monitoring extends javax.swing.JFrame {
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
         for(int i=0;i<11;i++){
-            if(!Floor.f0.get(i).Sid.equals(""))
-                Floor.f0.get(i).setScvalue();
-            if(!Floor.f0.get(i).Hid.equals(""))
-                Floor.f0.get(i).setHcvalue();
-            if(!Floor.f0.get(i).Cid.equals(""))
-                Floor.f0.get(i).setCcvalue();
+            if(!F.f0.get(i).Sid.equals(""))
+                F.f0.get(i).setScvalue();
+            if(!F.f0.get(i).Hid.equals(""))
+                F.f0.get(i).setHcvalue();
+            if(!F.f0.get(i).Cid.equals(""))
+                F.f0.get(i).setCcvalue();
         }
         
         
@@ -270,19 +271,19 @@ public class Start_Monitoring extends javax.swing.JFrame {
        
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(int i=0;i<6;i++){
-        String data[]={"Room "+String.valueOf(i+1),String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
+        String data[]={"Room "+String.valueOf(i+1),String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
         tModel.addRow(data);
         }
         for(int i=0;i<2;i++){
-           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
+           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
         tModel.addRow(data);
        }
        for(int i=0;i<2;i++){
-           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
+           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
         tModel.addRow(data);
        }
        for(int i=0;i<1;i++){
-           String data[]={"Hall",String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
+           String data[]={"Hall",String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
         tModel.addRow(data);
        }
     }//GEN-LAST:event_jButton3MouseClicked
@@ -300,23 +301,23 @@ public class Start_Monitoring extends javax.swing.JFrame {
         }
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(int i=0;i<6;i++){
-        String data[]={"Room "+String.valueOf(i+1),String.valueOf(Floor.f1.get(i).Scvalue),String.valueOf(Floor.f1.get(i).Hcvalue),String.valueOf(Floor.f1.get(i).Ccvalue)};
-        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+        String data[]={"Room "+String.valueOf(i+1),String.valueOf(F.f1.get(i).Scvalue),String.valueOf(F.f1.get(i).Hcvalue),String.valueOf(F.f1.get(i).Ccvalue)};
+        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
         tModel.addRow(data);
         }
         for(int i=0;i<2;i++){
-           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(Floor.f1.get(i).Scvalue),String.valueOf(Floor.f1.get(i).Hcvalue),String.valueOf(Floor.f1.get(i).Ccvalue)};
-        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(F.f1.get(i).Scvalue),String.valueOf(F.f1.get(i).Hcvalue),String.valueOf(F.f1.get(i).Ccvalue)};
+        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
         tModel.addRow(data);
        }
        for(int i=0;i<2;i++){
-           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(Floor.f1.get(i).Scvalue),String.valueOf(Floor.f1.get(i).Hcvalue),String.valueOf(Floor.f1.get(i).Ccvalue)};
-        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(F.f1.get(i).Scvalue),String.valueOf(F.f1.get(i).Hcvalue),String.valueOf(F.f1.get(i).Ccvalue)};
+        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
         tModel.addRow(data);
        }
        for(int i=0;i<1;i++){
-           String data[]={"Hall",String.valueOf(Floor.f1.get(i).Scvalue),String.valueOf(Floor.f1.get(i).Hcvalue),String.valueOf(Floor.f1.get(i).Ccvalue)};
-        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+           String data[]={"Hall",String.valueOf(F.f1.get(i).Scvalue),String.valueOf(F.f1.get(i).Hcvalue),String.valueOf(F.f1.get(i).Ccvalue)};
+        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
         tModel.addRow(data);
        }
     }//GEN-LAST:event_jMenu2MouseClicked
@@ -330,23 +331,23 @@ public class Start_Monitoring extends javax.swing.JFrame {
         }
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(int i=0;i<6;i++){
-        String data[]={"Room "+String.valueOf(i+1),String.valueOf(Floor.f2.get(i).Scvalue),String.valueOf(Floor.f2.get(i).Hcvalue),String.valueOf(Floor.f2.get(i).Ccvalue)};
-        //Float data[]={(Floor.f2.get(i).Scvalue),(Floor.f2.get(i).Hcvalue),(Floor.f2.get(i).Ccvalue)};
+        String data[]={"Room "+String.valueOf(i+1),String.valueOf(F.f2.get(i).Scvalue),String.valueOf(F.f2.get(i).Hcvalue),String.valueOf(F.f2.get(i).Ccvalue)};
+        //Float data[]={(F.f2.get(i).Scvalue),(F.f2.get(i).Hcvalue),(F.f2.get(i).Ccvalue)};
         tModel.addRow(data);
         }
         for(int i=0;i<2;i++){
-           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(Floor.f2.get(i).Scvalue),String.valueOf(Floor.f2.get(i).Hcvalue),String.valueOf(Floor.f2.get(i).Ccvalue)};
-        //Float data[]={(Floor.f2.get(i).Scvalue),(Floor.f2.get(i).Hcvalue),(Floor.f2.get(i).Ccvalue)};
+           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(F.f2.get(i).Scvalue),String.valueOf(F.f2.get(i).Hcvalue),String.valueOf(F.f2.get(i).Ccvalue)};
+        //Float data[]={(F.f2.get(i).Scvalue),(F.f2.get(i).Hcvalue),(F.f2.get(i).Ccvalue)};
         tModel.addRow(data);
        }
        for(int i=0;i<2;i++){
-           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(Floor.f2.get(i).Scvalue),String.valueOf(Floor.f2.get(i).Hcvalue),String.valueOf(Floor.f2.get(i).Ccvalue)};
-        //Float data[]={(Floor.f2.get(i).Scvalue),(Floor.f2.get(i).Hcvalue),(Floor.f2.get(i).Ccvalue)};
+           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(F.f2.get(i).Scvalue),String.valueOf(F.f2.get(i).Hcvalue),String.valueOf(F.f2.get(i).Ccvalue)};
+        //Float data[]={(F.f2.get(i).Scvalue),(F.f2.get(i).Hcvalue),(F.f2.get(i).Ccvalue)};
         tModel.addRow(data);
        }
        for(int i=0;i<1;i++){
-           String data[]={"Hall",String.valueOf(Floor.f2.get(i).Scvalue),String.valueOf(Floor.f2.get(i).Hcvalue),String.valueOf(Floor.f2.get(i).Ccvalue)};
-        //Float data[]={(Floor.f2.get(i).Scvalue),(Floor.f2.get(i).Hcvalue),(Floor.f2.get(i).Ccvalue)};
+           String data[]={"Hall",String.valueOf(F.f2.get(i).Scvalue),String.valueOf(F.f2.get(i).Hcvalue),String.valueOf(F.f2.get(i).Ccvalue)};
+        //Float data[]={(F.f2.get(i).Scvalue),(F.f2.get(i).Hcvalue),(F.f2.get(i).Ccvalue)};
         tModel.addRow(data);
        }
     }//GEN-LAST:event_jMenu3MouseClicked
@@ -360,23 +361,23 @@ public class Start_Monitoring extends javax.swing.JFrame {
         }
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(int i=0;i<6;i++){
-        String data[]={"Room "+String.valueOf(i+1),String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
-        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+        String data[]={"Room "+String.valueOf(i+1),String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
+        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
         tModel.addRow(data);
         }
         for(int i=0;i<2;i++){
-           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
-        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
+        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
         tModel.addRow(data);
        }
        for(int i=0;i<2;i++){
-           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
-        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
+        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
         tModel.addRow(data);
        }
        for(int i=0;i<1;i++){
-           String data[]={"Hall",String.valueOf(Floor.f0.get(i).Scvalue),String.valueOf(Floor.f0.get(i).Hcvalue),String.valueOf(Floor.f0.get(i).Ccvalue)};
-        //Float data[]={(Floor.f0.get(i).Scvalue),(Floor.f0.get(i).Hcvalue),(Floor.f0.get(i).Ccvalue)};
+           String data[]={"Hall",String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
+        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
         tModel.addRow(data);
        }
     }//GEN-LAST:event_jMenu1MouseClicked
@@ -390,23 +391,23 @@ public class Start_Monitoring extends javax.swing.JFrame {
         }
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(int i=0;i<6;i++){
-        String data[]={"Room "+String.valueOf(i+1),String.valueOf(Floor.f3.get(i).Scvalue),String.valueOf(Floor.f3.get(i).Hcvalue),String.valueOf(Floor.f3.get(i).Ccvalue)};
-        //Float data[]={(Floor.f3.get(i).Scvalue),(Floor.f3.get(i).Hcvalue),(Floor.f3.get(i).Ccvalue)};
+        String data[]={"Room "+String.valueOf(i+1),String.valueOf(F.f3.get(i).Scvalue),String.valueOf(F.f3.get(i).Hcvalue),String.valueOf(F.f3.get(i).Ccvalue)};
+        //Float data[]={(F.f3.get(i).Scvalue),(F.f3.get(i).Hcvalue),(F.f3.get(i).Ccvalue)};
         tModel.addRow(data);
         }
         for(int i=0;i<2;i++){
-           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(Floor.f3.get(i).Scvalue),String.valueOf(Floor.f3.get(i).Hcvalue),String.valueOf(Floor.f3.get(i).Ccvalue)};
-        //Float data[]={(Floor.f3.get(i).Scvalue),(Floor.f3.get(i).Hcvalue),(Floor.f3.get(i).Ccvalue)};
+           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(F.f3.get(i).Scvalue),String.valueOf(F.f3.get(i).Hcvalue),String.valueOf(F.f3.get(i).Ccvalue)};
+        //Float data[]={(F.f3.get(i).Scvalue),(F.f3.get(i).Hcvalue),(F.f3.get(i).Ccvalue)};
         tModel.addRow(data);
        }
        for(int i=0;i<2;i++){
-           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(Floor.f3.get(i).Scvalue),String.valueOf(Floor.f3.get(i).Hcvalue),String.valueOf(Floor.f3.get(i).Ccvalue)};
-        //Float data[]={(Floor.f3.get(i).Scvalue),(Floor.f3.get(i).Hcvalue),(Floor.f3.get(i).Ccvalue)};
+           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(F.f3.get(i).Scvalue),String.valueOf(F.f3.get(i).Hcvalue),String.valueOf(F.f3.get(i).Ccvalue)};
+        //Float data[]={(F.f3.get(i).Scvalue),(F.f3.get(i).Hcvalue),(F.f3.get(i).Ccvalue)};
         tModel.addRow(data);
        }
        for(int i=0;i<1;i++){
-           String data[]={"Hall",String.valueOf(Floor.f3.get(i).Scvalue),String.valueOf(Floor.f3.get(i).Hcvalue),String.valueOf(Floor.f3.get(i).Ccvalue)};
-        //Float data[]={(Floor.f3.get(i).Scvalue),(Floor.f3.get(i).Hcvalue),(Floor.f3.get(i).Ccvalue)};
+           String data[]={"Hall",String.valueOf(F.f3.get(i).Scvalue),String.valueOf(F.f3.get(i).Hcvalue),String.valueOf(F.f3.get(i).Ccvalue)};
+        //Float data[]={(F.f3.get(i).Scvalue),(F.f3.get(i).Hcvalue),(F.f3.get(i).Ccvalue)};
         tModel.addRow(data);
        }
     }//GEN-LAST:event_jMenu4MouseClicked
@@ -420,23 +421,23 @@ public class Start_Monitoring extends javax.swing.JFrame {
         }
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(int i=0;i<6;i++){
-        String data[]={"Room "+String.valueOf(i+1),String.valueOf(Floor.f4.get(i).Scvalue),String.valueOf(Floor.f4.get(i).Hcvalue),String.valueOf(Floor.f4.get(i).Ccvalue)};
-        //Float data[]={(Floor.f4.get(i).Scvalue),(Floor.f4.get(i).Hcvalue),(Floor.f4.get(i).Ccvalue)};
+        String data[]={"Room "+String.valueOf(i+1),String.valueOf(F.f4.get(i).Scvalue),String.valueOf(F.f4.get(i).Hcvalue),String.valueOf(F.f4.get(i).Ccvalue)};
+        //Float data[]={(F.f4.get(i).Scvalue),(F.f4.get(i).Hcvalue),(F.f4.get(i).Ccvalue)};
         tModel.addRow(data);
         }
         for(int i=0;i<2;i++){
-           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(Floor.f4.get(i).Scvalue),String.valueOf(Floor.f4.get(i).Hcvalue),String.valueOf(Floor.f4.get(i).Ccvalue)};
-        //Float data[]={(Floor.f4.get(i).Scvalue),(Floor.f4.get(i).Hcvalue),(Floor.f4.get(i).Ccvalue)};
+           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(F.f4.get(i).Scvalue),String.valueOf(F.f4.get(i).Hcvalue),String.valueOf(F.f4.get(i).Ccvalue)};
+        //Float data[]={(F.f4.get(i).Scvalue),(F.f4.get(i).Hcvalue),(F.f4.get(i).Ccvalue)};
         tModel.addRow(data);
        }
        for(int i=0;i<2;i++){
-           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(Floor.f4.get(i).Scvalue),String.valueOf(Floor.f4.get(i).Hcvalue),String.valueOf(Floor.f4.get(i).Ccvalue)};
-        //Float data[]={(Floor.f4.get(i).Scvalue),(Floor.f4.get(i).Hcvalue),(Floor.f4.get(i).Ccvalue)};
+           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(F.f4.get(i).Scvalue),String.valueOf(F.f4.get(i).Hcvalue),String.valueOf(F.f4.get(i).Ccvalue)};
+        //Float data[]={(F.f4.get(i).Scvalue),(F.f4.get(i).Hcvalue),(F.f4.get(i).Ccvalue)};
         tModel.addRow(data);
        }
        for(int i=0;i<1;i++){
-           String data[]={"Hall",String.valueOf(Floor.f4.get(i).Scvalue),String.valueOf(Floor.f4.get(i).Hcvalue),String.valueOf(Floor.f4.get(i).Ccvalue)};
-        //Float data[]={(Floor.f4.get(i).Scvalue),(Floor.f4.get(i).Hcvalue),(Floor.f4.get(i).Ccvalue)};
+           String data[]={"Hall",String.valueOf(F.f4.get(i).Scvalue),String.valueOf(F.f4.get(i).Hcvalue),String.valueOf(F.f4.get(i).Ccvalue)};
+        //Float data[]={(F.f4.get(i).Scvalue),(F.f4.get(i).Hcvalue),(F.f4.get(i).Ccvalue)};
         tModel.addRow(data);
        }
     }//GEN-LAST:event_jMenu5MouseClicked
@@ -450,19 +451,19 @@ public class Start_Monitoring extends javax.swing.JFrame {
         }
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(int i=0;i<6;i++){
-        String data[]={"Room "+String.valueOf(i+1),String.valueOf(Floor.f5.get(i).Scvalue),String.valueOf(Floor.f5.get(i).Hcvalue),String.valueOf(Floor.f5.get(i).Ccvalue)};
+        String data[]={"Room "+String.valueOf(i+1),String.valueOf(F.f5.get(i).Scvalue),String.valueOf(F.f5.get(i).Hcvalue),String.valueOf(F.f5.get(i).Ccvalue)};
         tModel.addRow(data);
         }
         for(int i=0;i<2;i++){
-           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(Floor.f5.get(i).Scvalue),String.valueOf(Floor.f5.get(i).Hcvalue),String.valueOf(Floor.f5.get(i).Ccvalue)};
+           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(F.f5.get(i).Scvalue),String.valueOf(F.f5.get(i).Hcvalue),String.valueOf(F.f5.get(i).Ccvalue)};
         tModel.addRow(data);
        }
        for(int i=0;i<2;i++){
-           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(Floor.f5.get(i).Scvalue),String.valueOf(Floor.f5.get(i).Hcvalue),String.valueOf(Floor.f5.get(i).Ccvalue)};
+           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(F.f5.get(i).Scvalue),String.valueOf(F.f5.get(i).Hcvalue),String.valueOf(F.f5.get(i).Ccvalue)};
         tModel.addRow(data);
        }
        for(int i=0;i<1;i++){
-           String data[]={"Hall",String.valueOf(Floor.f5.get(i).Scvalue),String.valueOf(Floor.f5.get(i).Hcvalue),String.valueOf(Floor.f5.get(i).Ccvalue)};
+           String data[]={"Hall",String.valueOf(F.f5.get(i).Scvalue),String.valueOf(F.f5.get(i).Hcvalue),String.valueOf(F.f5.get(i).Ccvalue)};
         tModel.addRow(data);
        }
     }//GEN-LAST:event_jMenu6MouseClicked

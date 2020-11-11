@@ -10,6 +10,7 @@ package com.mycompany.fire_alarm_system;
  */
 public class MainScreen extends javax.swing.JFrame {
     static MainScreen dashboard;
+    static Floor F=new Floor();
     /**
      * Creates new form MainScreen
      */
@@ -212,7 +213,6 @@ public class MainScreen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Floor F=new Floor();
                 new MainScreen().setVisible(true);
             }
         });

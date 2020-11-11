@@ -8,6 +8,7 @@ package com.mycompany.fire_alarm_system;
  *
  * @author HP
  */
+import static com.mycompany.fire_alarm_system.MainScreen.F;
 import javax.swing.*; 
 public class Register_a_sensor extends javax.swing.JFrame {
 
@@ -215,27 +216,27 @@ public class Register_a_sensor extends javax.swing.JFrame {
         int index=0;
         int flag=0;
         for(int j=0;j<11;j++){
-            if(Floor.f0.get(j).Cid.equals(jTextField1.getText())||Floor.f0.get(j).Hid.equals(jTextField1.getText())||Floor.f0.get(j).Sid.equals(jTextField1.getText()))
+            if(F.f0.get(j).Cid.equals(jTextField1.getText())||F.f0.get(j).Hid.equals(jTextField1.getText())||F.f0.get(j).Sid.equals(jTextField1.getText()))
                 flag++;
         }
         for(int j=0;j<11;j++){
-            if(Floor.f1.get(j).Cid.equals(jTextField1.getText())||Floor.f1.get(j).Hid.equals(jTextField1.getText())||Floor.f1.get(j).Sid.equals(jTextField1.getText()))
+            if(F.f1.get(j).Cid.equals(jTextField1.getText())||F.f1.get(j).Hid.equals(jTextField1.getText())||F.f1.get(j).Sid.equals(jTextField1.getText()))
                 flag++;
         }
         for(int j=0;j<11;j++){
-            if(Floor.f2.get(j).Cid.equals(jTextField1.getText())||Floor.f2.get(j).Hid.equals(jTextField1.getText())||Floor.f2.get(j).Sid.equals(jTextField1.getText()))
+            if(F.f2.get(j).Cid.equals(jTextField1.getText())||F.f2.get(j).Hid.equals(jTextField1.getText())||F.f2.get(j).Sid.equals(jTextField1.getText()))
                 flag++;
         }
         for(int j=0;j<11;j++){
-            if(Floor.f3.get(j).Cid.equals(jTextField1.getText())||Floor.f3.get(j).Hid.equals(jTextField1.getText())||Floor.f3.get(j).Sid.equals(jTextField1.getText()))
+            if(F.f3.get(j).Cid.equals(jTextField1.getText())||F.f3.get(j).Hid.equals(jTextField1.getText())||F.f3.get(j).Sid.equals(jTextField1.getText()))
                 flag++;
         }
         for(int j=0;j<11;j++){
-            if(Floor.f4.get(j).Cid.equals(jTextField1.getText())||Floor.f4.get(j).Hid.equals(jTextField1.getText())||Floor.f4.get(j).Sid.equals(jTextField1.getText()))
+            if(F.f4.get(j).Cid.equals(jTextField1.getText())||F.f4.get(j).Hid.equals(jTextField1.getText())||F.f4.get(j).Sid.equals(jTextField1.getText()))
                 flag++;
         }
         for(int j=0;j<11;j++){
-            if(Floor.f5.get(j).Cid.equals(jTextField1.getText())||Floor.f5.get(j).Hid.equals(jTextField1.getText())||Floor.f5.get(j).Sid.equals(jTextField1.getText()))
+            if(F.f5.get(j).Cid.equals(jTextField1.getText())||F.f5.get(j).Hid.equals(jTextField1.getText())||F.f5.get(j).Sid.equals(jTextField1.getText()))
                 flag++;
         }
         
@@ -337,13 +338,13 @@ public class Register_a_sensor extends javax.swing.JFrame {
                     if(i==s1.floorno){
                         switch(s1.SensorType){
                     case "Smoke Sensor":
-                        Floor.f0.get(index).Sid=s1.SensorID;
+                        F.f0.get(index).Sid=s1.SensorID;
                         break;
                     case "Heat Sensor":
-                        Floor.f0.get(index).Hid=s1.SensorID;
+                        F.f0.get(index).Hid=s1.SensorID;
                         break;
                     case "CO Sensor":
-                        Floor.f0.get(index).Cid=s1.SensorID;
+                        F.f0.get(index).Cid=s1.SensorID;
                         break;
                     }
                     }

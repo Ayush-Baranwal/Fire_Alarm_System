@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author rajen
  */
 public class Floor {
-    static ArrayList<Location> f0,f1,f2,f3,f4,f5 ;
+    ArrayList<Location> f0,f1,f2,f3,f4,f5 ;
 
     Floor(){
        f0=new ArrayList<>(11);
