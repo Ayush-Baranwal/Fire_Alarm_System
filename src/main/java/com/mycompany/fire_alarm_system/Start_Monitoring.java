@@ -68,6 +68,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(255, 51, 51));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("STOP");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
@@ -77,6 +78,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(51, 102, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("START");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton3MouseClicked(evt);
@@ -159,6 +161,15 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jMenuBar1.setForeground(new java.awt.Color(255, 153, 153));
 
         jMenu1.setText("Floor 0");
+        jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenu1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jMenu1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jMenu1FocusLost(evt);
+            }
+        });
         jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenu1MouseClicked(evt);
@@ -167,6 +178,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Floor 1");
+        jMenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenu2MouseClicked(evt);
@@ -175,6 +187,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Floor 2");
+        jMenu3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenu3MouseClicked(evt);
@@ -183,6 +196,8 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Floor 3");
+        jMenu4.setContentAreaFilled(false);
+        jMenu4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenu4MouseClicked(evt);
@@ -191,6 +206,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Floor 4");
+        jMenu5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenu5MouseClicked(evt);
@@ -199,6 +215,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jMenuBar1.add(jMenu5);
 
         jMenu6.setText("Floor 5");
+        jMenu6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenu6MouseClicked(evt);
@@ -229,8 +246,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        MainScreen M3 = new MainScreen();
-        M3.setVisible(true);
+        MainScreen.dashboard.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
 
@@ -450,6 +466,16 @@ public class Start_Monitoring extends javax.swing.JFrame {
         tModel.addRow(data);
        }
     }//GEN-LAST:event_jMenu6MouseClicked
+
+    private void jMenu1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jMenu1FocusGained
+        // TODO add your handling code here:
+        jMenu1.setForeground(new java.awt.Color(230, 57, 70));
+    }//GEN-LAST:event_jMenu1FocusGained
+
+    private void jMenu1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jMenu1FocusLost
+        // TODO add your handling code here:
+        jMenu1.setForeground(new java.awt.Color(29,53,87));
+    }//GEN-LAST:event_jMenu1FocusLost
 
     /**
      * @param args the command line arguments

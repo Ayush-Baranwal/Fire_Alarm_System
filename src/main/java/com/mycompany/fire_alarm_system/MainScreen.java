@@ -9,7 +9,7 @@ package com.mycompany.fire_alarm_system;
  * @author HP
  */
 public class MainScreen extends javax.swing.JFrame {
-    
+    static MainScreen dashboard;
     /**
      * Creates new form MainScreen
      */
@@ -42,7 +42,7 @@ public class MainScreen extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Fire Alarm System");
+        jLabel2.setText("Dashboard");
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -65,6 +65,7 @@ public class MainScreen extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 119, 182));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setText("Register New");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.setFocusPainted(false);
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -80,6 +81,7 @@ public class MainScreen extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(0, 119, 182));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("Configure");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
@@ -89,15 +91,17 @@ public class MainScreen extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(0, 119, 182));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setText("Monitor");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton3MouseClicked(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(0, 119, 182));
+        jButton4.setBackground(new java.awt.Color(255, 51, 51));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton4.setText("Quit");
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton4MouseClicked(evt);
@@ -154,14 +158,16 @@ public class MainScreen extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         Register_a_sensor R=new Register_a_sensor();
         R.setVisible(true);
-        this.dispose();
+        dashboard=this;
+        dashboard.setVisible(false);
     }//GEN-LAST:event_jButton1MouseClicked
     //ActionListener for directing to Configure window.
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
         Configure_a_sensor C=new Configure_a_sensor();
         C.setVisible(true);
-        this.dispose();
+        dashboard=this;
+        dashboard.setVisible(false);
     }//GEN-LAST:event_jButton2MouseClicked
     //ActionListener for Quiting window.
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
@@ -172,7 +178,8 @@ public class MainScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         Start_Monitoring S=new Start_Monitoring();
         S.setVisible(true);
-        this.dispose();
+        dashboard=this;
+        dashboard.setVisible(false);
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**
@@ -205,6 +212,7 @@ public class MainScreen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                Floor F=new Floor();
                 new MainScreen().setVisible(true);
             }
         });
