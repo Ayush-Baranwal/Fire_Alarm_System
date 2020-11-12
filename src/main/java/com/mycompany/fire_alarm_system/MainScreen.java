@@ -4,13 +4,22 @@
  * and open the template in the editor.
  */
 package com.mycompany.fire_alarm_system;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author HP
  */
 public class MainScreen extends javax.swing.JFrame {
     static MainScreen dashboard;
-    static Floor F=new Floor();
+    static Map<String, Location> f0 = new HashMap<String, Location>();
+    static Map<String, Location> f1 = new HashMap<String, Location>();
+    static Map<String, Location> f2 = new HashMap<String, Location>();
+    static Map<String, Location> f3 = new HashMap<String, Location>();
+    static Map<String, Location> f4 = new HashMap<String, Location>();
+    static Map<String, Location> f5 = new HashMap<String, Location>();
     /**
      * Creates new form MainScreen
      */
@@ -172,6 +181,7 @@ public class MainScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
     //ActionListener for Quiting window.
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        dashboard =this;
         this.dispose();
     }//GEN-LAST:event_jButton4MouseClicked
     //ActionListener for directing to StartMonituring window.

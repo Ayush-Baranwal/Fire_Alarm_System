@@ -8,7 +8,14 @@ package com.mycompany.fire_alarm_system;
  *
  * @author HP
  */
-import static com.mycompany.fire_alarm_system.MainScreen.F;
+
+import static com.mycompany.fire_alarm_system.MainScreen.f0;
+import static com.mycompany.fire_alarm_system.MainScreen.f1;
+import static com.mycompany.fire_alarm_system.MainScreen.f2;
+import static com.mycompany.fire_alarm_system.MainScreen.f3;
+import static com.mycompany.fire_alarm_system.MainScreen.f4;
+import static com.mycompany.fire_alarm_system.MainScreen.f5;
+import java.util.Map.Entry;
 import javax.swing.*; 
 public class Register_a_sensor extends javax.swing.JFrame {
 
@@ -213,30 +220,29 @@ public class Register_a_sensor extends javax.swing.JFrame {
     //ActionListener for saving data of registered sensor and directing to MainScreen window.
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
-        int index=0;
         int flag=0;
-        for(int j=0;j<11;j++){
-            if(F.f0.get(j).Cid.equals(jTextField1.getText())||F.f0.get(j).Hid.equals(jTextField1.getText())||F.f0.get(j).Sid.equals(jTextField1.getText()))
+        for(Entry<String,Location> mp : f0.entrySet()){
+            if(mp.getValue().Cid.equals(jTextField1.getText())||mp.getValue().Hid.equals(jTextField1.getText())||mp.getValue().Sid.equals(jTextField1.getText()))
                 flag++;
         }
-        for(int j=0;j<11;j++){
-            if(F.f1.get(j).Cid.equals(jTextField1.getText())||F.f1.get(j).Hid.equals(jTextField1.getText())||F.f1.get(j).Sid.equals(jTextField1.getText()))
+        for(Entry<String,Location> mp : f1.entrySet()){
+            if(mp.getValue().Cid.equals(jTextField1.getText())||mp.getValue().Hid.equals(jTextField1.getText())||mp.getValue().Sid.equals(jTextField1.getText()))
                 flag++;
         }
-        for(int j=0;j<11;j++){
-            if(F.f2.get(j).Cid.equals(jTextField1.getText())||F.f2.get(j).Hid.equals(jTextField1.getText())||F.f2.get(j).Sid.equals(jTextField1.getText()))
+        for(Entry<String,Location> mp : f2.entrySet()){
+            if(mp.getValue().Cid.equals(jTextField1.getText())||mp.getValue().Hid.equals(jTextField1.getText())||mp.getValue().Sid.equals(jTextField1.getText()))
                 flag++;
         }
-        for(int j=0;j<11;j++){
-            if(F.f3.get(j).Cid.equals(jTextField1.getText())||F.f3.get(j).Hid.equals(jTextField1.getText())||F.f3.get(j).Sid.equals(jTextField1.getText()))
+        for(Entry<String,Location> mp : f3.entrySet()){
+            if(mp.getValue().Cid.equals(jTextField1.getText())||mp.getValue().Hid.equals(jTextField1.getText())||mp.getValue().Sid.equals(jTextField1.getText()))
                 flag++;
         }
-        for(int j=0;j<11;j++){
-            if(F.f4.get(j).Cid.equals(jTextField1.getText())||F.f4.get(j).Hid.equals(jTextField1.getText())||F.f4.get(j).Sid.equals(jTextField1.getText()))
+        for(Entry<String,Location> mp : f4.entrySet()){
+            if(mp.getValue().Cid.equals(jTextField1.getText())||mp.getValue().Hid.equals(jTextField1.getText())||mp.getValue().Sid.equals(jTextField1.getText()))
                 flag++;
         }
-        for(int j=0;j<11;j++){
-            if(F.f5.get(j).Cid.equals(jTextField1.getText())||F.f5.get(j).Hid.equals(jTextField1.getText())||F.f5.get(j).Sid.equals(jTextField1.getText()))
+        for(Entry<String,Location> mp : f5.entrySet()){
+            if(mp.getValue().Cid.equals(jTextField1.getText())||mp.getValue().Hid.equals(jTextField1.getText())||mp.getValue().Sid.equals(jTextField1.getText()))
                 flag++;
         }
         
@@ -293,61 +299,40 @@ public class Register_a_sensor extends javax.swing.JFrame {
                 System.out.println(Sensor.volume);
                 System.out.println(Sensor.duration);
 
-                switch(s1.location)
-                {
-                    case "Room 1":
-                        index=0;
-                        break;
-                    case "Room 2":
-                        index=1;
-                        break;
-                    case "Room 3":
-                        index=2;
-                        break;
-                    case "Room 4":
-                        index=3;
-                        break;
-                    case "Room 5":
-                        index=4;
-                        break;
-                    case "Room 6":
-                        index=5;
-                        break;
-                    case "Lab 1":
-                        index=6;
-                        break;
-                    case "Lab 2":
-                        index=7;
-                        break;
-                    case "Stairs 1":
-                        index=8;
-                        break;
-                    case "Stairs 2":
-                        index=9;
-                        break;
-                    case "Hall":
-                        index=10;
-                        break;
-                }
-
-//                Location L=new Location();
-//                L.setLoc(s1);
-//                
                 
-                for(int i=0;i<6;i++){
-                    if(i==s1.floorno){
-                        switch(s1.SensorType){
+                Location L=new Location();             
+                
+                switch(s1.SensorType){
                     case "Smoke Sensor":
-                        F.f0.get(index).Sid=s1.SensorID;
+                        L.Sid=s1.SensorID;
                         break;
                     case "Heat Sensor":
-                        F.f0.get(index).Hid=s1.SensorID;
+                        L.Hid=s1.SensorID;
                         break;
                     case "CO Sensor":
-                        F.f0.get(index).Cid=s1.SensorID;
+                        L.Cid=s1.SensorID;
                         break;
-                    }
-                    }
+                }
+                        
+                switch(s1.floorno){
+                    case 0:
+                        f0.put(s1.location, L);
+                        break;
+                    case 1:
+                        f1.put(s1.location, L);
+                        break;
+                    case 2:
+                        f2.put(s1.location, L);
+                        break;
+                    case 3:
+                        f3.put(s1.location, L);
+                        break;
+                    case 4:
+                        f4.put(s1.location, L);
+                        break;
+                    case 5:
+                        f5.put(s1.location, L);
+                        break;
                 }
 
                 jTextField1.setText("");

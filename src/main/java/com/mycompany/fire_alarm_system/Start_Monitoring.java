@@ -9,9 +9,14 @@
  * @author HP
  */
 package com.mycompany.fire_alarm_system;
-
-import static com.mycompany.fire_alarm_system.MainScreen.F;
+import java.util.Map.*;
 import javax.swing.table.DefaultTableModel;
+import static com.mycompany.fire_alarm_system.MainScreen.f0;
+import static com.mycompany.fire_alarm_system.MainScreen.f1;
+import static com.mycompany.fire_alarm_system.MainScreen.f2;
+import static com.mycompany.fire_alarm_system.MainScreen.f3;
+import static com.mycompany.fire_alarm_system.MainScreen.f4;
+import static com.mycompany.fire_alarm_system.MainScreen.f5;
 
 public class Start_Monitoring extends javax.swing.JFrame {
 
@@ -253,39 +258,67 @@ public class Start_Monitoring extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
-        for(int i=0;i<11;i++){
-            if(!F.f0.get(i).Sid.equals(""))
-                F.f0.get(i).setScvalue();
-            if(!F.f0.get(i).Hid.equals(""))
-                F.f0.get(i).setHcvalue();
-            if(!F.f0.get(i).Cid.equals(""))
-                F.f0.get(i).setCcvalue();
+        for(Entry<String,Location> mp : f0.entrySet()){
+            if(!mp.getValue().Sid.equals(""))
+                mp.getValue().setScvalue();
+            if(!mp.getValue().Hid.equals(""))
+                mp.getValue().setHcvalue();
+            if(!mp.getValue().Cid.equals(""))
+                mp.getValue().setCcvalue();
+        }
+        for(Entry<String,Location> mp : f1.entrySet()){
+            if(!mp.getValue().Sid.equals(""))
+                mp.getValue().setScvalue();
+            if(!mp.getValue().Hid.equals(""))
+                mp.getValue().setHcvalue();
+            if(!mp.getValue().Cid.equals(""))
+                mp.getValue().setCcvalue();
+        }
+        for(Entry<String,Location> mp : f2.entrySet()){
+            if(!mp.getValue().Sid.equals(""))
+                mp.getValue().setScvalue();
+            if(!mp.getValue().Hid.equals(""))
+                mp.getValue().setHcvalue();
+            if(!mp.getValue().Cid.equals(""))
+                mp.getValue().setCcvalue();
+        }
+        for(Entry<String,Location> mp : f3.entrySet()){
+            if(!mp.getValue().Sid.equals(""))
+                mp.getValue().setScvalue();
+            if(!mp.getValue().Hid.equals(""))
+                mp.getValue().setHcvalue();
+            if(!mp.getValue().Cid.equals(""))
+                mp.getValue().setCcvalue();
+        }
+        for(Entry<String,Location> mp : f4.entrySet()){
+            if(!mp.getValue().Sid.equals(""))
+                mp.getValue().setScvalue();
+            if(!mp.getValue().Hid.equals(""))
+                mp.getValue().setHcvalue();
+            if(!mp.getValue().Cid.equals(""))
+                mp.getValue().setCcvalue();
+        }
+        for(Entry<String,Location> mp : f5.entrySet()){
+            if(!mp.getValue().Sid.equals(""))
+                mp.getValue().setScvalue();
+            if(!mp.getValue().Hid.equals(""))
+                mp.getValue().setHcvalue();
+            if(!mp.getValue().Cid.equals(""))
+                mp.getValue().setCcvalue();
         }
         
         
         DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
         if(tModel1.getRowCount()!=0){
-        for(int i=0;i<11;i++){
-            tModel1.removeRow(tModel1.getRowCount()-1);
+        for(int i=0;i<tModel1.getRowCount();i++){
+            tModel1.removeRow(0);
         }}
        
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
-        for(int i=0;i<6;i++){
-        String data[]={"Room "+String.valueOf(i+1),String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
+        for(Entry<String,Location> mp : f0.entrySet()){
+        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue)};
         tModel.addRow(data);
         }
-        for(int i=0;i<2;i++){
-           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
-       for(int i=0;i<2;i++){
-           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
-       for(int i=0;i<1;i++){
-           String data[]={"Hall",String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -296,176 +329,90 @@ public class Start_Monitoring extends javax.swing.JFrame {
         // TODO add your handling code here:
         jLabel1.setText("1st Floor");
         DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
-        for(int i=0;i<11;i++){
-            tModel1.removeRow(tModel1.getRowCount()-1);
-        }
+        if(tModel1.getRowCount()!=0){
+        for(int i=0;i<tModel1.getRowCount();i++){
+            tModel1.removeRow(0);
+        }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
-        for(int i=0;i<6;i++){
-        String data[]={"Room "+String.valueOf(i+1),String.valueOf(F.f1.get(i).Scvalue),String.valueOf(F.f1.get(i).Hcvalue),String.valueOf(F.f1.get(i).Ccvalue)};
-        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
+        for(Entry<String,Location> mp : f1.entrySet()){
+        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue)};
         tModel.addRow(data);
         }
-        for(int i=0;i<2;i++){
-           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(F.f1.get(i).Scvalue),String.valueOf(F.f1.get(i).Hcvalue),String.valueOf(F.f1.get(i).Ccvalue)};
-        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
-       for(int i=0;i<2;i++){
-           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(F.f1.get(i).Scvalue),String.valueOf(F.f1.get(i).Hcvalue),String.valueOf(F.f1.get(i).Ccvalue)};
-        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
-       for(int i=0;i<1;i++){
-           String data[]={"Hall",String.valueOf(F.f1.get(i).Scvalue),String.valueOf(F.f1.get(i).Hcvalue),String.valueOf(F.f1.get(i).Ccvalue)};
-        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
     }//GEN-LAST:event_jMenu2MouseClicked
 
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
         // TODO add your handling code here:
         jLabel1.setText("2nd Floor");
         DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
-        for(int i=0;i<11;i++){
-            tModel1.removeRow(tModel1.getRowCount()-1);
-        }
+        if(tModel1.getRowCount()!=0){
+        for(int i=0;i<tModel1.getRowCount();i++){
+            tModel1.removeRow(0);
+        }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
-        for(int i=0;i<6;i++){
-        String data[]={"Room "+String.valueOf(i+1),String.valueOf(F.f2.get(i).Scvalue),String.valueOf(F.f2.get(i).Hcvalue),String.valueOf(F.f2.get(i).Ccvalue)};
-        //Float data[]={(F.f2.get(i).Scvalue),(F.f2.get(i).Hcvalue),(F.f2.get(i).Ccvalue)};
+        for(Entry<String,Location> mp : f2.entrySet()){
+        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue)};
         tModel.addRow(data);
         }
-        for(int i=0;i<2;i++){
-           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(F.f2.get(i).Scvalue),String.valueOf(F.f2.get(i).Hcvalue),String.valueOf(F.f2.get(i).Ccvalue)};
-        //Float data[]={(F.f2.get(i).Scvalue),(F.f2.get(i).Hcvalue),(F.f2.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
-       for(int i=0;i<2;i++){
-           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(F.f2.get(i).Scvalue),String.valueOf(F.f2.get(i).Hcvalue),String.valueOf(F.f2.get(i).Ccvalue)};
-        //Float data[]={(F.f2.get(i).Scvalue),(F.f2.get(i).Hcvalue),(F.f2.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
-       for(int i=0;i<1;i++){
-           String data[]={"Hall",String.valueOf(F.f2.get(i).Scvalue),String.valueOf(F.f2.get(i).Hcvalue),String.valueOf(F.f2.get(i).Ccvalue)};
-        //Float data[]={(F.f2.get(i).Scvalue),(F.f2.get(i).Hcvalue),(F.f2.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
     }//GEN-LAST:event_jMenu3MouseClicked
 
     private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
         // TODO add your handling code here:
         jLabel1.setText("Ground Floor");
         DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
-        for(int i=0;i<11;i++){
-            tModel1.removeRow(tModel1.getRowCount()-1);
-        }
+        if(tModel1.getRowCount()!=0){
+        for(int i=0;i<tModel1.getRowCount();i++){
+            tModel1.removeRow(0);
+        }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
-        for(int i=0;i<6;i++){
-        String data[]={"Room "+String.valueOf(i+1),String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
-        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
+        for(Entry<String,Location> mp : f0.entrySet()){
+        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue)};
         tModel.addRow(data);
         }
-        for(int i=0;i<2;i++){
-           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
-        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
-       for(int i=0;i<2;i++){
-           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
-        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
-       for(int i=0;i<1;i++){
-           String data[]={"Hall",String.valueOf(F.f0.get(i).Scvalue),String.valueOf(F.f0.get(i).Hcvalue),String.valueOf(F.f0.get(i).Ccvalue)};
-        //Float data[]={(F.f0.get(i).Scvalue),(F.f0.get(i).Hcvalue),(F.f0.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
     }//GEN-LAST:event_jMenu1MouseClicked
 
     private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
         // TODO add your handling code here:
         jLabel1.setText("3rd Floor");
         DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
-        for(int i=0;i<11;i++){
-            tModel1.removeRow(tModel1.getRowCount()-1);
-        }
+        if(tModel1.getRowCount()!=0){
+        for(int i=0;i<tModel1.getRowCount();i++){
+            tModel1.removeRow(0);
+        }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
-        for(int i=0;i<6;i++){
-        String data[]={"Room "+String.valueOf(i+1),String.valueOf(F.f3.get(i).Scvalue),String.valueOf(F.f3.get(i).Hcvalue),String.valueOf(F.f3.get(i).Ccvalue)};
-        //Float data[]={(F.f3.get(i).Scvalue),(F.f3.get(i).Hcvalue),(F.f3.get(i).Ccvalue)};
+        for(Entry<String,Location> mp : f3.entrySet()){
+        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue)};
         tModel.addRow(data);
         }
-        for(int i=0;i<2;i++){
-           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(F.f3.get(i).Scvalue),String.valueOf(F.f3.get(i).Hcvalue),String.valueOf(F.f3.get(i).Ccvalue)};
-        //Float data[]={(F.f3.get(i).Scvalue),(F.f3.get(i).Hcvalue),(F.f3.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
-       for(int i=0;i<2;i++){
-           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(F.f3.get(i).Scvalue),String.valueOf(F.f3.get(i).Hcvalue),String.valueOf(F.f3.get(i).Ccvalue)};
-        //Float data[]={(F.f3.get(i).Scvalue),(F.f3.get(i).Hcvalue),(F.f3.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
-       for(int i=0;i<1;i++){
-           String data[]={"Hall",String.valueOf(F.f3.get(i).Scvalue),String.valueOf(F.f3.get(i).Hcvalue),String.valueOf(F.f3.get(i).Ccvalue)};
-        //Float data[]={(F.f3.get(i).Scvalue),(F.f3.get(i).Hcvalue),(F.f3.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
     }//GEN-LAST:event_jMenu4MouseClicked
 
     private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
         // TODO add your handling code here:
         jLabel1.setText("4th Floor");
         DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
-        for(int i=0;i<11;i++){
-            tModel1.removeRow(tModel1.getRowCount()-1);
-        }
+        if(tModel1.getRowCount()!=0){
+        for(int i=0;i<tModel1.getRowCount();i++){
+            tModel1.removeRow(0);
+        }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
-        for(int i=0;i<6;i++){
-        String data[]={"Room "+String.valueOf(i+1),String.valueOf(F.f4.get(i).Scvalue),String.valueOf(F.f4.get(i).Hcvalue),String.valueOf(F.f4.get(i).Ccvalue)};
-        //Float data[]={(F.f4.get(i).Scvalue),(F.f4.get(i).Hcvalue),(F.f4.get(i).Ccvalue)};
+        for(Entry<String,Location> mp : f4.entrySet()){
+        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue)};
         tModel.addRow(data);
         }
-        for(int i=0;i<2;i++){
-           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(F.f4.get(i).Scvalue),String.valueOf(F.f4.get(i).Hcvalue),String.valueOf(F.f4.get(i).Ccvalue)};
-        //Float data[]={(F.f4.get(i).Scvalue),(F.f4.get(i).Hcvalue),(F.f4.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
-       for(int i=0;i<2;i++){
-           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(F.f4.get(i).Scvalue),String.valueOf(F.f4.get(i).Hcvalue),String.valueOf(F.f4.get(i).Ccvalue)};
-        //Float data[]={(F.f4.get(i).Scvalue),(F.f4.get(i).Hcvalue),(F.f4.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
-       for(int i=0;i<1;i++){
-           String data[]={"Hall",String.valueOf(F.f4.get(i).Scvalue),String.valueOf(F.f4.get(i).Hcvalue),String.valueOf(F.f4.get(i).Ccvalue)};
-        //Float data[]={(F.f4.get(i).Scvalue),(F.f4.get(i).Hcvalue),(F.f4.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
     }//GEN-LAST:event_jMenu5MouseClicked
 
     private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
         // TODO add your handling code here:
         jLabel1.setText("5th Floor");
         DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
-        for(int i=0;i<11;i++){
-            tModel1.removeRow(tModel1.getRowCount()-1);
-        }
+        if(tModel1.getRowCount()!=0){
+        for(int i=0;i<tModel1.getRowCount();i++){
+            tModel1.removeRow(0);
+        }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
-        for(int i=0;i<6;i++){
-        String data[]={"Room "+String.valueOf(i+1),String.valueOf(F.f5.get(i).Scvalue),String.valueOf(F.f5.get(i).Hcvalue),String.valueOf(F.f5.get(i).Ccvalue)};
+        for(Entry<String,Location> mp : f5.entrySet()){
+        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue)};
         tModel.addRow(data);
         }
-        for(int i=0;i<2;i++){
-           String data[]={"Lab "+String.valueOf(i+1),String.valueOf(F.f5.get(i).Scvalue),String.valueOf(F.f5.get(i).Hcvalue),String.valueOf(F.f5.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
-       for(int i=0;i<2;i++){
-           String data[]={"Stairs "+String.valueOf(i+1),String.valueOf(F.f5.get(i).Scvalue),String.valueOf(F.f5.get(i).Hcvalue),String.valueOf(F.f5.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
-       for(int i=0;i<1;i++){
-           String data[]={"Hall",String.valueOf(F.f5.get(i).Scvalue),String.valueOf(F.f5.get(i).Hcvalue),String.valueOf(F.f5.get(i).Ccvalue)};
-        tModel.addRow(data);
-       }
     }//GEN-LAST:event_jMenu6MouseClicked
 
     private void jMenu1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jMenu1FocusGained
