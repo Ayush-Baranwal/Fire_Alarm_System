@@ -288,7 +288,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
                     flag++;
                 }
         if(flag==0){
-        switch(stype)
+            switch(stype)
             {
                 case 0 -> Sensor.thresholdCO = Float.parseFloat(jTextField1.getText());
                 case 1 -> Sensor.thresholdHeat = Float.parseFloat(jTextField1.getText());
@@ -304,8 +304,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
                 case 2 -> Location.conSsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdSmoke);
             }
             JOptionPane.showMessageDialog(this,"Configuration Successful");
-            MainScreen M4 = new MainScreen();
-            M4.setVisible(true);
+            MainScreen.dashboard.setVisible(true);
             this.dispose();
         }
         else{

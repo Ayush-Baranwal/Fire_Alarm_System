@@ -24,7 +24,9 @@ public class Location {
         Scvalue=0;
         Hcvalue=0;
         Ccvalue=0;
-        Sid=Hid=Cid="N/A";   
+        Sid="N/A"; 
+        Hid="N/A"; 
+        Cid="N/A";   
     }
     
 //    public void setLoc(Sensor s){

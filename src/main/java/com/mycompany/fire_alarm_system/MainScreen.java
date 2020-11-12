@@ -181,7 +181,7 @@ public class MainScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
     //ActionListener for Quiting window.
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        dashboard =this;
+        dashboard=this;
         this.dispose();
     }//GEN-LAST:event_jButton4MouseClicked
     //ActionListener for directing to StartMonituring window.
