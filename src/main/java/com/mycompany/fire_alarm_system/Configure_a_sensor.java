@@ -124,7 +124,8 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         jComboBox1.setToolTipText("Time(in minutes)");
         jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jSlider1.setBackground(new java.awt.Color(108, 120, 137));
+        jSlider1.setBackground(new java.awt.Color(153, 204, 255));
+        jSlider1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jSlider1.setMajorTickSpacing(10);
         jSlider1.setMaximum(120);
         jSlider1.setMinimum(60);
@@ -304,7 +305,8 @@ public class Configure_a_sensor extends javax.swing.JFrame {
                 case 2 -> Location.conSsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdSmoke);
             }
             JOptionPane.showMessageDialog(this,"Configuration Successful");
-            MainScreen.dashboard.setVisible(true);
+            Configure_a_sensor C=new Configure_a_sensor();
+            C.setVisible(true);
             this.dispose();
         }
         else{
