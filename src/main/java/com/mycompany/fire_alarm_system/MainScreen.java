@@ -84,7 +84,7 @@ public class MainScreen extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Register.setBackground(new java.awt.Color(204, 204, 255));
+        Register.setBackground(new java.awt.Color(255, 255, 255));
         Register.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Register.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/reg.png"))); // NOI18N
         Register.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -100,7 +100,7 @@ public class MainScreen extends javax.swing.JFrame {
             }
         });
 
-        configure.setBackground(new java.awt.Color(204, 204, 255));
+        configure.setBackground(new java.awt.Color(255, 255, 255));
         configure.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         configure.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/conf.png"))); // NOI18N
         configure.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -110,7 +110,7 @@ public class MainScreen extends javax.swing.JFrame {
             }
         });
 
-        monitor.setBackground(new java.awt.Color(204, 204, 255));
+        monitor.setBackground(new java.awt.Color(255, 255, 255));
         monitor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         monitor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/mon.png"))); // NOI18N
         monitor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
