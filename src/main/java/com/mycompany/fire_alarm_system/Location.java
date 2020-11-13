@@ -16,7 +16,6 @@ public class Location {
     static float Stvalue, Htvalue, Ctvalue;
     static int Sdur, Hdur, Cdur, Slog, Clog, Hlog, vol;
     float Scvalue, Hcvalue, Ccvalue;
-    String loc;
     String Sid, Hid, Cid;
     Location(){
         Stvalue=0;
@@ -25,12 +24,14 @@ public class Location {
         Scvalue=0;
         Hcvalue=0;
         Ccvalue=0;
-        Sid=Hid=Cid=loc="N/A";   
+        Sid=""; 
+        Hid=""; 
+        Cid="";   
     }
     
-    public void setLoc(Sensor s){
-        loc=s.location;
-    }
+//    public void setLoc(Sensor s){
+//        loc=s.location;
+//    }
     public static void conSsensor(int d, int v, int l, float t){
         Sdur=d; vol=v; Slog=l; Stvalue=t;
     }
@@ -42,17 +43,17 @@ public class Location {
     }
     public void setScvalue(){
         float min=Stvalue/2;
-        float max=Stvalue*2;
+        float max=(float) (Stvalue*1.5);
         Scvalue=RandomGenerator.RandomGenerator(min, max);
     }
     public void setHcvalue(){
         float min=Htvalue/2;
-        float max=Htvalue*2;
+        float max=(float) (Htvalue*1.5);
         Hcvalue=RandomGenerator.RandomGenerator(min, max);
     }
     public void setCcvalue(){
         float min=Ctvalue/2;
-        float max=Ctvalue*2;
+        float max=(float) (Ctvalue*1.5);
         Ccvalue=RandomGenerator.RandomGenerator(min, max);
     }
     }

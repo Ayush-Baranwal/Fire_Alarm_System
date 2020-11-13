@@ -122,6 +122,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "4", "8", " " }));
         jComboBox1.setToolTipText("Time(in minutes)");
+        jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jSlider1.setBackground(new java.awt.Color(108, 120, 137));
         jSlider1.setMajorTickSpacing(10);
@@ -131,11 +132,13 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         jSlider1.setPaintLabels(true);
         jSlider1.setSnapToTicks(true);
         jSlider1.setValue(90);
+        jSlider1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jComboBox2.setBackground(new java.awt.Color(108, 120, 137));
         jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10", "15", "30", "60", "120", " " }));
         jComboBox2.setToolTipText("Time(in second)");
+        jComboBox2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -145,6 +148,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 119, 182));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setText("Configure");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
@@ -156,9 +160,10 @@ public class Configure_a_sensor extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(192, 57, 43));
+        jButton2.setBackground(new java.awt.Color(255, 51, 51));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("Cancel");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
@@ -173,6 +178,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CO Sensor", "Heat Sensor", "Smoke Sensor", " " }));
         jComboBox3.setToolTipText("Select sensor type.");
+        jComboBox3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jComboBox3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jComboBox3MouseClicked(evt);
@@ -193,9 +199,9 @@ public class Configure_a_sensor extends javax.swing.JFrame {
                 .addContainerGap(44, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -269,8 +275,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
     //ActionListener for directing to MainScreen window without configuring any sensor.
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        MainScreen M3 = new MainScreen();
-        M3.setVisible(true);
+        MainScreen.dashboard.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
     //ActionListener for Configuring a particular type of sensor and directing to MainScreen window.
@@ -279,11 +284,11 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         int stype=jComboBox3.getSelectedIndex();
         //float fvalue=Float.parseFloat(jTextField1.getText());
         int flag=0;
-        if(!jTextField1.getText().matches("[+-]?([0-9]*[.])?[0-9]+")){
+        if(!jTextField1.getText().matches("[+]?([0-9]*[.])?[0-9]+")){
                     flag++;
                 }
         if(flag==0){
-        switch(stype)
+            switch(stype)
             {
                 case 0 -> Sensor.thresholdCO = Float.parseFloat(jTextField1.getText());
                 case 1 -> Sensor.thresholdHeat = Float.parseFloat(jTextField1.getText());
@@ -299,8 +304,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
                 case 2 -> Location.conSsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdSmoke);
             }
             JOptionPane.showMessageDialog(this,"Configuration Successful");
-            MainScreen M4 = new MainScreen();
-            M4.setVisible(true);
+            MainScreen.dashboard.setVisible(true);
             this.dispose();
         }
         else{
