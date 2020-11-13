@@ -221,7 +221,7 @@ public class Register_a_sensor extends javax.swing.JFrame {
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
         int flag=0;
-        for(Entry<String,Location> mp : f0.entrySet()){
+        for(Entry<String,Location> mp : f3.entrySet()){
             if(mp.getValue().Cid.equals(jTextField1.getText())||mp.getValue().Hid.equals(jTextField1.getText())||mp.getValue().Sid.equals(jTextField1.getText()))
                 flag++;
         }
@@ -291,10 +291,9 @@ public class Register_a_sensor extends javax.swing.JFrame {
                 s1.SensorID = jTextField1.getText();
                 s1.floorno = Integer.parseInt(jTextField2.getText());
                 s1.location = jComboBox2.getSelectedItem().toString();
-                s1.SensorType =  jComboBox1.getSelectedItem().toString();    
+                s1.SensorType =  jComboBox1.getSelectedItem().toString();  
                 
                 Location L=new Location();             
-                
                 switch(s1.SensorType){
                     case "Smoke Sensor":
                         L.Sid=s1.SensorID;
@@ -309,22 +308,106 @@ public class Register_a_sensor extends javax.swing.JFrame {
                         
                 switch(s1.floorno){
                     case 0:
-                        f0.put(s1.location, L);
+                        if(f0.containsKey(s1.location)){
+                            switch(s1.SensorType){
+                                case "Smoke Sensor":
+                                    f0.get(s1.location).Sid=s1.SensorID;
+                                    break;
+                                case "Heat Sensor":
+                                    f0.get(s1.location).Hid=s1.SensorID;
+                                    break;
+                                case "CO Sensor":
+                                    f0.get(s1.location).Cid=s1.SensorID;
+                                    break;
+                            }
+                                    }
+                        else
+                            f0.put(s1.location, L);
                         break;
                     case 1:
-                        f1.put(s1.location, L);
+                        if(f1.containsKey(s1.location)){
+                            switch(s1.SensorType){
+                                case "Smoke Sensor":
+                                    f1.get(s1.location).Sid=s1.SensorID;
+                                    break;
+                                case "Heat Sensor":
+                                    f1.get(s1.location).Hid=s1.SensorID;
+                                    break;
+                                case "CO Sensor":
+                                    f1.get(s1.location).Cid=s1.SensorID;
+                                    break;
+                            }
+                                    }
+                        else
+                            f1.put(s1.location, L);
                         break;
                     case 2:
-                        f2.put(s1.location, L);
+                        if(f2.containsKey(s1.location)){
+                            switch(s1.SensorType){
+                                case "Smoke Sensor":
+                                    f2.get(s1.location).Sid=s1.SensorID;
+                                    break;
+                                case "Heat Sensor":
+                                    f2.get(s1.location).Hid=s1.SensorID;
+                                    break;
+                                case "CO Sensor":
+                                    f2.get(s1.location).Cid=s1.SensorID;
+                                    break;
+                            }
+                                    }
+                        else
+                            f2.put(s1.location, L);
                         break;
                     case 3:
-                        f3.put(s1.location, L);
+                        if(f3.containsKey(s1.location)){
+                            switch(s1.SensorType){
+                                case "Smoke Sensor":
+                                    f3.get(s1.location).Sid=s1.SensorID;
+                                    break;
+                                case "Heat Sensor":
+                                    f3.get(s1.location).Hid=s1.SensorID;
+                                    break;
+                                case "CO Sensor":
+                                    f3.get(s1.location).Cid=s1.SensorID;
+                                    break;
+                            }
+                                    }
+                        else
+                            f3.put(s1.location, L);
                         break;
                     case 4:
-                        f4.put(s1.location, L);
+                        if(f4.containsKey(s1.location)){
+                            switch(s1.SensorType){
+                                case "Smoke Sensor":
+                                    f4.get(s1.location).Sid=s1.SensorID;
+                                    break;
+                                case "Heat Sensor":
+                                    f4.get(s1.location).Hid=s1.SensorID;
+                                    break;
+                                case "CO Sensor":
+                                    f4.get(s1.location).Cid=s1.SensorID;
+                                    break;
+                            }
+                                    }
+                        else
+                            f4.put(s1.location, L);
                         break;
                     case 5:
-                        f5.put(s1.location, L);
+                        if(f5.containsKey(s1.location)){
+                            switch(s1.SensorType){
+                                case "Smoke Sensor":
+                                    f5.get(s1.location).Sid=s1.SensorID;
+                                    break;
+                                case "Heat Sensor":
+                                    f5.get(s1.location).Hid=s1.SensorID;
+                                    break;
+                                case "CO Sensor":
+                                    f5.get(s1.location).Cid=s1.SensorID;
+                                    break;
+                            }
+                                    }
+                        else
+                            f5.put(s1.location, L);
                         break;
                 }
                 
