@@ -34,7 +34,7 @@ public class LogGenerator {
 			while (true) {
 				// Log an INFO message.
                                 for(int i=0;i<6;i++){
-                                     String log = "Floor" + i + "\n";
+                                     String log = "Floor" + i + "\n"; 
                                      log += "Location: Room 1: ";
                                      log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
                                      log += "Location: Room 2: ";
