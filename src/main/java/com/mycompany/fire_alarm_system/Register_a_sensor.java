@@ -113,9 +113,9 @@ public class Register_a_sensor extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(76, Short.MAX_VALUE)
+                .addContainerGap(124, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,27 +173,27 @@ public class Register_a_sensor extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addGap(18, 19, Short.MAX_VALUE)
+                .addGap(18, 27, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(18, 21, Short.MAX_VALUE)
+                .addGap(18, 29, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(18, 21, Short.MAX_VALUE)
+                .addGap(18, 29, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         jComboBox1.getAccessibleContext().setAccessibleName("");
@@ -221,7 +221,7 @@ public class Register_a_sensor extends javax.swing.JFrame {
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
         int flag=0;
-        for(Entry<String,Location> mp : f0.entrySet()){
+        for(Entry<String,Location> mp : f3.entrySet()){
             if(mp.getValue().Cid.equals(jTextField1.getText())||mp.getValue().Hid.equals(jTextField1.getText())||mp.getValue().Sid.equals(jTextField1.getText()))
                 flag++;
         }
@@ -287,21 +287,13 @@ public class Register_a_sensor extends javax.swing.JFrame {
             case 0:
             {
                 Sensor s1 = new Sensor();
-                FileIO f = new FileIO();
 
                 s1.SensorID = jTextField1.getText();
                 s1.floorno = Integer.parseInt(jTextField2.getText());
                 s1.location = jComboBox2.getSelectedItem().toString();
-                s1.SensorType =  jComboBox1.getSelectedItem().toString();    
-                f.WriteObjectToFile(s1);
-                f.ReadObjectFromFile(s1);
-                System.out.println(Sensor.thresholdHeat);
-                System.out.println(Sensor.volume);
-                System.out.println(Sensor.duration);
-
+                s1.SensorType =  jComboBox1.getSelectedItem().toString();  
                 
                 Location L=new Location();             
-                
                 switch(s1.SensorType){
                     case "Smoke Sensor":
                         L.Sid=s1.SensorID;
@@ -316,28 +308,113 @@ public class Register_a_sensor extends javax.swing.JFrame {
                         
                 switch(s1.floorno){
                     case 0:
-                        f0.put(s1.location, L);
+                        if(f0.containsKey(s1.location)){
+                            switch(s1.SensorType){
+                                case "Smoke Sensor":
+                                    f0.get(s1.location).Sid=s1.SensorID;
+                                    break;
+                                case "Heat Sensor":
+                                    f0.get(s1.location).Hid=s1.SensorID;
+                                    break;
+                                case "CO Sensor":
+                                    f0.get(s1.location).Cid=s1.SensorID;
+                                    break;
+                            }
+                                    }
+                        else
+                            f0.put(s1.location, L);
                         break;
                     case 1:
-                        f1.put(s1.location, L);
+                        if(f1.containsKey(s1.location)){
+                            switch(s1.SensorType){
+                                case "Smoke Sensor":
+                                    f1.get(s1.location).Sid=s1.SensorID;
+                                    break;
+                                case "Heat Sensor":
+                                    f1.get(s1.location).Hid=s1.SensorID;
+                                    break;
+                                case "CO Sensor":
+                                    f1.get(s1.location).Cid=s1.SensorID;
+                                    break;
+                            }
+                                    }
+                        else
+                            f1.put(s1.location, L);
                         break;
                     case 2:
-                        f2.put(s1.location, L);
+                        if(f2.containsKey(s1.location)){
+                            switch(s1.SensorType){
+                                case "Smoke Sensor":
+                                    f2.get(s1.location).Sid=s1.SensorID;
+                                    break;
+                                case "Heat Sensor":
+                                    f2.get(s1.location).Hid=s1.SensorID;
+                                    break;
+                                case "CO Sensor":
+                                    f2.get(s1.location).Cid=s1.SensorID;
+                                    break;
+                            }
+                                    }
+                        else
+                            f2.put(s1.location, L);
                         break;
                     case 3:
-                        f3.put(s1.location, L);
+                        if(f3.containsKey(s1.location)){
+                            switch(s1.SensorType){
+                                case "Smoke Sensor":
+                                    f3.get(s1.location).Sid=s1.SensorID;
+                                    break;
+                                case "Heat Sensor":
+                                    f3.get(s1.location).Hid=s1.SensorID;
+                                    break;
+                                case "CO Sensor":
+                                    f3.get(s1.location).Cid=s1.SensorID;
+                                    break;
+                            }
+                                    }
+                        else
+                            f3.put(s1.location, L);
                         break;
                     case 4:
-                        f4.put(s1.location, L);
+                        if(f4.containsKey(s1.location)){
+                            switch(s1.SensorType){
+                                case "Smoke Sensor":
+                                    f4.get(s1.location).Sid=s1.SensorID;
+                                    break;
+                                case "Heat Sensor":
+                                    f4.get(s1.location).Hid=s1.SensorID;
+                                    break;
+                                case "CO Sensor":
+                                    f4.get(s1.location).Cid=s1.SensorID;
+                                    break;
+                            }
+                                    }
+                        else
+                            f4.put(s1.location, L);
                         break;
                     case 5:
-                        f5.put(s1.location, L);
+                        if(f5.containsKey(s1.location)){
+                            switch(s1.SensorType){
+                                case "Smoke Sensor":
+                                    f5.get(s1.location).Sid=s1.SensorID;
+                                    break;
+                                case "Heat Sensor":
+                                    f5.get(s1.location).Hid=s1.SensorID;
+                                    break;
+                                case "CO Sensor":
+                                    f5.get(s1.location).Cid=s1.SensorID;
+                                    break;
+                            }
+                                    }
+                        else
+                            f5.put(s1.location, L);
                         break;
                 }
-
-                jTextField1.setText("");
-                jTextField2.setText("");
+                
                 JOptionPane.showMessageDialog(this,"Sensor Registered.");
+                Register_a_sensor R=new Register_a_sensor();
+                R.setVisible(true);
+                this.dispose();
                 break;
         }
         }
