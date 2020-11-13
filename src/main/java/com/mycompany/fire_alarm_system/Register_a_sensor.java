@@ -287,7 +287,6 @@ public class Register_a_sensor extends javax.swing.JFrame {
             case 0:
             {
                 Sensor s1 = new Sensor();
-                FileIO f = new FileIO();
 
                 s1.SensorID = jTextField1.getText();
                 s1.floorno = Integer.parseInt(jTextField2.getText());
