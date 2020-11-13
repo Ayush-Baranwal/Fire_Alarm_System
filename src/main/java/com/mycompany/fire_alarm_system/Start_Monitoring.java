@@ -310,7 +310,8 @@ public class Start_Monitoring extends javax.swing.JFrame {
         
         DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
         if(tModel1.getRowCount()!=0){
-        for(int i=0;i<tModel1.getRowCount();i++){
+            int c =tModel1.getRowCount();
+        for(int i=0;i<c;i++){
             tModel1.removeRow(0);
         }}
        
