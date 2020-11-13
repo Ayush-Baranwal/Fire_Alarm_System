@@ -18,15 +18,12 @@ public class Location {
     float Scvalue, Hcvalue, Ccvalue;
     String Sid, Hid, Cid;
     Location(){
-        Stvalue=0;
-        Htvalue=0;
-        Ctvalue=0;
         Scvalue=0;
         Hcvalue=0;
         Ccvalue=0;
-        Sid="N/A"; 
-        Hid="N/A"; 
-        Cid="N/A";   
+        Sid=""; 
+        Hid=""; 
+        Cid="";   
     }
     
 //    public void setLoc(Sensor s){

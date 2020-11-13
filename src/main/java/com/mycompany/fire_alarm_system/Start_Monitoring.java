@@ -310,13 +310,14 @@ public class Start_Monitoring extends javax.swing.JFrame {
         
         DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
         if(tModel1.getRowCount()!=0){
-        for(int i=0;i<tModel1.getRowCount();i++){
+            int c =tModel1.getRowCount();
+        for(int i=0;i<c;i++){
             tModel1.removeRow(0);
         }}
        
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f0.entrySet()){
-        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue)};
+        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
         }
     }//GEN-LAST:event_jButton3MouseClicked
@@ -330,12 +331,13 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jLabel1.setText("1st Floor");
         DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
         if(tModel1.getRowCount()!=0){
-        for(int i=0;i<tModel1.getRowCount();i++){
+            int c =tModel1.getRowCount();
+        for(int i=0;i<c;i++){
             tModel1.removeRow(0);
         }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f1.entrySet()){
-        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue)};
+        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
         }
     }//GEN-LAST:event_jMenu2MouseClicked
@@ -344,13 +346,14 @@ public class Start_Monitoring extends javax.swing.JFrame {
         // TODO add your handling code here:
         jLabel1.setText("2nd Floor");
         DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
-        if(tModel1.getRowCount()!=0){
-        for(int i=0;i<tModel1.getRowCount();i++){
+       if(tModel1.getRowCount()!=0){
+            int c =tModel1.getRowCount();
+        for(int i=0;i<c;i++){
             tModel1.removeRow(0);
         }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f2.entrySet()){
-        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue)};
+        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
         }
     }//GEN-LAST:event_jMenu3MouseClicked
@@ -360,12 +363,13 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jLabel1.setText("Ground Floor");
         DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
         if(tModel1.getRowCount()!=0){
-        for(int i=0;i<tModel1.getRowCount();i++){
+            int c =tModel1.getRowCount();
+        for(int i=0;i<c;i++){
             tModel1.removeRow(0);
         }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f0.entrySet()){
-        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue)};
+        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
         }
     }//GEN-LAST:event_jMenu1MouseClicked
@@ -375,12 +379,13 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jLabel1.setText("3rd Floor");
         DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
         if(tModel1.getRowCount()!=0){
-        for(int i=0;i<tModel1.getRowCount();i++){
+            int c =tModel1.getRowCount();
+        for(int i=0;i<c;i++){
             tModel1.removeRow(0);
         }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f3.entrySet()){
-        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue)};
+        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
         }
     }//GEN-LAST:event_jMenu4MouseClicked
@@ -390,12 +395,13 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jLabel1.setText("4th Floor");
         DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
         if(tModel1.getRowCount()!=0){
-        for(int i=0;i<tModel1.getRowCount();i++){
+            int c =tModel1.getRowCount();
+        for(int i=0;i<c;i++){
             tModel1.removeRow(0);
         }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f4.entrySet()){
-        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue)};
+        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
         }
     }//GEN-LAST:event_jMenu5MouseClicked
@@ -405,12 +411,13 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jLabel1.setText("5th Floor");
         DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
         if(tModel1.getRowCount()!=0){
-        for(int i=0;i<tModel1.getRowCount();i++){
+            int c =tModel1.getRowCount();
+        for(int i=0;i<c;i++){
             tModel1.removeRow(0);
         }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f5.entrySet()){
-        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Scvalue)};
+        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
         }
     }//GEN-LAST:event_jMenu6MouseClicked
