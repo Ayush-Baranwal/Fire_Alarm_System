@@ -84,9 +84,9 @@ public class MainScreen extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Register.setBackground(new java.awt.Color(0, 119, 182));
+        Register.setBackground(new java.awt.Color(204, 204, 255));
         Register.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Register.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/fire_alarm_system/icons/reg.png"))); // NOI18N
+        Register.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/reg.png"))); // NOI18N
         Register.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Register.setFocusPainted(false);
         Register.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -100,9 +100,9 @@ public class MainScreen extends javax.swing.JFrame {
             }
         });
 
-        configure.setBackground(new java.awt.Color(0, 119, 182));
+        configure.setBackground(new java.awt.Color(204, 204, 255));
         configure.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        configure.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/fire_alarm_system/icons/conf.png"))); // NOI18N
+        configure.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/conf.png"))); // NOI18N
         configure.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         configure.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -110,9 +110,9 @@ public class MainScreen extends javax.swing.JFrame {
             }
         });
 
-        monitor.setBackground(new java.awt.Color(0, 119, 182));
+        monitor.setBackground(new java.awt.Color(204, 204, 255));
         monitor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        monitor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/fire_alarm_system/icons/mon.png"))); // NOI18N
+        monitor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/mon.png"))); // NOI18N
         monitor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         monitor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -120,9 +120,9 @@ public class MainScreen extends javax.swing.JFrame {
             }
         });
 
-        quit.setBackground(new java.awt.Color(255, 51, 51));
+        quit.setBackground(new java.awt.Color(255, 153, 153));
         quit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        quit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/fire_alarm_system/icons/quit.png"))); // NOI18N
+        quit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/quit.png"))); // NOI18N
         quit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         quit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
