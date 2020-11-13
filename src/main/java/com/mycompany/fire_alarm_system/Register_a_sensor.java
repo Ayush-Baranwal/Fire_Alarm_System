@@ -327,10 +327,11 @@ public class Register_a_sensor extends javax.swing.JFrame {
                         f5.put(s1.location, L);
                         break;
                 }
-
-                jTextField1.setText("");
-                jTextField2.setText("");
+                
                 JOptionPane.showMessageDialog(this,"Sensor Registered.");
+                Register_a_sensor R=new Register_a_sensor();
+                R.setVisible(true);
+                this.dispose();
                 break;
         }
         }
