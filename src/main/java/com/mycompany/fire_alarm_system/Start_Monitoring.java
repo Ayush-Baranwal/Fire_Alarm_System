@@ -434,6 +434,11 @@ public class Start_Monitoring extends javax.swing.JFrame {
         for(Entry<String,Location> mp : f1.entrySet()){
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
+        
+        Runnable task2=()->{
+        tModel.fireTableDataChanged();
+        };
+        ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task2, 0, Location.log, TimeUnit.SECONDS); 
         }
     }//GEN-LAST:event_jMenu2MouseClicked
 
@@ -450,6 +455,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
         for(Entry<String,Location> mp : f2.entrySet()){
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
+        
         }
     }//GEN-LAST:event_jMenu3MouseClicked
 
@@ -514,6 +520,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
         for(Entry<String,Location> mp : f5.entrySet()){
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
+        
         }
     }//GEN-LAST:event_jMenu6MouseClicked
 
