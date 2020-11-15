@@ -40,17 +40,17 @@ public class Location {
     }
     public void setScvalue(){
         float min=Stvalue/2;
-        float max=(float) (Stvalue*1.5);
+        float max=(float) (Stvalue*1.2);
         Scvalue=RandomGenerator.RandomGenerator(min, max);
     }
     public void setHcvalue(){
         float min=Htvalue/2;
-        float max=(float) (Htvalue*1.5);
+        float max=(float) (Htvalue*1.2);
         Hcvalue=RandomGenerator.RandomGenerator(min, max);
     }
     public void setCcvalue(){
         float min=Ctvalue/2;
-        float max=(float) (Ctvalue*1.5);
+        float max=(float) (Ctvalue*1.2);
         Ccvalue=RandomGenerator.RandomGenerator(min, max);
     }
     }
