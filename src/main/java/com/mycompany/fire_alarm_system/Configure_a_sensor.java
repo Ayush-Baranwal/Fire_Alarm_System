@@ -124,7 +124,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
         jComboBox1.setToolTipText("Time(in minutes)");
         jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jSlider1.setBackground(new java.awt.Color(153, 204, 255));
+        jSlider1.setBackground(new java.awt.Color(204, 204, 204));
         jSlider1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jSlider1.setMajorTickSpacing(10);
         jSlider1.setMaximum(120);
@@ -200,7 +200,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
                 .addContainerGap(61, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
