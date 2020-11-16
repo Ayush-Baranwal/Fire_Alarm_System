@@ -317,139 +317,139 @@ public class Start_Monitoring extends javax.swing.JFrame {
         for(Entry<String,Location> mp : f0.entrySet()){
             if(!mp.getValue().Sid.equals(""))
             {
-                Runnable task1=() ->{
+                Runnable task10=() ->{
                 mp.getValue().setScvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task10, 0, 2, TimeUnit.SECONDS);
             }
             if(!mp.getValue().Hid.equals(""))
                 {
-                Runnable task1=() ->{
+                Runnable task11=() ->{
                 mp.getValue().setHcvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task11, 0, 2, TimeUnit.SECONDS);
             }
             if(!mp.getValue().Cid.equals(""))
                 {
-                Runnable task1=() ->{
+                Runnable task12=() ->{
                 mp.getValue().setCcvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task12, 0, 2, TimeUnit.SECONDS);
             }
         }
         for(Entry<String,Location> mp : f1.entrySet()){
             if(!mp.getValue().Sid.equals(""))
             {
-                Runnable task1=() ->{
+                Runnable task20=() ->{
                 mp.getValue().setScvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task20, 0, 2, TimeUnit.SECONDS);
             }
             if(!mp.getValue().Hid.equals(""))
                 {
-                Runnable task1=() ->{
+                Runnable task21=() ->{
                 mp.getValue().setHcvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task21, 0, 2, TimeUnit.SECONDS);
             }
             if(!mp.getValue().Cid.equals(""))
                 {
-                Runnable task1=() ->{
+                Runnable task22=() ->{
                 mp.getValue().setCcvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task22, 0, 2, TimeUnit.SECONDS);
             }
         }
         for(Entry<String,Location> mp : f2.entrySet()){
             if(!mp.getValue().Sid.equals(""))
             {
-                Runnable task1=() ->{
+                Runnable task30=() ->{
                 mp.getValue().setScvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task30, 0, 2, TimeUnit.SECONDS);
             }
             if(!mp.getValue().Hid.equals(""))
                 {
-                Runnable task1=() ->{
+                Runnable task31=() ->{
                 mp.getValue().setHcvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task31, 0, 2, TimeUnit.SECONDS);
             }
             if(!mp.getValue().Cid.equals(""))
                 {
-                Runnable task1=() ->{
+                Runnable task32=() ->{
                 mp.getValue().setCcvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task32, 0, 2, TimeUnit.SECONDS);
             }
         }
         for(Entry<String,Location> mp : f3.entrySet()){
             if(!mp.getValue().Sid.equals(""))
             {
-                Runnable task1=() ->{
+                Runnable task40=() ->{
                 mp.getValue().setScvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task40, 0, 2, TimeUnit.SECONDS);
             }
             if(!mp.getValue().Hid.equals(""))
                 {
-                Runnable task1=() ->{
+                Runnable task41=() ->{
                 mp.getValue().setHcvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task41, 0, 2, TimeUnit.SECONDS);
             }
             if(!mp.getValue().Cid.equals(""))
                 {
-                Runnable task1=() ->{
+                Runnable task42=() ->{
                 mp.getValue().setCcvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task42, 0, 2, TimeUnit.SECONDS);
             }
         }
         for(Entry<String,Location> mp : f4.entrySet()){
             if(!mp.getValue().Sid.equals(""))
             {
-                Runnable task1=() ->{
+                Runnable task50=() ->{
                 mp.getValue().setScvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task50, 0, 2, TimeUnit.SECONDS);
             }
             if(!mp.getValue().Hid.equals(""))
                 {
-                Runnable task1=() ->{
+                Runnable task51=() ->{
                 mp.getValue().setHcvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task51, 0, 2, TimeUnit.SECONDS);
             }
             if(!mp.getValue().Cid.equals(""))
                 {
-                Runnable task1=() ->{
+                Runnable task52=() ->{
                 mp.getValue().setCcvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task52, 0, 2, TimeUnit.SECONDS);
             }
         }
         for(Entry<String,Location> mp : f5.entrySet()){
             if(!mp.getValue().Sid.equals(""))
             {
-                Runnable task1=() ->{
+                Runnable task60=() ->{
                 mp.getValue().setScvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task60, 0, 2, TimeUnit.SECONDS);
             }
             if(!mp.getValue().Hid.equals(""))
                 {
-                Runnable task1=() ->{
+                Runnable task61=() ->{
                 mp.getValue().setHcvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task61, 0, 2, TimeUnit.SECONDS);
             }
             if(!mp.getValue().Cid.equals(""))
                 {
-                Runnable task1=() ->{
+                Runnable task62=() ->{
                 mp.getValue().setCcvalue();
             };
-               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 0, Location.log, TimeUnit.SECONDS);
+               ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task62, 0, 2, TimeUnit.SECONDS);
             }
         }
         
@@ -580,9 +580,13 @@ public class Start_Monitoring extends javax.swing.JFrame {
             tModel1.removeRow(0);
         }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
-        for(Entry<String,Location> mp : f1.entrySet()){
+        for(Entry<String,Location> mp : f1.entrySet()){       
+        
+            Runnable task2=()->{
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
+        };
+        ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task2, 0, 2, TimeUnit.SECONDS); 
         }
     }//GEN-LAST:event_jMenu2MouseClicked
 
@@ -597,8 +601,12 @@ public class Start_Monitoring extends javax.swing.JFrame {
         }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f2.entrySet()){
+        Runnable task3=()->{
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
+        };
+        ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task3, 0, 2, TimeUnit.SECONDS); 
+        
         }
     }//GEN-LAST:event_jMenu3MouseClicked
 
@@ -613,8 +621,11 @@ public class Start_Monitoring extends javax.swing.JFrame {
         }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f0.entrySet()){
+        Runnable task111=()->{
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
+        };
+        ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task111, 0, 2, TimeUnit.SECONDS); 
         }
     }//GEN-LAST:event_jMenu1MouseClicked
 
@@ -629,8 +640,11 @@ public class Start_Monitoring extends javax.swing.JFrame {
         }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f3.entrySet()){
+       Runnable task4=()->{
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
+        };
+        ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task4, 0, 2, TimeUnit.SECONDS); 
         }
     }//GEN-LAST:event_jMenu4MouseClicked
 
@@ -645,8 +659,11 @@ public class Start_Monitoring extends javax.swing.JFrame {
         }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f4.entrySet()){
+        Runnable task5=()->{
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
+        };
+        ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task5, 0, 2, TimeUnit.SECONDS); 
         }
     }//GEN-LAST:event_jMenu5MouseClicked
 
@@ -661,8 +678,12 @@ public class Start_Monitoring extends javax.swing.JFrame {
         }}
         DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f5.entrySet()){
+        Runnable task6=()->{
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
+        };
+        ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task6, 0, 2, TimeUnit.SECONDS); 
+        
         }
     }//GEN-LAST:event_jMenu6MouseClicked
 
