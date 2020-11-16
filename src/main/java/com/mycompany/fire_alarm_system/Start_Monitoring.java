@@ -53,11 +53,9 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jScrollBar1 = new javax.swing.JScrollBar();
-        jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -121,6 +119,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
         jTable1.setRowHeight(30);
         jTable1.setRowSelectionAllowed(false);
         jTable1.setShowGrid(true);
@@ -133,55 +132,74 @@ public class Start_Monitoring extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jLabel2.setText("jLabel2");
+        jTable2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jTable2.setForeground(new java.awt.Color(255, 51, 51));
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        jLabel3.setText("jLabel2");
+            },
+            new String [] {
+                "Sensor ID", "Type", "Floor", "Location", "Message"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
 
-        jLabel4.setText("jLabel2");
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-        jLabel5.setText("jLabel2");
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable2.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable2.setRowHeight(25);
+        jScrollPane2.setViewportView(jTable2);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setResizable(false);
+            jTable2.getColumnModel().getColumn(1).setResizable(false);
+            jTable2.getColumnModel().getColumn(2).setResizable(false);
+            jTable2.getColumnModel().getColumn(3).setResizable(false);
+            jTable2.getColumnModel().getColumn(4).setResizable(false);
+        }
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("ALERTS");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 812, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -281,7 +299,8 @@ public class Start_Monitoring extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -446,6 +465,104 @@ public class Start_Monitoring extends javax.swing.JFrame {
         for(Entry<String,Location> mp : f0.entrySet()){
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tModel.addRow(data);
+        }
+        
+        DefaultTableModel tModel22=(DefaultTableModel)jTable2.getModel();
+        if(tModel22.getRowCount()!=0){
+            int c =tModel22.getRowCount();
+        for(int i=0;i<c;i++){
+            tModel22.removeRow(0);
+        }}
+        
+        DefaultTableModel tModel2=(DefaultTableModel)jTable2.getModel();
+        for(Entry<String,Location> mp : f0.entrySet()){
+            if(mp.getValue().Scvalue>Location.Stvalue){
+                String d[]={mp.getValue().Sid,"Smoke","Ground",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+            if(mp.getValue().Hcvalue>Location.Htvalue){
+                String d[]={mp.getValue().Hid,"Heat","Ground",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+            if(mp.getValue().Ccvalue>Location.Ctvalue){
+                String d[]={mp.getValue().Cid,"CO","Ground",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+        }
+        
+        for(Entry<String,Location> mp : f1.entrySet()){
+            if(mp.getValue().Scvalue>Location.Stvalue){
+                String d[]={mp.getValue().Sid,"Smoke","First",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+            if(mp.getValue().Hcvalue>Location.Htvalue){
+                String d[]={mp.getValue().Hid,"Heat","First",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+            if(mp.getValue().Ccvalue>Location.Ctvalue){
+                String d[]={mp.getValue().Cid,"CO","First",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+        }
+        
+        for(Entry<String,Location> mp : f2.entrySet()){
+            if(mp.getValue().Scvalue>Location.Stvalue){
+                String d[]={mp.getValue().Sid,"Smoke","Second",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+            if(mp.getValue().Hcvalue>Location.Htvalue){
+                String d[]={mp.getValue().Hid,"Heat","Second",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+            if(mp.getValue().Ccvalue>Location.Ctvalue){
+                String d[]={mp.getValue().Cid,"CO","Second",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+        }
+        
+        for(Entry<String,Location> mp : f3.entrySet()){
+            if(mp.getValue().Scvalue>Location.Stvalue){
+                String d[]={mp.getValue().Sid,"Smoke","Third",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+            if(mp.getValue().Hcvalue>Location.Htvalue){
+                String d[]={mp.getValue().Hid,"Heat","Third",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+            if(mp.getValue().Ccvalue>Location.Ctvalue){
+                String d[]={mp.getValue().Cid,"CO","Third",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+        }
+        
+        for(Entry<String,Location> mp : f4.entrySet()){
+            if(mp.getValue().Scvalue>Location.Stvalue){
+                String d[]={mp.getValue().Sid,"Smoke","Fourth",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+            if(mp.getValue().Hcvalue>Location.Htvalue){
+                String d[]={mp.getValue().Hid,"Heat","Fourth",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+            if(mp.getValue().Ccvalue>Location.Ctvalue){
+                String d[]={mp.getValue().Cid,"CO","Fourth",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+        }
+        
+        for(Entry<String,Location> mp : f5.entrySet()){
+            if(mp.getValue().Scvalue>Location.Stvalue){
+                String d[]={mp.getValue().Sid,"Smoke","Fifth",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+            if(mp.getValue().Hcvalue>Location.Htvalue){
+                String d[]={mp.getValue().Hid,"Heat","Fifth",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
+            if(mp.getValue().Ccvalue>Location.Ctvalue){
+                String d[]={mp.getValue().Cid,"CO","Fifth",mp.getKey(),"Threshold Breached!"};
+                tModel2.addRow(d);
+            }
         }
     }//GEN-LAST:event_jButton3MouseClicked
 
@@ -647,9 +764,6 @@ public class Start_Monitoring extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -659,8 +773,9 @@ public class Start_Monitoring extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }
