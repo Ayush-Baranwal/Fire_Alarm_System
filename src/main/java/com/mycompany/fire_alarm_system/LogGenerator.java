@@ -33,8 +33,9 @@ public class LogGenerator {
 			// infinite loop
 			while (true) {
 				// Log an INFO message.
+                                String log = "";
                                 for(int i=0;i<6;i++){
-                                     String log = "Floor" + i + "\n"; 
+                                     log += "Floor " + i + "\n"; 
                                      log += "Location: Room 1: ";
                                      log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
                                      log += "Location: Room 2: ";
@@ -56,10 +57,10 @@ public class LogGenerator {
                                      log += "Location: Strairs 2: ";
                                      log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
                                      log += "Location: Hall: ";
-                                     log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";    
-                                     FireAlarmLogger.info(log);    
+                                     log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";                
                                 }
-				Thread.sleep(100000);
+                                FireAlarmLogger.info(log);
+				Thread.sleep(4000);
 			}
 		} catch (SecurityException e) {
 			e.printStackTrace();
