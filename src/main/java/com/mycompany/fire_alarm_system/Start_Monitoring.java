@@ -161,12 +161,18 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jTable2.setRowHeight(25);
         jScrollPane2.setViewportView(jTable2);
         if (jTable2.getColumnModel().getColumnCount() > 0) {
-            jTable2.getColumnModel().getColumn(0).setMinWidth(100);
-            jTable2.getColumnModel().getColumn(0).setPreferredWidth(120);
-            jTable2.getColumnModel().getColumn(0).setMaxWidth(150);
-            jTable2.getColumnModel().getColumn(1).setResizable(false);
-            jTable2.getColumnModel().getColumn(2).setResizable(false);
-            jTable2.getColumnModel().getColumn(3).setResizable(false);
+            jTable2.getColumnModel().getColumn(0).setMinWidth(150);
+            jTable2.getColumnModel().getColumn(0).setPreferredWidth(180);
+            jTable2.getColumnModel().getColumn(0).setMaxWidth(250);
+            jTable2.getColumnModel().getColumn(1).setMinWidth(100);
+            jTable2.getColumnModel().getColumn(1).setPreferredWidth(120);
+            jTable2.getColumnModel().getColumn(1).setMaxWidth(150);
+            jTable2.getColumnModel().getColumn(2).setMinWidth(100);
+            jTable2.getColumnModel().getColumn(2).setPreferredWidth(120);
+            jTable2.getColumnModel().getColumn(2).setMaxWidth(150);
+            jTable2.getColumnModel().getColumn(3).setMinWidth(100);
+            jTable2.getColumnModel().getColumn(3).setPreferredWidth(120);
+            jTable2.getColumnModel().getColumn(3).setMaxWidth(150);
             jTable2.getColumnModel().getColumn(4).setMinWidth(150);
             jTable2.getColumnModel().getColumn(4).setPreferredWidth(230);
             jTable2.getColumnModel().getColumn(4).setMaxWidth(200);

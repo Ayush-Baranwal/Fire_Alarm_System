@@ -35,6 +35,8 @@ public class MainScreen extends javax.swing.JFrame {
     public MainScreen() {
         initComponents();
         valid=false;
+        dashboard=this;
+        dashboard.setDefaultCloseOperation(MainScreen.EXIT_ON_CLOSE);
     }
 
     /**
@@ -230,15 +232,13 @@ public class MainScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         Configure_a_sensor C=new Configure_a_sensor();
         C.setVisible(true);
-        dashboard=this;
         dashboard.setVisible(false);
     }//GEN-LAST:event_configureMouseClicked
     //ActionListener for Quiting window.
     private void quitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quitMouseClicked
-        dashboard=this;
         if(tim==1)
             timer.cancel();
-        this.dispose();
+        dashboard.dispose();
     }//GEN-LAST:event_quitMouseClicked
     //ActionListener for directing to StartMonituring window.
     private void monitorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_monitorMouseClicked
@@ -247,7 +247,6 @@ public class MainScreen extends javax.swing.JFrame {
         S.setVisible(true);
         TimerTask task = new timerTask();
         timer.scheduleAtFixedRate(task, 0, 2000);
-        dashboard=this;
         dashboard.setVisible(false);
     }//GEN-LAST:event_monitorMouseClicked
 
