@@ -4,13 +4,14 @@
  * and open the template in the editor  .
  */
 package com.mycompany.fire_alarm_system;
+import java.util.TimerTask;
 import javax.swing.JOptionPane;
 /**
  *
  * @author HP
  */
 public class Configure_a_sensor extends javax.swing.JFrame {
-
+     static int flog=0;
     /**
      * Creates new form Configure_a_sensor
      */
@@ -333,6 +334,18 @@ public class Configure_a_sensor extends javax.swing.JFrame {
                 case 2 -> Location.conSsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdSmoke);
             }
             JOptionPane.showMessageDialog(this,"Configuration Successful");
+            if(flog==0){
+            java.util.Timer logtimer = new java.util.Timer();
+            TimerTask logtask = new timerTask(){
+            @Override
+            public void run(){
+                Location.allSet();
+                LogGenerator log = new LogGenerator();
+            }
+            };
+            logtimer.scheduleAtFixedRate(logtask, 0, 1000*Location.log); 
+            flog++;
+            }
             Configure_a_sensor C=new Configure_a_sensor();
             C.setVisible(true);
             this.dispose();
