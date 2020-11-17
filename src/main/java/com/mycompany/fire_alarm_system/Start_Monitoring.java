@@ -24,18 +24,18 @@ import static com.mycompany.fire_alarm_system.MainScreen.f5;
 //import java.util.concurrent.TimeUnit;
 import java.awt.Color;
 import java.awt.Component;
+import java.util.TimerTask;
 import javax.swing.table.DefaultTableCellRenderer;
 
 
 public class Start_Monitoring extends javax.swing.JFrame {
-    static int fno=0;
+    static int fno=-1;
     /**
      * Creates new form Start_Monitoring
      */
     public Start_Monitoring() {
         initComponents();
-        jTable1.setDefaultRenderer(String.class, new colorcode());
-
+        jTable1.setDefaultRenderer(String.class, new colorcode()); 
     }
     //ScheduledExecutorService ses = Executors.newScheduledThreadPool(1);
     /**
@@ -139,11 +139,11 @@ public class Start_Monitoring extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Sensor ID", "Type", "Floor", "Location", "Message"
+                "Time Stamp", "Type", "Floor", "Location", "Message"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
@@ -313,148 +313,24 @@ public class Start_Monitoring extends javax.swing.JFrame {
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
         MainScreen.dashboard.setVisible(true);
+        MainScreen.dashboard.tim=1;
         this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
         fno=0;
-//        Location.allSet();
+        Location.allSet();
+        java.util.Timer timer = new java.util.Timer();
+        TimerTask task = new timerTask();
+        timer.scheduleAtFixedRate(task, 0, 3000);
         
-//        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
-//        if(tModel1.getRowCount()!=0){
-//            int c =tModel1.getRowCount();
-//        for(int i=0;i<c;i++){
-//            tModel1.removeRow(0);
-//        }}
-//       
-//        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
-//        for(Entry<String,Location> mp : f0.entrySet()){
-//        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
-//        tModel.addRow(data);
-//        }
-//        
-//        DefaultTableModel tModel22=(DefaultTableModel)jTable2.getModel();
-//        if(tModel22.getRowCount()!=0){
-//            int c =tModel22.getRowCount();
-//        for(int i=0;i<c;i++){
-//            tModel22.removeRow(0);
-//        }}
-//        
-//        DefaultTableModel tModel2=(DefaultTableModel)jTable2.getModel();
-//        for(Entry<String,Location> mp : f0.entrySet()){
-//            if(mp.getValue().Scvalue>Location.Stvalue){
-//                String d[]={mp.getValue().Sid,"Smoke","Ground",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().Hcvalue>Location.Htvalue){
-//                String d[]={mp.getValue().Hid,"Heat","Ground",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().Ccvalue>Location.Ctvalue){
-//                String d[]={mp.getValue().Cid,"CO","Ground",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().mcp==1){
-//                String d[]={"N/A","Manual Callpoint","Ground",mp.getKey(),"Manual Alarm Triggered!"};
-//                tModel2.addRow(d);
-//            }
-//        }
-//        
-//        for(Entry<String,Location> mp : f1.entrySet()){
-//            if(mp.getValue().Scvalue>Location.Stvalue){
-//                String d[]={mp.getValue().Sid,"Smoke","First",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().Hcvalue>Location.Htvalue){
-//                String d[]={mp.getValue().Hid,"Heat","First",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().Ccvalue>Location.Ctvalue){
-//                String d[]={mp.getValue().Cid,"CO","First",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().mcp==1){
-//                String d[]={"N/A","Manual Callpoint","First",mp.getKey(),"Manual Alarm Triggered!"};
-//                tModel2.addRow(d);
-//            }
-//        }
-//        
-//        for(Entry<String,Location> mp : f2.entrySet()){
-//            if(mp.getValue().Scvalue>Location.Stvalue){
-//                String d[]={mp.getValue().Sid,"Smoke","Second",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().Hcvalue>Location.Htvalue){
-//                String d[]={mp.getValue().Hid,"Heat","Second",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().Ccvalue>Location.Ctvalue){
-//                String d[]={mp.getValue().Cid,"CO","Second",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().mcp==1){
-//                String d[]={"N/A","Manual Callpoint","Second",mp.getKey(),"Manual Alarm Triggered!"};
-//                tModel2.addRow(d);
-//            }
-//        }
-//        
-//        for(Entry<String,Location> mp : f3.entrySet()){
-//            if(mp.getValue().Scvalue>Location.Stvalue){
-//                String d[]={mp.getValue().Sid,"Smoke","Third",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().Hcvalue>Location.Htvalue){
-//                String d[]={mp.getValue().Hid,"Heat","Third",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().Ccvalue>Location.Ctvalue){
-//                String d[]={mp.getValue().Cid,"CO","Third",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().mcp==1){
-//                String d[]={"N/A","Manual Callpoint","Third",mp.getKey(),"Manual Alarm Triggered!"};
-//                tModel2.addRow(d);
-//            }
-//        }
-//        
-//        for(Entry<String,Location> mp : f4.entrySet()){
-//            if(mp.getValue().Scvalue>Location.Stvalue){
-//                String d[]={mp.getValue().Sid,"Smoke","Fourth",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().Hcvalue>Location.Htvalue){
-//                String d[]={mp.getValue().Hid,"Heat","Fourth",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().Ccvalue>Location.Ctvalue){
-//                String d[]={mp.getValue().Cid,"CO","Fourth",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().mcp==1){
-//                String d[]={"N/A","Manual Callpoint","Fourth",mp.getKey(),"Manual Alarm Triggered!"};
-//                tModel2.addRow(d);
-//            }
-//        }
-//        
-//        for(Entry<String,Location> mp : f5.entrySet()){
-//            if(mp.getValue().Scvalue>Location.Stvalue){
-//                String d[]={mp.getValue().Sid,"Smoke","Fifth",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().Hcvalue>Location.Htvalue){
-//                String d[]={mp.getValue().Hid,"Heat","Fifth",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().Ccvalue>Location.Ctvalue){
-//                String d[]={mp.getValue().Cid,"CO","Fifth",mp.getKey(),"Threshold Breached!"};
-//                tModel2.addRow(d);
-//            }
-//            if(mp.getValue().mcp==1){
-//                String d[]={"N/A","Manual Callpoint","Fifth",mp.getKey(),"Manual Alarm Triggered!"};
-//                tModel2.addRow(d);
-//            }
-//        }
+        DefaultTableModel tM0=(DefaultTableModel)jTable1.getModel();
+        for(Entry<String,Location> mp : f0.entrySet()){
+        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
+        tM0.addRow(data);
+        }
+
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -465,16 +341,16 @@ public class Start_Monitoring extends javax.swing.JFrame {
         // TODO add your handling code here:
         fno=1;
         jLabel1.setText("1st Floor");
-        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
-        if(tModel1.getRowCount()!=0){
-            int c =tModel1.getRowCount();
+        DefaultTableModel tM1=(DefaultTableModel)jTable1.getModel();
+        if(tM1.getRowCount()!=0){
+            int c =tM1.getRowCount();
         for(int i=0;i<c;i++){
-            tModel1.removeRow(0);
+            tM1.removeRow(0);
         }}
-        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
+        DefaultTableModel tM12=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f1.entrySet()){       
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
-        tModel.addRow(data);
+        tM12.addRow(data);
         }
     }//GEN-LAST:event_jMenu2MouseClicked
 
@@ -482,16 +358,16 @@ public class Start_Monitoring extends javax.swing.JFrame {
         // TODO add your handling code here:
         fno=2;
         jLabel1.setText("2nd Floor");
-        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
-       if(tModel1.getRowCount()!=0){
-            int c =tModel1.getRowCount();
+        DefaultTableModel tM2=(DefaultTableModel)jTable1.getModel();
+       if(tM2.getRowCount()!=0){
+            int c =tM2.getRowCount();
         for(int i=0;i<c;i++){
-            tModel1.removeRow(0);
+            tM2.removeRow(0);
         }}
-        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
+        DefaultTableModel tM22=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f2.entrySet()){
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
-        tModel.addRow(data);
+        tM22.addRow(data);
         }
     }//GEN-LAST:event_jMenu3MouseClicked
 
@@ -499,16 +375,16 @@ public class Start_Monitoring extends javax.swing.JFrame {
         // TODO add your handling code here:
         fno=0;
         jLabel1.setText("Ground Floor");
-        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
-        if(tModel1.getRowCount()!=0){
-            int c =tModel1.getRowCount();
+        DefaultTableModel tM0=(DefaultTableModel)jTable1.getModel();
+        if(tM0.getRowCount()!=0){
+            int c =tM0.getRowCount();
         for(int i=0;i<c;i++){
-            tModel1.removeRow(0);
+            tM0.removeRow(0);
         }}
-        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
+        DefaultTableModel tM02=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f0.entrySet()){
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
-        tModel.addRow(data);
+        tM02.addRow(data);
         }
     }//GEN-LAST:event_jMenu1MouseClicked
 
@@ -516,16 +392,16 @@ public class Start_Monitoring extends javax.swing.JFrame {
         // TODO add your handling code here:
         fno=3;
         jLabel1.setText("3rd Floor");
-        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
-        if(tModel1.getRowCount()!=0){
-            int c =tModel1.getRowCount();
+        DefaultTableModel tM3=(DefaultTableModel)jTable1.getModel();
+        if(tM3.getRowCount()!=0){
+            int c =tM3.getRowCount();
         for(int i=0;i<c;i++){
-            tModel1.removeRow(0);
+            tM3.removeRow(0);
         }}
-        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
+        DefaultTableModel tM32=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f3.entrySet()){
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
-        tModel.addRow(data);
+        tM32.addRow(data);
         }
     }//GEN-LAST:event_jMenu4MouseClicked
 
@@ -533,16 +409,16 @@ public class Start_Monitoring extends javax.swing.JFrame {
         // TODO add your handling code here:
         fno=4;
         jLabel1.setText("4th Floor");
-        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
-        if(tModel1.getRowCount()!=0){
-            int c =tModel1.getRowCount();
+        DefaultTableModel tM4=(DefaultTableModel)jTable1.getModel();
+        if(tM4.getRowCount()!=0){
+            int c =tM4.getRowCount();
         for(int i=0;i<c;i++){
-            tModel1.removeRow(0);
+            tM4.removeRow(0);
         }}
-        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
+        DefaultTableModel tM42=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f4.entrySet()){
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
-        tModel.addRow(data);
+        tM42.addRow(data);
         }
     }//GEN-LAST:event_jMenu5MouseClicked
 
@@ -550,16 +426,16 @@ public class Start_Monitoring extends javax.swing.JFrame {
         // TODO add your handling code here:
         fno=5;
         jLabel1.setText("5th Floor");
-        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
-        if(tModel1.getRowCount()!=0){
-            int c =tModel1.getRowCount();
+        DefaultTableModel tM5=(DefaultTableModel)jTable1.getModel();
+        if(tM5.getRowCount()!=0){
+            int c =tM5.getRowCount();
         for(int i=0;i<c;i++){
-            tModel1.removeRow(0);
+            tM5.removeRow(0);
         }}
-        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
+        DefaultTableModel tM52=(DefaultTableModel)jTable1.getModel();
         for(Entry<String,Location> mp : f5.entrySet()){
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
-        tModel.addRow(data);
+        tM52.addRow(data);
         }
     }//GEN-LAST:event_jMenu6MouseClicked
 

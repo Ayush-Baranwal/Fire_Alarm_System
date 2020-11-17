@@ -5,6 +5,7 @@
  */
 package com.mycompany.fire_alarm_system;
 
+import static com.mycompany.fire_alarm_system.Start_Monitoring.fno;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Timer;
@@ -24,7 +25,8 @@ public class MainScreen extends javax.swing.JFrame {
     static Map<String, Location> f3 = new HashMap<String, Location>();
     static Map<String, Location> f4 = new HashMap<String, Location>();
     static Map<String, Location> f5 = new HashMap<String, Location>();
-     
+    static int tim=0; 
+    Timer timer = new Timer();
     /**
      * Creates new form MainScreen
      */
@@ -231,6 +233,8 @@ public class MainScreen extends javax.swing.JFrame {
     //ActionListener for Quiting window.
     private void quitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quitMouseClicked
         dashboard=this;
+        if(tim==1)
+            timer.cancel();
         this.dispose();
     }//GEN-LAST:event_quitMouseClicked
     //ActionListener for directing to StartMonituring window.
@@ -238,7 +242,6 @@ public class MainScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         Start_Monitoring S=new Start_Monitoring();
         S.setVisible(true);
-        Timer timer = new Timer();
         TimerTask task = new timerTask();
         timer.scheduleAtFixedRate(task, 0, 2000);
         dashboard=this;

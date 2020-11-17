@@ -50,22 +50,22 @@ public class Location {
     }
     public void setScvalue(){
         float min=Stvalue/2;
-        float max=(float) (Stvalue*1.2);
+        float max=(float) (Stvalue*1.05);
         Scvalue=RandomGenerator.RandomGenerator(min, max);
     }
     public void setHcvalue(){
         float min=Htvalue/2;
-        float max=(float) (Htvalue*1.2);
+        float max=(float) (Htvalue*1.05);
         Hcvalue=RandomGenerator.RandomGenerator(min, max);
     }
     public void setCcvalue(){
         float min=Ctvalue/2;
-        float max=(float) (Ctvalue*1.2);
+        float max=(float) (Ctvalue*1.05);
         Ccvalue=RandomGenerator.RandomGenerator(min, max);
     }
     public void setmcp(){
         float min=0;
-        float max=(float) (1.20);
+        float max=(float) (1.05);
         mcp=(int) floor(RandomGenerator.RandomGenerator(min, max));
     }
     public static void allSet(){
