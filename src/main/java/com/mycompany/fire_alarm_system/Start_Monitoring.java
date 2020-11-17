@@ -24,7 +24,6 @@ import static com.mycompany.fire_alarm_system.MainScreen.f5;
 //import java.util.concurrent.TimeUnit;
 import java.awt.Color;
 import java.awt.Component;
-import java.util.TimerTask;
 import javax.swing.table.DefaultTableCellRenderer;
 
 
@@ -320,142 +319,142 @@ public class Start_Monitoring extends javax.swing.JFrame {
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
         fno=0;
-        Location.allSet();
+//        Location.allSet();
         
-        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
-        if(tModel1.getRowCount()!=0){
-            int c =tModel1.getRowCount();
-        for(int i=0;i<c;i++){
-            tModel1.removeRow(0);
-        }}
-       
-        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
-        for(Entry<String,Location> mp : f0.entrySet()){
-        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
-        tModel.addRow(data);
-        }
-        
-        DefaultTableModel tModel22=(DefaultTableModel)jTable2.getModel();
-        if(tModel22.getRowCount()!=0){
-            int c =tModel22.getRowCount();
-        for(int i=0;i<c;i++){
-            tModel22.removeRow(0);
-        }}
-        
-        DefaultTableModel tModel2=(DefaultTableModel)jTable2.getModel();
-        for(Entry<String,Location> mp : f0.entrySet()){
-            if(mp.getValue().Scvalue>Location.Stvalue){
-                String d[]={mp.getValue().Sid,"Smoke","Ground",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().Hcvalue>Location.Htvalue){
-                String d[]={mp.getValue().Hid,"Heat","Ground",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().Ccvalue>Location.Ctvalue){
-                String d[]={mp.getValue().Cid,"CO","Ground",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().mcp==1){
-                String d[]={"N/A","Manual Callpoint","Ground",mp.getKey(),"Manual Alarm Triggered!"};
-                tModel2.addRow(d);
-            }
-        }
-        
-        for(Entry<String,Location> mp : f1.entrySet()){
-            if(mp.getValue().Scvalue>Location.Stvalue){
-                String d[]={mp.getValue().Sid,"Smoke","First",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().Hcvalue>Location.Htvalue){
-                String d[]={mp.getValue().Hid,"Heat","First",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().Ccvalue>Location.Ctvalue){
-                String d[]={mp.getValue().Cid,"CO","First",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().mcp==1){
-                String d[]={"N/A","Manual Callpoint","First",mp.getKey(),"Manual Alarm Triggered!"};
-                tModel2.addRow(d);
-            }
-        }
-        
-        for(Entry<String,Location> mp : f2.entrySet()){
-            if(mp.getValue().Scvalue>Location.Stvalue){
-                String d[]={mp.getValue().Sid,"Smoke","Second",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().Hcvalue>Location.Htvalue){
-                String d[]={mp.getValue().Hid,"Heat","Second",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().Ccvalue>Location.Ctvalue){
-                String d[]={mp.getValue().Cid,"CO","Second",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().mcp==1){
-                String d[]={"N/A","Manual Callpoint","Second",mp.getKey(),"Manual Alarm Triggered!"};
-                tModel2.addRow(d);
-            }
-        }
-        
-        for(Entry<String,Location> mp : f3.entrySet()){
-            if(mp.getValue().Scvalue>Location.Stvalue){
-                String d[]={mp.getValue().Sid,"Smoke","Third",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().Hcvalue>Location.Htvalue){
-                String d[]={mp.getValue().Hid,"Heat","Third",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().Ccvalue>Location.Ctvalue){
-                String d[]={mp.getValue().Cid,"CO","Third",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().mcp==1){
-                String d[]={"N/A","Manual Callpoint","Third",mp.getKey(),"Manual Alarm Triggered!"};
-                tModel2.addRow(d);
-            }
-        }
-        
-        for(Entry<String,Location> mp : f4.entrySet()){
-            if(mp.getValue().Scvalue>Location.Stvalue){
-                String d[]={mp.getValue().Sid,"Smoke","Fourth",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().Hcvalue>Location.Htvalue){
-                String d[]={mp.getValue().Hid,"Heat","Fourth",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().Ccvalue>Location.Ctvalue){
-                String d[]={mp.getValue().Cid,"CO","Fourth",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().mcp==1){
-                String d[]={"N/A","Manual Callpoint","Fourth",mp.getKey(),"Manual Alarm Triggered!"};
-                tModel2.addRow(d);
-            }
-        }
-        
-        for(Entry<String,Location> mp : f5.entrySet()){
-            if(mp.getValue().Scvalue>Location.Stvalue){
-                String d[]={mp.getValue().Sid,"Smoke","Fifth",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().Hcvalue>Location.Htvalue){
-                String d[]={mp.getValue().Hid,"Heat","Fifth",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().Ccvalue>Location.Ctvalue){
-                String d[]={mp.getValue().Cid,"CO","Fifth",mp.getKey(),"Threshold Breached!"};
-                tModel2.addRow(d);
-            }
-            if(mp.getValue().mcp==1){
-                String d[]={"N/A","Manual Callpoint","Fifth",mp.getKey(),"Manual Alarm Triggered!"};
-                tModel2.addRow(d);
-            }
-        }
+//        DefaultTableModel tModel1=(DefaultTableModel)jTable1.getModel();
+//        if(tModel1.getRowCount()!=0){
+//            int c =tModel1.getRowCount();
+//        for(int i=0;i<c;i++){
+//            tModel1.removeRow(0);
+//        }}
+//       
+//        DefaultTableModel tModel=(DefaultTableModel)jTable1.getModel();
+//        for(Entry<String,Location> mp : f0.entrySet()){
+//        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
+//        tModel.addRow(data);
+//        }
+//        
+//        DefaultTableModel tModel22=(DefaultTableModel)jTable2.getModel();
+//        if(tModel22.getRowCount()!=0){
+//            int c =tModel22.getRowCount();
+//        for(int i=0;i<c;i++){
+//            tModel22.removeRow(0);
+//        }}
+//        
+//        DefaultTableModel tModel2=(DefaultTableModel)jTable2.getModel();
+//        for(Entry<String,Location> mp : f0.entrySet()){
+//            if(mp.getValue().Scvalue>Location.Stvalue){
+//                String d[]={mp.getValue().Sid,"Smoke","Ground",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().Hcvalue>Location.Htvalue){
+//                String d[]={mp.getValue().Hid,"Heat","Ground",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().Ccvalue>Location.Ctvalue){
+//                String d[]={mp.getValue().Cid,"CO","Ground",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().mcp==1){
+//                String d[]={"N/A","Manual Callpoint","Ground",mp.getKey(),"Manual Alarm Triggered!"};
+//                tModel2.addRow(d);
+//            }
+//        }
+//        
+//        for(Entry<String,Location> mp : f1.entrySet()){
+//            if(mp.getValue().Scvalue>Location.Stvalue){
+//                String d[]={mp.getValue().Sid,"Smoke","First",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().Hcvalue>Location.Htvalue){
+//                String d[]={mp.getValue().Hid,"Heat","First",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().Ccvalue>Location.Ctvalue){
+//                String d[]={mp.getValue().Cid,"CO","First",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().mcp==1){
+//                String d[]={"N/A","Manual Callpoint","First",mp.getKey(),"Manual Alarm Triggered!"};
+//                tModel2.addRow(d);
+//            }
+//        }
+//        
+//        for(Entry<String,Location> mp : f2.entrySet()){
+//            if(mp.getValue().Scvalue>Location.Stvalue){
+//                String d[]={mp.getValue().Sid,"Smoke","Second",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().Hcvalue>Location.Htvalue){
+//                String d[]={mp.getValue().Hid,"Heat","Second",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().Ccvalue>Location.Ctvalue){
+//                String d[]={mp.getValue().Cid,"CO","Second",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().mcp==1){
+//                String d[]={"N/A","Manual Callpoint","Second",mp.getKey(),"Manual Alarm Triggered!"};
+//                tModel2.addRow(d);
+//            }
+//        }
+//        
+//        for(Entry<String,Location> mp : f3.entrySet()){
+//            if(mp.getValue().Scvalue>Location.Stvalue){
+//                String d[]={mp.getValue().Sid,"Smoke","Third",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().Hcvalue>Location.Htvalue){
+//                String d[]={mp.getValue().Hid,"Heat","Third",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().Ccvalue>Location.Ctvalue){
+//                String d[]={mp.getValue().Cid,"CO","Third",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().mcp==1){
+//                String d[]={"N/A","Manual Callpoint","Third",mp.getKey(),"Manual Alarm Triggered!"};
+//                tModel2.addRow(d);
+//            }
+//        }
+//        
+//        for(Entry<String,Location> mp : f4.entrySet()){
+//            if(mp.getValue().Scvalue>Location.Stvalue){
+//                String d[]={mp.getValue().Sid,"Smoke","Fourth",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().Hcvalue>Location.Htvalue){
+//                String d[]={mp.getValue().Hid,"Heat","Fourth",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().Ccvalue>Location.Ctvalue){
+//                String d[]={mp.getValue().Cid,"CO","Fourth",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().mcp==1){
+//                String d[]={"N/A","Manual Callpoint","Fourth",mp.getKey(),"Manual Alarm Triggered!"};
+//                tModel2.addRow(d);
+//            }
+//        }
+//        
+//        for(Entry<String,Location> mp : f5.entrySet()){
+//            if(mp.getValue().Scvalue>Location.Stvalue){
+//                String d[]={mp.getValue().Sid,"Smoke","Fifth",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().Hcvalue>Location.Htvalue){
+//                String d[]={mp.getValue().Hid,"Heat","Fifth",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().Ccvalue>Location.Ctvalue){
+//                String d[]={mp.getValue().Cid,"CO","Fifth",mp.getKey(),"Threshold Breached!"};
+//                tModel2.addRow(d);
+//            }
+//            if(mp.getValue().mcp==1){
+//                String d[]={"N/A","Manual Callpoint","Fifth",mp.getKey(),"Manual Alarm Triggered!"};
+//                tModel2.addRow(d);
+//            }
+//        }
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -635,9 +634,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
                 new Start_Monitoring().setVisible(true);
             }
         });
-        java.util.Timer timer = new java.util.Timer();
-        TimerTask task = new timerTask();
-        timer.scheduleAtFixedRate(task, 0, 1000);
+        
         
     }
 

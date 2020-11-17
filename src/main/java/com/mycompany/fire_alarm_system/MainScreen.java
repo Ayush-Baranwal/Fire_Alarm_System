@@ -7,6 +7,8 @@ package com.mycompany.fire_alarm_system;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,6 +24,7 @@ public class MainScreen extends javax.swing.JFrame {
     static Map<String, Location> f3 = new HashMap<String, Location>();
     static Map<String, Location> f4 = new HashMap<String, Location>();
     static Map<String, Location> f5 = new HashMap<String, Location>();
+     
     /**
      * Creates new form MainScreen
      */
@@ -235,6 +238,9 @@ public class MainScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         Start_Monitoring S=new Start_Monitoring();
         S.setVisible(true);
+        Timer timer = new Timer();
+        TimerTask task = new timerTask();
+        timer.scheduleAtFixedRate(task, 0, 2000);
         dashboard=this;
         dashboard.setVisible(false);
     }//GEN-LAST:event_monitorMouseClicked
@@ -268,7 +274,7 @@ public class MainScreen extends javax.swing.JFrame {
         welcome w=new welcome();
         w.setVisible(true);
         try {
-            Thread.sleep(2500);
+            Thread.sleep(1500);
         } catch (InterruptedException ex) {
             Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
