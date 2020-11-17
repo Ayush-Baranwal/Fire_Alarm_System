@@ -5,8 +5,11 @@
  */
 package com.mycompany.fire_alarm_system;
 
+import static com.mycompany.fire_alarm_system.Start_Monitoring.fno;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,11 +25,18 @@ public class MainScreen extends javax.swing.JFrame {
     static Map<String, Location> f3 = new HashMap<String, Location>();
     static Map<String, Location> f4 = new HashMap<String, Location>();
     static Map<String, Location> f5 = new HashMap<String, Location>();
+    static int tim=0; 
+    static String emailID;
+    static boolean valid;
+    Timer timer = new Timer();
     /**
      * Creates new form MainScreen
      */
     public MainScreen() {
         initComponents();
+        valid=false;
+        dashboard=this;
+        dashboard.setDefaultCloseOperation(MainScreen.EXIT_ON_CLOSE);
     }
 
     /**
@@ -222,20 +232,21 @@ public class MainScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         Configure_a_sensor C=new Configure_a_sensor();
         C.setVisible(true);
-        dashboard=this;
         dashboard.setVisible(false);
     }//GEN-LAST:event_configureMouseClicked
     //ActionListener for Quiting window.
     private void quitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quitMouseClicked
-        dashboard=this;
-        this.dispose();
+        if(tim==1)
+            timer.cancel();
+        dashboard.dispose();
     }//GEN-LAST:event_quitMouseClicked
     //ActionListener for directing to StartMonituring window.
     private void monitorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_monitorMouseClicked
         // TODO add your handling code here:
         Start_Monitoring S=new Start_Monitoring();
         S.setVisible(true);
-        dashboard=this;
+        TimerTask task = new timerTask();
+        timer.scheduleAtFixedRate(task, 0, 2000);
         dashboard.setVisible(false);
     }//GEN-LAST:event_monitorMouseClicked
 
@@ -268,7 +279,7 @@ public class MainScreen extends javax.swing.JFrame {
         welcome w=new welcome();
         w.setVisible(true);
         try {
-            Thread.sleep(2500);
+            Thread.sleep(1500);
         } catch (InterruptedException ex) {
             Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -279,6 +290,14 @@ public class MainScreen extends javax.swing.JFrame {
                 new MainScreen().setVisible(true);
             }
         });
+        java.util.Timer logtimer = new java.util.Timer();
+        TimerTask logtask = new timerTask(){
+            @Override
+            public void run(){
+             
+            }
+    };
+        logtimer.scheduleAtFixedRate(logtask, 0, 1000*Location.log); 
         w.dispose();
     }
 
