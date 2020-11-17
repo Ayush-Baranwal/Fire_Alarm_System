@@ -18,7 +18,7 @@ import static com.mycompany.fire_alarm_system.MainScreen.f2;
 import static com.mycompany.fire_alarm_system.MainScreen.f3;
 import static com.mycompany.fire_alarm_system.MainScreen.f4;
 import static com.mycompany.fire_alarm_system.MainScreen.f5;
-import static com.mycompany.fire_alarm_system.Email.send;
+
 //import java.util.concurrent.Executors;
 //import java.util.concurrent.ScheduledExecutorService;
 //import java.util.concurrent.ScheduledFuture;
@@ -33,13 +33,14 @@ import javax.swing.table.DefaultTableCellRenderer;
 
 public class Start_Monitoring extends javax.swing.JFrame {
     static int fno=-1;
-    static int mailtrigger=0;
+    static int mailtrigger;
     /**
      * Creates new form Start_Monitoring
      */
     public Start_Monitoring() {
         initComponents();
         jTable1.setDefaultRenderer(String.class, new colorcode()); 
+        mailtrigger=0;
     }
     //ScheduledExecutorService ses = Executors.newScheduledThreadPool(1);
     /**
@@ -346,7 +347,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
             @Override
             public void run(){
                 if(mailtrigger==0&&jTable2.getRowCount()>0){
-            Email.send("rsrivastava2341@gmail.com","1as23df4","MainScreen.emailID","Fire Alert in CC3!","One or more sensors have breached their threshold and alarm has been triggered. Immediate action required.");
+            Email.send("rsrivastava2341@gmail.com","1as23df4",MainScreen.emailID,"Fire Alert in CC3!","One or more sensors have breached their threshold and alarm has been triggered. Immediate action required.");
             mailtrigger=1;
                     try {
                         Thread.sleep(5000);

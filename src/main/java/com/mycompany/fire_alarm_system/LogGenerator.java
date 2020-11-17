@@ -5,7 +5,11 @@
  */
 package com.mycompany.fire_alarm_system;
 import static com.mycompany.fire_alarm_system.MainScreen.f0;
+import static com.mycompany.fire_alarm_system.MainScreen.f1;
+import static com.mycompany.fire_alarm_system.MainScreen.f2;
+import static com.mycompany.fire_alarm_system.MainScreen.f3;
 import static com.mycompany.fire_alarm_system.MainScreen.f4;
+import static com.mycompany.fire_alarm_system.MainScreen.f5;
 import java.io.IOException;
 import java.util.Map;
 import java.util.logging.FileHandler;
@@ -34,47 +38,50 @@ public class LogGenerator {
  
  
 			// infinite loop
-			while (true) {
-				// Log an INFO message.
-                                String log = "";
-                                for(int i=0;i<6;i++){
-                                     log += "Floor " + i + "\n";
-                                     log += "Location: Room 1: ";
-                                     log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
-                                     log += "Location: Room 2: ";
-                                     log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
-                                     log += "Location: Room 3: ";
-                                     log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
-                                     log += "Location: Room 4: ";
-                                     log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
-                                     log += "Location: Room 5: ";
-                                     log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
-                                     log += "Location: Room 6: ";
-                                     log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
-                                     log += "Location: Lab 1: ";
-                                     log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
-                                     log += "Location: Lab 2: ";
-                                     log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
-                                     log += "Location: Stairs 1: ";
-                                     log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
-                                     log += "Location: Stairs 2: ";
-                                     log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
-                                     log += "Location: Hall: ";
-                                     log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";                
-                                }
-        for(Map.Entry<String,Location> mp : f0.entrySet()){
-        String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
+        while (true) {
+                // Log an INFO message.
+            String log = "";
+            log += "Floor 0:\n";
+            for(Map.Entry<String,Location> mp : f0.entrySet()){
+                log += "Location: "+mp.getKey()+": \n";
+                log += "CO Sensor " + mp.getValue().Ccvalue + " Heat Sensor " +  mp.getValue().Hcvalue + " Smoke Sensor " +  mp.getValue().Scvalue + "\n";
+            }
+            log += "Floor 1:\n";
+            for(Map.Entry<String,Location> mp : f1.entrySet()){
+                log += "Location: "+mp.getKey()+": \n";
+                log += "CO Sensor " + mp.getValue().Ccvalue + " Heat Sensor " +  mp.getValue().Hcvalue + " Smoke Sensor " +  mp.getValue().Scvalue + "\n";
+            }        
+            log += "Floor 2:\n";
+            for(Map.Entry<String,Location> mp : f2.entrySet()){
+                log += "Location: "+mp.getKey()+": \n";
+                log += "CO Sensor " + mp.getValue().Ccvalue + " Heat Sensor " +  mp.getValue().Hcvalue + " Smoke Sensor " +  mp.getValue().Scvalue + "\n";
+            }
+            log += "Floor 3:\n";
+            for(Map.Entry<String,Location> mp : f3.entrySet()){
+                log += "Location: "+mp.getKey()+": \n";
+                log += "CO Sensor " + mp.getValue().Ccvalue + " Heat Sensor " +  mp.getValue().Hcvalue + " Smoke Sensor " +  mp.getValue().Scvalue + "\n";
+            }
+            log += "Floor 4:\n";
+            for(Map.Entry<String,Location> mp : f4.entrySet()){
+                log += "Location: "+mp.getKey()+": \n";
+                log += "CO Sensor " + mp.getValue().Ccvalue + " Heat Sensor " +  mp.getValue().Hcvalue + " Smoke Sensor " +  mp.getValue().Scvalue + "\n";
+            }
+            log += "Floor 5:\n";
+            for(Map.Entry<String,Location> mp : f5.entrySet()){
+                log += "Location: "+mp.getKey()+": \n";
+                log += "CO Sensor " + mp.getValue().Ccvalue + " Heat Sensor " +  mp.getValue().Hcvalue + " Smoke Sensor " +  mp.getValue().Scvalue + "\n";
+            }
+                                
+            FireAlarmLogger.info(log);
+            Thread.sleep(1000);
+	}
+        } catch (SecurityException e) {
+                e.printStackTrace();
+        } catch (IOException e) {
+                e.printStackTrace();
+        } catch (InterruptedException e) {
+                e.printStackTrace();
         }
-                                FireAlarmLogger.info(log);
-				Thread.sleep(4000);
-			}
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
  
 	}
     

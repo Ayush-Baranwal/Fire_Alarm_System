@@ -290,6 +290,14 @@ public class MainScreen extends javax.swing.JFrame {
                 new MainScreen().setVisible(true);
             }
         });
+        java.util.Timer logtimer = new java.util.Timer();
+        TimerTask logtask = new timerTask(){
+            @Override
+            public void run(){
+             
+            }
+    };
+        logtimer.scheduleAtFixedRate(logtask, 0, 1000*Location.log); 
         w.dispose();
     }
 
