@@ -18,7 +18,7 @@ import java.util.logging.SimpleFormatter;
 
 public class LogGenerator {
     
-    public static void main(String[] args) {
+    LogGenerator() {
  
 		Logger FireAlarmLogger = Logger.getLogger("FireAlarmLog");
  
@@ -28,7 +28,7 @@ public class LogGenerator {
 		try {
  
 			// We are setting handler to true = append data to file
-			FileHandler = new FileHandler("/FireAlarm.log", true);
+			FileHandler = new FileHandler("C:\\Users\\rajen\\Documents\\NetBeansProjects\\Fire-Alarm-System\\src\\main\\resources\\FireAlarm.log", true);
 			FireAlarmLogger.addHandler(FileHandler);
  
 			// Print a brief summary of the LogRecord in a human readable format.
@@ -38,7 +38,6 @@ public class LogGenerator {
  
  
 			// infinite loop
-        while (true) {
                 // Log an INFO message.
             String log = "";
             log += "Floor 0:\n";
@@ -73,14 +72,11 @@ public class LogGenerator {
             }
                                 
             FireAlarmLogger.info(log);
-            Thread.sleep(1000);
-	}
         } catch (SecurityException e) {
                 e.printStackTrace();
         } catch (IOException e) {
                 e.printStackTrace();
-        } catch (InterruptedException e) {
-                e.printStackTrace();
+        
         }
  
 	}
