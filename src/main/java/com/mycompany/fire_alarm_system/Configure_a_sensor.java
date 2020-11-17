@@ -324,7 +324,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
             Sensor.duration = Integer.parseInt(jComboBox1.getSelectedItem().toString());
             Sensor.volume = jSlider1.getValue();
             Sensor.logint = Integer.parseInt(jComboBox2.getSelectedItem().toString());
-            MainScreen.email=jTextField2.getText();
+            MainScreen.emailID=jTextField2.getText();
             MainScreen.valid=true;
             switch(stype)
             {
