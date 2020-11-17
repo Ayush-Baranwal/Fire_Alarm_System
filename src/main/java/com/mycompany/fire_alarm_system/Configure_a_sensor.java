@@ -5,6 +5,8 @@
  */
 package com.mycompany.fire_alarm_system;
 import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /**
  *
@@ -325,7 +327,8 @@ public class Configure_a_sensor extends javax.swing.JFrame {
             Sensor.duration = Integer.parseInt(jComboBox1.getSelectedItem().toString());
             Sensor.volume = jSlider1.getValue();
             Sensor.logint = Integer.parseInt(jComboBox2.getSelectedItem().toString());
-            MainScreen.emailID=jTextField2.getText();
+            if(!jTextField2.getText().equals(""))
+                MainScreen.emailID=jTextField2.getText();
             MainScreen.valid=true;
             switch(stype)
             {
@@ -334,18 +337,26 @@ public class Configure_a_sensor extends javax.swing.JFrame {
                 case 2 -> Location.conSsensor(Sensor.duration,Sensor.volume,Sensor.logint, Sensor.thresholdSmoke);
             }
             JOptionPane.showMessageDialog(this,"Configuration Successful");
-            if(flog==0){
+            
+           
+            if(flog==0){              
             java.util.Timer logtimer = new java.util.Timer();
             TimerTask logtask = new timerTask(){
             @Override
             public void run(){
                 Location.allSet();
+                 try {
                 LogGenerator log = new LogGenerator();
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Configure_a_sensor.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             };
-            logtimer.scheduleAtFixedRate(logtask, 0, 1000*Location.log); 
-            flog++;
+            logtimer.scheduleAtFixedRate(logtask, 0, 1000*100000); 
+              flog++;
             }
+            
+            
             Configure_a_sensor C=new Configure_a_sensor();
             C.setVisible(true);
             this.dispose();

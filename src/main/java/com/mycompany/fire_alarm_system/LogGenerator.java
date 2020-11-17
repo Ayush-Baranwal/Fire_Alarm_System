@@ -11,6 +11,7 @@ import static com.mycompany.fire_alarm_system.MainScreen.f3;
 import static com.mycompany.fire_alarm_system.MainScreen.f4;
 import static com.mycompany.fire_alarm_system.MainScreen.f5;
 import java.io.IOException;
+import static java.lang.Thread.sleep;
 import java.util.Map;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
@@ -18,27 +19,28 @@ import java.util.logging.SimpleFormatter;
 
 public class LogGenerator {
     
-    LogGenerator() {
+    LogGenerator() throws InterruptedException {
  
-		Logger FireAlarmLogger = Logger.getLogger("FireAlarmLog");
- 
-		// Simple file logging Handler.
-		FileHandler FileHandler;
+    Logger FireAlarmLogger = Logger.getLogger("FireAlarmLog");
+
+    // Simple file logging Handler.
+    FileHandler FileHandler;
 		
-		try {
- 
-			// We are setting handler to true = append data to file
-			FileHandler = new FileHandler("C:\\Users\\rajen\\Documents\\NetBeansProjects\\Fire-Alarm-System\\src\\main\\resources\\FireAlarm.log", true);
-			FireAlarmLogger.addHandler(FileHandler);
- 
-			// Print a brief summary of the LogRecord in a human readable format.
-			SimpleFormatter formatter = new SimpleFormatter();	
-			FileHandler.setFormatter(formatter);
+    try {
+
+            // We are setting handler to true = append data to file
+            FileHandler = new FileHandler("C:\\Users\\rajen\\Documents\\NetBeansProjects\\Fire-Alarm-System\\src\\main\\resources\\FireAlarm.log", true);
+            FireAlarmLogger.addHandler(FileHandler);
+
+            // Print a brief summary of the LogRecord in a human readable format.
+            SimpleFormatter formatter = new SimpleFormatter();	
+            FileHandler.setFormatter(formatter);
 			
  
  
 			// infinite loop
                 // Log an INFO message.
+        while(true){
             String log = "";
             log += "Floor 0:\n";
             for(Map.Entry<String,Location> mp : f0.entrySet()){
@@ -72,6 +74,9 @@ public class LogGenerator {
             }
                                 
             FireAlarmLogger.info(log);
+            Thread.sleep(1000*Location.log);
+    }
+       
         } catch (SecurityException e) {
                 e.printStackTrace();
         } catch (IOException e) {
