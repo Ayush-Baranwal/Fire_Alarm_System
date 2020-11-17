@@ -313,7 +313,7 @@ public class Start_Monitoring extends javax.swing.JFrame {
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
         MainScreen.dashboard.setVisible(true);
-        MainScreen.dashboard.tim=1;
+        MainScreen.tim=1;
         this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
 

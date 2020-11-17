@@ -26,12 +26,15 @@ public class MainScreen extends javax.swing.JFrame {
     static Map<String, Location> f4 = new HashMap<String, Location>();
     static Map<String, Location> f5 = new HashMap<String, Location>();
     static int tim=0; 
+    static String email;
+    static boolean valid;
     Timer timer = new Timer();
     /**
      * Creates new form MainScreen
      */
     public MainScreen() {
         initComponents();
+        valid=false;
     }
 
     /**
