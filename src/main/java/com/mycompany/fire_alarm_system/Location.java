@@ -5,6 +5,15 @@
  */
 package com.mycompany.fire_alarm_system;
 
+import static com.mycompany.fire_alarm_system.MainScreen.f0;
+import static com.mycompany.fire_alarm_system.MainScreen.f1;
+import static com.mycompany.fire_alarm_system.MainScreen.f2;
+import static com.mycompany.fire_alarm_system.MainScreen.f3;
+import static com.mycompany.fire_alarm_system.MainScreen.f4;
+import static com.mycompany.fire_alarm_system.MainScreen.f5;
+import static java.lang.Math.floor;
+import java.util.Map;
+
 /**
  *
  * @author rajen
@@ -16,6 +25,7 @@ public class Location {
     static float Stvalue, Htvalue, Ctvalue;
     static int Sdur, Hdur, Cdur, log, vol;
     float Scvalue, Hcvalue, Ccvalue;
+    int mcp;
     String Sid, Hid, Cid;
     Location(){
         Scvalue=0;
@@ -52,6 +62,85 @@ public class Location {
         float min=Ctvalue/2;
         float max=(float) (Ctvalue*1.2);
         Ccvalue=RandomGenerator.RandomGenerator(min, max);
+    }
+    public void setmcp(){
+        float min=0;
+        float max=(float) (1.20);
+        mcp=(int) floor(RandomGenerator.RandomGenerator(min, max));
+    }
+    public static void allSet(){
+        for(Map.Entry<String,Location> mp : f0.entrySet()){
+            if(!mp.getValue().Sid.equals("")){
+                mp.getValue().setScvalue();
+            }
+            if(!mp.getValue().Hid.equals("")){
+                mp.getValue().setHcvalue();
+            }
+            if(!mp.getValue().Cid.equals("")){
+                mp.getValue().setCcvalue();
+            }
+            mp.getValue().setmcp();
+        }
+        for(Map.Entry<String,Location> mp : f1.entrySet()){
+            if(!mp.getValue().Sid.equals("")){
+                mp.getValue().setScvalue();
+            }
+            if(!mp.getValue().Hid.equals("")){
+                mp.getValue().setHcvalue();
+            }
+            if(!mp.getValue().Cid.equals("")){
+                mp.getValue().setCcvalue();
+            }
+            mp.getValue().setmcp();
+        }
+        for(Map.Entry<String,Location> mp : f2.entrySet()){
+            if(!mp.getValue().Sid.equals("")){
+                mp.getValue().setScvalue();
+            }
+            if(!mp.getValue().Hid.equals("")){
+                mp.getValue().setHcvalue();
+            }
+            if(!mp.getValue().Cid.equals("")){
+                mp.getValue().setCcvalue();
+            }
+            mp.getValue().setmcp();
+        }
+        for(Map.Entry<String,Location> mp : f3.entrySet()){
+            if(!mp.getValue().Sid.equals("")){
+                mp.getValue().setScvalue();
+            }
+            if(!mp.getValue().Hid.equals("")){
+                mp.getValue().setHcvalue();
+            }
+            if(!mp.getValue().Cid.equals("")){
+                mp.getValue().setCcvalue();
+            }
+            mp.getValue().setmcp();
+        }
+        for(Map.Entry<String,Location> mp : f4.entrySet()){
+            if(!mp.getValue().Sid.equals("")){
+                mp.getValue().setScvalue();
+            }
+            if(!mp.getValue().Hid.equals("")){
+                mp.getValue().setHcvalue();
+            }
+            if(!mp.getValue().Cid.equals("")){
+                mp.getValue().setCcvalue();
+            }
+            mp.getValue().setmcp();
+        }
+        for(Map.Entry<String,Location> mp : f5.entrySet()){
+            if(!mp.getValue().Sid.equals("")){
+                mp.getValue().setScvalue();
+            }
+            if(!mp.getValue().Hid.equals("")){
+                mp.getValue().setHcvalue();
+            }
+            if(!mp.getValue().Cid.equals("")){
+                mp.getValue().setCcvalue();
+            }
+            mp.getValue().setmcp();
+        }
     }
     }
 

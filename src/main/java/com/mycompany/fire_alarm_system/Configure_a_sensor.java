@@ -120,7 +120,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
 
         jComboBox1.setBackground(new java.awt.Color(108, 120, 137));
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "4", "8", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "4", "8" }));
         jComboBox1.setToolTipText("Time(in minutes)");
         jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -177,7 +177,7 @@ public class Configure_a_sensor extends javax.swing.JFrame {
 
         jComboBox3.setBackground(new java.awt.Color(108, 120, 137));
         jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CO Sensor", "Heat Sensor", "Smoke Sensor", " " }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CO Sensor", "Heat Sensor", "Smoke Sensor" }));
         jComboBox3.setToolTipText("Select sensor type.");
         jComboBox3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jComboBox3.addMouseListener(new java.awt.event.MouseAdapter() {

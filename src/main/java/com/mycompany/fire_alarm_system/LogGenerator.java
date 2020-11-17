@@ -21,7 +21,7 @@ public class LogGenerator {
 		try {
  
 			// We are setting handler to true = append data to file
-			FileHandler = new FileHandler("C:\\Users\\HP\\Documents\\Code-Base\\Fire-Alarm-System\\src\\main\\java\\com\\mycompany\\fire_alarm_system\\FireAlarm.log", true);
+			FileHandler = new FileHandler("/FireAlarm.log", true);
 			FireAlarmLogger.addHandler(FileHandler);
  
 			// Print a brief summary of the LogRecord in a human readable format.
@@ -50,11 +50,11 @@ public class LogGenerator {
                                      log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
                                      log += "Location: Lab 1: ";
                                      log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
-                                     log += "Location: lab 2: ";
+                                     log += "Location: Lab 2: ";
                                      log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
                                      log += "Location: Stairs 1: ";
                                      log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
-                                     log += "Location: Strairs 2: ";
+                                     log += "Location: Stairs 2: ";
                                      log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";
                                      log += "Location: Hall: ";
                                      log += "CO Sensor " + 1 + " Heat Sensor " + 2 + " Smoke Sensor " + 3 + "\n";                
