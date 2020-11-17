@@ -59,7 +59,7 @@ public class timerTask extends TimerTask{
                         tm2.addRow(d);
                     }
                     if(mp.getValue().mcp==1){
-                        String d[]={""+LocalTime.now(),"Ground",mp.getKey(),"Manual Alarm Triggered!"};
+                        String d[]={""+LocalTime.now(),"Manual CallPoint","Ground",mp.getKey(),"Manual Alarm Triggered!"};
                         tm2.addRow(d);
                     }
                 }
@@ -93,7 +93,7 @@ public class timerTask extends TimerTask{
                         tm2.addRow(d);
                     }
                     if(mp.getValue().mcp==1){
-                        String d[]={""+LocalTime.now(),"First",mp.getKey(),"Manual Alarm Triggered!"};
+                        String d[]={""+LocalTime.now(),"Manual CallPoint","First",mp.getKey(),"Manual Alarm Triggered!"};
                         tm2.addRow(d);
                     }
                 }

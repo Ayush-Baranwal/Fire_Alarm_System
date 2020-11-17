@@ -18,6 +18,7 @@ import static com.mycompany.fire_alarm_system.MainScreen.f2;
 import static com.mycompany.fire_alarm_system.MainScreen.f3;
 import static com.mycompany.fire_alarm_system.MainScreen.f4;
 import static com.mycompany.fire_alarm_system.MainScreen.f5;
+import static com.mycompany.fire_alarm_system.Email.send;
 //import java.util.concurrent.Executors;
 //import java.util.concurrent.ScheduledExecutorService;
 //import java.util.concurrent.ScheduledFuture;
@@ -25,11 +26,14 @@ import static com.mycompany.fire_alarm_system.MainScreen.f5;
 import java.awt.Color;
 import java.awt.Component;
 import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableCellRenderer;
 
 
 public class Start_Monitoring extends javax.swing.JFrame {
     static int fno=-1;
+    static int mailtrigger=0;
     /**
      * Creates new form Start_Monitoring
      */
@@ -162,8 +166,8 @@ public class Start_Monitoring extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable2);
         if (jTable2.getColumnModel().getColumnCount() > 0) {
             jTable2.getColumnModel().getColumn(0).setMinWidth(150);
-            jTable2.getColumnModel().getColumn(0).setPreferredWidth(180);
-            jTable2.getColumnModel().getColumn(0).setMaxWidth(250);
+            jTable2.getColumnModel().getColumn(0).setPreferredWidth(160);
+            jTable2.getColumnModel().getColumn(0).setMaxWidth(220);
             jTable2.getColumnModel().getColumn(1).setMinWidth(100);
             jTable2.getColumnModel().getColumn(1).setPreferredWidth(120);
             jTable2.getColumnModel().getColumn(1).setMaxWidth(150);
@@ -336,6 +340,23 @@ public class Start_Monitoring extends javax.swing.JFrame {
         String data[]={mp.getKey(),String.valueOf(mp.getValue().Scvalue),String.valueOf(mp.getValue().Hcvalue),String.valueOf(mp.getValue().Ccvalue)};
         tM0.addRow(data);
         }
+        
+        java.util.Timer mailtimer = new java.util.Timer();
+        TimerTask mailtask = new timerTask(){
+            @Override
+            public void run(){
+                if(mailtrigger==0&&jTable2.getRowCount()>0){
+            Email.send("rsrivastava2341@gmail.com","1as23df4","MainScreen.emailID","Fire Alert in CC3!","One or more sensors have breached their threshold and alarm has been triggered. Immediate action required.");
+            mailtrigger=1;
+                    try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Start_Monitoring.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                JOptionPane.showMessageDialog(jPanel2,"Email Alert Sent.");}
+            }
+    };
+        mailtimer.scheduleAtFixedRate(mailtask, 0, 60000); 
 
     }//GEN-LAST:event_jButton3MouseClicked
 
